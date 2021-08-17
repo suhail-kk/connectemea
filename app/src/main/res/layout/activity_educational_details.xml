@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".Activity.EducationalDetails">
+        <TextView
+            android:id="@+id/sslc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:text="1.SSLC/10th"
+            android:textSize="25dp"
+            android:textColor="@color/heading"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/schoolname"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="School name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sslc" />
+
+        <TextView
+            android:id="@+id/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Medium of instruction"
+            android:textSize="17sp"
+            android:textColor="@color/sub_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/schoolname" />
+
+        <RadioButton
+            android:id="@+id/radioeng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toStartOf="@+id/radiomal"
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medium" />
+
+        <RadioButton
+            android:id="@+id/radiomal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:text="Malayalam"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medium" />
+
+        <TextView
+            android:id="@+id/marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Marks obtained(in %)"
+            android:textSize="17sp"
+            android:textColor="@color/sub_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.079"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medium" />
+
+        <TextView
+            android:id="@+id/englishmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="English"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/englishmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/marks" />
+
+        <TextView
+            android:id="@+id/mathsmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            android:text="Maths"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/mathsmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/englishmark" />
+
+        <TextView
+            android:id="@+id/sciencemark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            android:text="Science"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/sciencemarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mathsmark" />
+
+        <TextView
+            android:id="@+id/ssmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            android:text="Social Science"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/ssmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sciencemark" />
+
+        <TextView
+            android:id="@+id/plus2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="2.Plus 2/VHSC"
+            android:textSize="25dp"
+            android:textColor="@color/heading"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/ssmark" />
+
+        <EditText
+            android:id="@+id/schoolname2"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="School name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plus2" />
+
+        <AutoCompleteTextView
+            android:id="@+id/allsyllabus"
+            android:layout_width="177dp"
+            android:layout_height="38dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:dropDownWidth="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Syllabus            "
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/schoolname2" />
+
+        <ImageView
+            android:id="@+id/allsyllabusimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/allsyllabus"
+            app:layout_constraintEnd_toEndOf="@+id/allsyllabus"
+            app:layout_constraintTop_toTopOf="@+id/allsyllabus"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <TextView
+            android:id="@+id/marks2"
+            android:layout_width="307dp"
+            android:layout_height="25dp"
+            android:text="Marks obtained(in %)"
+            android:textSize="17sp"
+            android:textColor="@color/sub_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allsyllabus" />
+
+        <TextView
+            android:id="@+id/english2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:text="English"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/marks2" />
+
+        <EditText
+            android:id="@+id/english2b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/box"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/english2"
+            app:layout_constraintStart_toEndOf="@+id/english2"
+            app:layout_constraintTop_toBottomOf="@+id/marks2"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <AutoCompleteTextView
+            android:id="@+id/sub1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Subject        "
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.234"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/english2" />
+
+        <EditText
+            android:id="@+id/sub1b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/box"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/english2b2"
+            app:layout_constraintBottom_toBottomOf="@+id/sub1"
+            app:layout_constraintStart_toEndOf="@+id/sub1"
+            app:layout_constraintTop_toBottomOf="@+id/english2b2" />
+
+        <ImageView
+            android:id="@+id/sub1image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintBottom_toBottomOf="@+id/sub1"
+            app:layout_constraintEnd_toEndOf="@+id/sub1"
+            app:layout_constraintTop_toTopOf="@+id/sub1"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="645dp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/sub2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Subject        "
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.234"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sub1" />
+
+        <EditText
+            android:id="@+id/sub2b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/box"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/english2b2"
+            app:layout_constraintBottom_toBottomOf="@+id/sub2"
+            app:layout_constraintStart_toEndOf="@+id/sub2"
+            app:layout_constraintTop_toBottomOf="@+id/sub1b2" />
+
+        <ImageView
+            android:id="@+id/sub2image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/sub2"
+            app:layout_constraintEnd_toEndOf="@+id/sub2"
+            app:layout_constraintTop_toTopOf="@+id/sub2"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <AutoCompleteTextView
+            android:id="@+id/sub3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Subject        "
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.234"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sub2" />
+
+        <ImageView
+            android:id="@+id/sub3image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/sub3"
+            app:layout_constraintEnd_toEndOf="@+id/sub3"
+            app:layout_constraintTop_toTopOf="@+id/sub3"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <EditText
+            android:id="@+id/sub3b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/box"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/english2b2"
+            app:layout_constraintBottom_toBottomOf="@+id/sub3"
+            app:layout_constraintStart_toEndOf="@+id/sub3"
+            app:layout_constraintTop_toBottomOf="@+id/sub2b2" />
+
+        <AutoCompleteTextView
+            android:id="@+id/sub4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Subject        "
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.234"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sub3" />
+
+        <ImageView
+            android:id="@+id/sub4image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/sub4"
+            app:layout_constraintEnd_toEndOf="@+id/sub4"
+            app:layout_constraintTop_toTopOf="@+id/sub4"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+
+        <EditText
+            android:id="@+id/sub4b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/box"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/english2b2"
+            app:layout_constraintStart_toEndOf="@+id/sub4"
+            app:layout_constraintTop_toBottomOf="@+id/sub3b2"
+            app:layout_constraintBottom_toBottomOf="@+id/sub4"/>
+
+        <EditText
+            android:id="@+id/englishmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="92dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/englishmark"
+            app:layout_constraintLeft_toRightOf="@+id/englishmark"
+            app:layout_constraintTop_toBottomOf="@+id/marks" />
+
+        <EditText
+            android:id="@+id/mathsmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="99dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/englishmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/mathsmark"
+            app:layout_constraintStart_toEndOf="@+id/mathsmark"
+            app:layout_constraintTop_toBottomOf="@+id/englishmarkb2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/sciencemarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/englishmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/sciencemark"
+            app:layout_constraintLeft_toRightOf="@+id/sciencemark"
+            app:layout_constraintTop_toBottomOf="@+id/mathsmarkb2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/ssmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/englishmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/ssmark"
+            app:layout_constraintStart_toEndOf="@+id/ssmark"
+            app:layout_constraintTop_toBottomOf="@+id/sciencemarkb2" />
+
+        <TextView
+            android:id="@+id/ugc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="3.UGC"
+            android:textSize="25dp"
+            android:textColor="@color/heading"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sub4" />
+
+        <EditText
+            android:id="@+id/collegename"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="College Name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ugc" />
+
+        <EditText
+            android:id="@+id/university"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:hint="University"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/collegename" />
+
+        <ImageView
+            android:id="@+id/universityimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/university"
+            app:layout_constraintEnd_toEndOf="@+id/university"
+            app:layout_constraintTop_toTopOf="@+id/university"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <EditText
+            android:id="@+id/course"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:hint="Course"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/university" />
+
+        <ImageView
+            android:id="@+id/courseimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/course"
+            app:layout_constraintEnd_toEndOf="@+id/course"
+            app:layout_constraintTop_toTopOf="@+id/course"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <TextView
+            android:id="@+id/marks3"
+            android:layout_width="307dp"
+            android:layout_height="25dp"
+            android:text="Marks obtained(in %)"
+            android:textSize="17sp"
+            android:textColor="@color/sub_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/course" />
+
+        <TextView
+            android:id="@+id/coremainmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Core(Main)"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/coremainmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/marks3" />
+
+        <EditText
+            android:id="@+id/coremainmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="92dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/coremainmark"
+            app:layout_constraintLeft_toRightOf="@+id/coremainmark"
+            app:layout_constraintTop_toBottomOf="@+id/marks3" />
+
+        <TextView
+            android:id="@+id/compsubmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Complementary(Sub)"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/compsubmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coremainmark" />
+
+        <EditText
+            android:id="@+id/compsubmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/coremainmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/compsubmark"
+            app:layout_constraintLeft_toRightOf="@+id/compsubmark"
+            app:layout_constraintTop_toBottomOf="@+id/coremainmarkb2" />
+
+        <TextView
+            android:id="@+id/commonengmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Common(English)"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/commonengmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/compsubmark" />
+
+        <EditText
+            android:id="@+id/commonengmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/coremainmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/commonengmark"
+            app:layout_constraintLeft_toRightOf="@+id/commonengmark"
+            app:layout_constraintTop_toBottomOf="@+id/compsubmarkb2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/commonlangmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Common(Language)"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/commonlangmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commonengmark" />
+
+        <EditText
+            android:id="@+id/commonlangmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/coremainmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/commonlangmark"
+            app:layout_constraintLeft_toRightOf="@+id/commonlangmark"
+            app:layout_constraintTop_toBottomOf="@+id/commonengmarkb2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/openmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Open Course"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@+id/openmarkb2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commonlangmark" />
+
+        <EditText
+            android:id="@+id/openmarkb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/textview_round"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/coremainmarkb2"
+            app:layout_constraintBottom_toBottomOf="@+id/openmark"
+            app:layout_constraintLeft_toRightOf="@+id/openmark"
+            app:layout_constraintTop_toBottomOf="@+id/commonlangmarkb2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/addqualification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/textview_round"
+            android:text="Add Qualification"
+            app:backgroundTint="@color/button_color"
+            app:layout_constraintEnd_toEndOf="@+id/openmark"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/openmark"
+            app:layout_constraintTop_toBottomOf="@+id/openmark" />
+
+        <TextView
+            android:id="@+id/otherqual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="4.Any Other Qualification"
+            android:textColor="@color/heading"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addqualification" />
+
+        <EditText
+            android:id="@+id/coursename"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Course Name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherqual" />
+
+        <EditText
+            android:id="@+id/coursetype"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:hint="Course Type"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coursename" />
+
+        <EditText
+            android:id="@+id/institutionname"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:hint="Institution Name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coursetype" />
+
+        <EditText
+            android:id="@+id/universityname"
+            android:layout_width="319dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:hint="University(If Recognized)"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/institutionname" />
+
+        <Button
+            android:id="@+id/addqualification2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/textview_round"
+            android:text="Add Qualification"
+            app:backgroundTint="@color/button_color"
+            app:layout_constraintEnd_toEndOf="@+id/addqualification"
+            app:layout_constraintHorizontal_bias="0.229"
+            app:layout_constraintStart_toStartOf="@+id/addqualification"
+            app:layout_constraintTop_toBottomOf="@+id/universityname" />
+
+        <Button
+            android:id="@+id/saveinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/textview_round"
+            android:gravity="center"
+            android:text="Save Info"
+            app:backgroundTint="@color/button_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addqualification2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

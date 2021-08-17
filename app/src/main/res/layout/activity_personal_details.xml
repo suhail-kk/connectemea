@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="90dp"
+    android:padding="20dp"
+    tools:context=".Activity.PersonalDetails">
+
+    <TextView
+        android:id="@+id/nametv"
+        android:layout_width="38dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="330dp"
+        android:layout_marginBottom="32dp"
+        android:text="Name"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#1E847F"
+        android:ems="10"
+        android:hint="John"
+        android:inputType="textPersonName"
+        android:textColor="#1E847F"
+        android:textColorHint="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/departmenttv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <EditText
+        android:id="@+id/course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#1E847F"
+        android:ems="10"
+        android:hint="Computer Science"
+        android:inputType="textPersonName"
+        android:textColor="#1E847F"
+        android:textColorHint="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/admissionnumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/admissionnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#1E847F"
+        android:ems="10"
+        android:hint="19BCSA502"
+        android:inputType="textPersonName"
+        android:textColor="#1E847F"
+        android:textColorHint="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/rollnotv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/rollnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:ems="7"
+        android:hint="144"
+        android:inputType="number"
+        android:textColor="#1E847F"
+        android:textColorHint="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/Gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rollnotv" />
+
+    <EditText
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#1E847F"
+        android:ems="7"
+        android:hint="2019"
+        android:inputType="number"
+        android:textColor="#1E847F"
+        android:textColorHint="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.362"
+        app:layout_constraintStart_toEndOf="@+id/rollnumber"
+        app:layout_constraintTop_toBottomOf="@+id/admissionnumber" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:ems="7"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Gender             "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/Birth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rollnumber" />
+
+    <ImageView
+        android:id="@+id/Genderi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Gender"
+        app:layout_constraintEnd_toEndOf="@+id/Gender"
+        app:layout_constraintTop_toTopOf="@+id/Gender"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Bloodgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#1E847F"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:ems="7"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Blood group             "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toEndOf="@+id/Genderi"
+        app:layout_constraintTop_toBottomOf="@+id/year" />
+
+    <ImageView
+        android:id="@+id/Bloodi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Bloodgroup"
+        app:layout_constraintEnd_toEndOf="@+id/Bloodgroup"
+        app:layout_constraintTop_toTopOf="@+id/Bloodgroup"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:ems="7"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Date of Birth             "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/Religion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Gender" />
+
+    <ImageButton
+        android:id="@+id/Birthi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/Birth"
+        app:layout_constraintEnd_toEndOf="@+id/Birth"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/Birth"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Marriage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:ems="7"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Marital Status"
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintLeft_toRightOf="@+id/Birth"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bloodgroup" />
+
+    <ImageView
+        android:id="@+id/Marriagei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Marriage"
+        app:layout_constraintEnd_toEndOf="@+id/Marriage"
+        app:layout_constraintTop_toTopOf="@+id/Marriage"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Religion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:ems="7"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Religion             "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/identificationmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Birth" />
+
+    <ImageView
+        android:id="@+id/Religioni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Religion"
+        app:layout_constraintEnd_toEndOf="@+id/Religion"
+        app:layout_constraintTop_toTopOf="@+id/Religion"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Caste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:ems="7"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Caste             "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintLeft_toRightOf="@+id/Religion"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Marriage" />
+
+    <ImageView
+        android:id="@+id/Castei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/Caste"
+        app:layout_constraintEnd_toEndOf="@+id/Caste"
+        app:layout_constraintTop_toTopOf="@+id/Caste"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+    <TextView
+        android:id="@+id/identificationmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:ems="10"
+        android:hint="Identification mark"
+        android:inputType="textPersonName"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Religion" />
+
+    <EditText
+        android:id="@+id/id1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="1. "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identificationmark" />
+
+    <EditText
+        android:id="@+id/id2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1E847F"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="2. "
+        android:textColor="#1E847F"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id1" />
+
+    <TextView
+        android:id="@+id/departmenttv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="317dp"
+        android:layout_marginBottom="36dp"
+        android:text="Department"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/course"
+        app:layout_constraintEnd_toEndOf="@+id/course"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/course" />
+
+    <TextView
+        android:id="@+id/admissionnotv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="317dp"
+        android:layout_marginBottom="36dp"
+        android:text="Admission No"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/admissionnumber"
+        app:layout_constraintEnd_toEndOf="@+id/admissionnumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/admissionnumber" />
+
+    <TextView
+        android:id="@+id/rollnotv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="36dp"
+        android:text="Roll Number"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rollnumber"
+        app:layout_constraintEnd_toEndOf="@+id/rollnumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rollnumber" />
+
+    <TextView
+        android:id="@+id/yearofadmtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="34dp"
+        android:text="Year of Admission"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/year"
+        app:layout_constraintEnd_toEndOf="@+id/year"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/year" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollviewfamdetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="86dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        tools:context=".Activity.FamilyDetails">
+
+        <TextView
+            android:id="@+id/father"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Father"
+            android:textColor="@color/heading"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.002"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/fname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Name"
+            app:layout_constraintEnd_toEndOf="@+id/father"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/father"
+            app:layout_constraintTop_toBottomOf="@+id/father"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/feducation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Education Qualification"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/fname"
+            app:layout_constraintStart_toStartOf="@+id/fname"
+            app:layout_constraintTop_toBottomOf="@+id/fname"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/foccupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Occupation"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/feducation"
+            app:layout_constraintStart_toStartOf="@+id/feducation"
+            app:layout_constraintTop_toBottomOf="@+id/feducation"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/fincome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Annual Income (Rs.)"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/foccupation"
+            app:layout_constraintStart_toStartOf="@+id/foccupation"
+            app:layout_constraintTop_toBottomOf="@+id/foccupation"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/guardian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Guardian"
+            android:textColor="@color/heading"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/mincome"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mincome"
+            app:layout_constraintTop_toBottomOf="@+id/mincome" />
+
+        <EditText
+            android:id="@+id/gname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/guardian"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guardian"
+            app:layout_constraintTop_toBottomOf="@+id/guardian"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/geducation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Education Qualification"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/gname"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/gname"
+            app:layout_constraintTop_toBottomOf="@+id/gname"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/goccupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Occupation"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/geducation"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/geducation"
+            app:layout_constraintTop_toBottomOf="@+id/geducation"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/gincome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Annual Income (Rs.)"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/goccupation"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/goccupation"
+            app:layout_constraintTop_toBottomOf="@+id/goccupation"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/mother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Mother"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/heading"
+            app:layout_constraintEnd_toEndOf="@+id/fincome"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/fincome"
+            app:layout_constraintTop_toBottomOf="@+id/fincome" />
+
+        <EditText
+            android:id="@+id/mname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Name"
+            app:layout_constraintEnd_toEndOf="@+id/mother"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mother"
+            app:layout_constraintTop_toBottomOf="@+id/mother"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/meducation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Education Qualification"
+            app:layout_constraintEnd_toEndOf="@+id/mname"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mname"
+            app:layout_constraintTop_toBottomOf="@+id/mname"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/moccupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Occupation"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/meducation"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/meducation"
+            app:layout_constraintTop_toBottomOf="@+id/meducation"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mincome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="Annual Income (Rs.)"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/moccupation"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/moccupation"
+            app:layout_constraintTop_toBottomOf="@+id/moccupation"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/textview_round"
+            android:text="Save"
+            app:backgroundTint="@color/button_color"
+            app:layout_constraintEnd_toEndOf="@+id/gincome"
+            app:layout_constraintHorizontal_bias="0.905"
+            app:layout_constraintStart_toStartOf="@+id/gincome"
+            app:layout_constraintTop_toBottomOf="@+id/gincome" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
