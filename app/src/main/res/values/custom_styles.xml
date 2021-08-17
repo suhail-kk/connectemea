@@ -3,4 +3,13 @@
     <style name="roundedSquare">
         <item name="cornerSize">20%</item>
     </style>
+    <style name="main_heading">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">#038DFE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">Rubik</item>
+    </style>
+    <style name="EditText">
+        <item name="hintTextColor">#00BBFF</item>
+    </style>
 </resources>
