@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="90dp"
     android:padding="20dp"
-    tools:context=".PersonalDetails">
+    tools:context=".Activity.PersonalDetails">
 
     <TextView
         android:id="@+id/nametv"

@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.emea.Fragments.HomePage;
+import com.example.emea.R;
 
 public class ForgotPassword extends AppCompatActivity {
     EditText txtEmail;

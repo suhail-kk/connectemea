@@ -1,8 +1,8 @@
-package com.example.emea;
+package com.example.emea.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-public class LoggingResponse{
+public class RegisterResponse{
 
 	@SerializedName("message")
 	private String message;
@@ -10,18 +10,11 @@ public class LoggingResponse{
 	@SerializedName("status")
 	private String status;
 
-	@SerializedName("token")
-	private String token;
-
 	public String getMessage(){
 		return message;
 	}
 
 	public String getStatus(){
 		return status;
-	}
-
-	public String getToken(){
-		return token;
 	}
 }

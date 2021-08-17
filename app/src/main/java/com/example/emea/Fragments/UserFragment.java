@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.emea.Activity.EducationalDetails;
+import com.example.emea.Activity.FamilyDetails;
+import com.example.emea.Activity.PersonalDetails;
+import com.example.emea.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,7 +75,7 @@ public class UserFragment extends Fragment {
         personaldt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newIntent=new Intent(getActivity().getApplicationContext(),PersonalDetails.class);
+                Intent newIntent=new Intent(getActivity().getApplicationContext(), PersonalDetails.class);
                 startActivity(newIntent);
 
             }
@@ -79,7 +84,7 @@ public class UserFragment extends Fragment {
         educationdt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newIntent=new Intent(getActivity().getApplicationContext(),EducationalDetails.class);
+                Intent newIntent=new Intent(getActivity().getApplicationContext(), EducationalDetails.class);
                 startActivity(newIntent);
 
             }
@@ -87,7 +92,7 @@ public class UserFragment extends Fragment {
         familydt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newIntent=new Intent(getActivity().getApplicationContext(),FamilyDetails.class);
+                Intent newIntent=new Intent(getActivity().getApplicationContext(), FamilyDetails.class);
                 startActivity(newIntent);
 
             }

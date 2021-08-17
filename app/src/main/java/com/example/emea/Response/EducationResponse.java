@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Response;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,18 +1,18 @@
-package com.example.emea;
+package com.example.emea.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.emea.Activity.MainActivity;
+import com.example.emea.R;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
 
@@ -59,7 +59,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getActivity(),MainActivity.class);
+                Intent myIntent = new Intent(getActivity(), MainActivity.class);
                 startActivity(myIntent);
             }
         });

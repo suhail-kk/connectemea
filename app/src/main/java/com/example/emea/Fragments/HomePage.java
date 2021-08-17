@@ -1,19 +1,14 @@
-package com.example.emea;
+package com.example.emea.Fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
-
-import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.example.emea.Network.ApiCall;
+import com.example.emea.R;
 
 public class HomePage extends AppCompatActivity {
     ApiCall apiCall;

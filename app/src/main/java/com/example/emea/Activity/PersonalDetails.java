@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.example.emea.R;
 
 import java.util.Calendar;
 

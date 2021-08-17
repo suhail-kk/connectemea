@@ -14,12 +14,12 @@
 
         android:theme="@style/Theme.Emea">
 
-        <activity android:name=".FamilyDetails" />
-        <activity android:name=".EducationalDetails" />
-        <activity android:name=".PersonalDetails" />
-        <activity android:name=".HomePage" />
-        <activity android:name=".ForgotPassword" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.FamilyDetails" />
+        <activity android:name=".Activity.EducationalDetails" />
+        <activity android:name=".Activity.PersonalDetails" />
+        <activity android:name=".Fragments.HomePage" />
+        <activity android:name=".Activity.ForgotPassword" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

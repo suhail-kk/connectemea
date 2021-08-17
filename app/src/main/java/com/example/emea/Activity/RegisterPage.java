@@ -1,13 +1,12 @@
-package com.example.emea;
+package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.EditText;
 
-import java.util.HashMap;
-
-import retrofit2.Call;
+import com.example.emea.Network.ApiCall;
+import com.example.emea.R;
 
 public class RegisterPage extends AppCompatActivity {
 

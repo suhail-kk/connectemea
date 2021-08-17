@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.example.emea.R;
 
 public class FamilyDetails extends AppCompatActivity {
 

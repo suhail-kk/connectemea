@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

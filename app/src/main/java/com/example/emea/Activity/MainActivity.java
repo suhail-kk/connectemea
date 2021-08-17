@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.emea.Fragments.HomePage;
+import com.example.emea.Response.LoggingResponse;
+import com.example.emea.Network.ApiCall;
+import com.example.emea.Network.ApiClient;
+import com.example.emea.R;
+
 import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;

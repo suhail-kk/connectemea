@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Fragments;
 
 import android.os.Bundle;
 
@@ -11,7 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.emea.Network.ApiCall;
+import com.example.emea.Network.ApiClient;
+import com.example.emea.R;
+import com.example.emea.Response.StudentItem;
 
 import retrofit2.Call;
 import retrofit2.Callback;

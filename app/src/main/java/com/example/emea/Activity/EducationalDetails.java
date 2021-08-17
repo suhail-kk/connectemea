@@ -1,4 +1,4 @@
-package com.example.emea;
+package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.emea.Response.EducationResponse;
+import com.example.emea.Network.ApiCall;
+import com.example.emea.Network.ApiClient;
+import com.example.emea.R;
 
 import java.util.HashMap;
 

@@ -1,21 +1,18 @@
-package com.example.emea;
+package com.example.emea.Network;
 
+
+import com.example.emea.Response.EducationResponse;
+import com.example.emea.Response.LoggingResponse;
+import com.example.emea.Response.StudentItem;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import okhttp3.RequestBody;
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.QueryMap;
 
 public interface ApiCall {
 
