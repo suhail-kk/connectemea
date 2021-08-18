@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
         android:gravity="center"
-        android:text="Sign in"
+        android:text="Log in"
         android:textAlignment="center"
         android:textColor="@color/main_heading"
         android:textSize="50sp"
