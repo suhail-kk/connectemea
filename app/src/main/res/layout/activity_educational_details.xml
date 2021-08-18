@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:text="English"
             android:textColor="@color/text_color"
+            android:onClick="onRadioButtonClicked"
             app:layout_constraintEnd_toStartOf="@+id/radiomal"
             app:layout_constraintHorizontal_bias="0.216"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="100dp"
             android:text="Malayalam"
+            android:onClick="onRadioButtonClicked"
             android:textColor="@color/text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/medium" />

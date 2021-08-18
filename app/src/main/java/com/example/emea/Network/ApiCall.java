@@ -17,14 +17,13 @@ import retrofit2.http.POST;
 public interface ApiCall {
 
 
-    @GET("students/view/2")
+    @GET("students/view")
     Call<StudentItem> getUser(@Header("token") String authtoken);
 
 
     @FormUrlEncoded
     @POST("users/login")
-
-    Call<LoggingResponse> getLoginToken(@FieldMap HashMap<String,String> params);
+    Call<LoggingResponse> getLoginToken(@FieldMap HashMap<String, String> params);
 
 //    @POST("users/register")
 //    Call<RegisterResponse> getRegistrationStatus(@FieldMap HashMap<String,String> params);

@@ -39,7 +39,8 @@ public class EducationalDetails extends AppCompatActivity {
             textsub3box, textsub4box,
             textallsyllabus, textsub1, textsub2, textsub3, textsub4,
             textugc, textcollegename, textuniversity, textugccourse, textmarksugc, textcoremain, textugcmainbox, textcoresub, textsubbox, textcommonenglish, textugcenglishbox,
-            textcommonlang, textugclangbox, textopencourse, textopencoursebox, textotherqual, textcoursename, textcoursetype, textinstitution, textuniversity2;
+            textradioeng,textradiomal,
+    textcommonlang, textugclangbox, textopencourse, textopencoursebox, textotherqual, textcoursename, textcoursetype, textinstitution, textuniversity2;
     EditText school, englishsslcbox, mathssslcbox, sciencesslcbox, socialsciencesslcbox,
             schoolplustwo, englishplustwobox, sub1box, sub2box, sub3box, sub4box,
             collegename, university, ugccourse, ugcmainbox, ugcsubbox, ugcenglishbox, ugclangbox, opencoursebox,
@@ -290,9 +291,19 @@ public class EducationalDetails extends AppCompatActivity {
                 textinstitution = institution.getText().toString();
                 textuniversity2 = university2.getText().toString();
 
+
+                if (radioeng.isChecked()) {
+                     textmedium= radioeng.getText().toString() ;
+                }
+                else{
+                    textmedium= radiomal.getText().toString() ;
+                }
+
                 apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
-                getEducationList(textschool, textenglishsslcbox, textmathssslcbox, textsciencesslcbox, textsocialsslcbox);
+                getEducationList(textschool,textmedium, textenglishsslcbox, textmathssslcbox, textsciencesslcbox, textsocialsslcbox,textschoolplustwo,textallsyllabus,
+                        textenglishplustwobox,textsub1box,textsub2box,textsub3box,textsub4box,
+                        textugccourse,textcollegename,textuniversity,textugcmainbox,textcoresub,textugcenglishbox,textugclangbox,textopencoursebox);
 
 
             }
@@ -330,46 +341,51 @@ public class EducationalDetails extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.radioeng:
-                if (checked)
+               radiomal.setChecked(false);
+
                     break;
             case R.id.radiomal:
-                if (checked)
+                radioeng.setChecked(false);
+
                     break;
         }
     }
 
 
-    public void getEducationList(String textschool, String textenglishsslcbox, String textmathssslcbox, String textsciencesslcbox, String textsocialsslcbox) {
+    public void getEducationList(String textschool, String textmedium, String textenglishsslcbox, String textmathssslcbox, String textsciencesslcbox, String textsocialsslcbox, String textschoolplustwo, String textallsyllabus,
+                                 String textenglishplustwobox, String textsub1box,String textsub2box,String textsub3box,String textsub4box,
+                                 String  textugccourse,String textcollegename,String textuniversity,String textugcmainbox,String textcoresub,
+                                String textugcenglishbox,String textugclangbox,String textopencoursebox ) {
 
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("10th_school_name", this.textschool);
-        params.put("10th_medium", textmedium);
-        params.put("english", this.textenglishsslcbox);
-        params.put("maths", this.textmathssslcbox);
-        params.put("science", this.textsciencesslcbox);
-        params.put("social_studies", this.textsocialsslcbox);
-//        params.put("syllabus", textallsyllabus);
-//        params.put("12th_school_name", textschoolplustwo);
+        params.put("high_school", textschool);
+        params.put("high_school_medium", textmedium);
+        params.put("high_school_english", textenglishsslcbox);
+        params.put("high_school_maths", textmathssslcbox);
+        params.put("high_school_science",textsciencesslcbox);
+        params.put("high_school_socialscience",textsocialsslcbox);
+       params.put("plus_two_syllabus", textallsyllabus);
+        params.put("higher_secondary_school", textschoolplustwo);
 //        //  params.put("course_id", 1);
 //        params.put("subject_id1", textenglishplustwobox);
 //        params.put("subject_id2", textsub1box);
 //        params.put("subject_id3", textsub2box);
 //        params.put("subject_id4", textsub3box);
 //        params.put("subject_id5", textsub4box);
-//        params.put("subject_1_mark", textenglishplustwobox);
-//        params.put("subject_2_mark", textsub1box);
-//        params.put("subject_3_mark", textsub2box);
-//        params.put("subject_4_mark", textsub3box);
-//        params.put("subject_5_mark", textsub4box);
-//        params.put("course_name", textugccourse);
-//        params.put("college_name", textcollegename);
-//        params.put("university", textuniversity);
-//        params.put("core_mark", textugcmainbox);
-//        params.put("sub_mark", textcoresub);
-//        params.put("english_mark", textugcenglishbox);
-//        params.put("language_mark", textugclangbox);
-//        params.put("open_mark", textopencoursebox);
+        params.put("higher_secondary_mark1", textenglishplustwobox);
+        params.put("higher_secondary_mark2", textsub1box);
+        params.put("higher_secondary_mark3", textsub2box);
+        params.put("higher_secondary_mark4", textsub3box);
+        params.put("higher_secondary_mark5", textsub4box);
+        params.put("course_name", textugccourse);
+        params.put("college_name", textcollegename);
+        params.put("university", textuniversity);
+        params.put("core_mark", textugcmainbox);
+        params.put("complementary", textcoresub);
+        params.put("common_english", textugcenglishbox);
+        params.put("common_language", textugclangbox);
+        params.put("open_mark", textopencoursebox);
 //        //params.put("additional_courses_grade", textcoursename);
 //        params.put("additional_courses_instiution", textinstitution);
 //        params.put("additional_courses_recongnisation", textuniversity2);
