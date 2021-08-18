@@ -25,7 +25,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-
 public class MainActivity extends AppCompatActivity {
     EditText txtEmail, txtPassword;
     Button btnLogin;
@@ -35,13 +34,6 @@ public class MainActivity extends AppCompatActivity {
     String inputPassword;
     ApiCall apiCall;
     String authToken;
-    String token;
-//
-//    public static final String PREFS_NAME = "storeAuthToken";
-//    SharedPreferences sharedPreferences;
-
-
-
 
 
     @Override
@@ -50,53 +42,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         txtEmail = findViewById(R.id.logginEmail);
         txtPassword = findViewById(R.id.logginPassword);
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-//
-//        txtEmail = findViewById(R.id.email);
-//        txtPassword = findViewById(R.id.password);
 
-
-//        txtEmail = findViewById(R.id.logginEmail);
-//        txtPassword = findViewById(R.id.logginPassword);
-    //    apiCalls = ApiClient.getRetrofit().create(ApiCall.class);
-
-//        txtEmail = findViewById(R.id.email);
-//        txtPassword = findViewById(R.id.password);
 
         btnLogin = findViewById(R.id.login);
         txtForgot = findViewById(R.id.forgot);
-
-//         inputEmail = txtEmail.getText().toString();
-//         inputPassword = txtPassword.getText().toString();
-
-
-
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              inputEmail = txtEmail.getText().toString();
-              inputPassword = txtPassword.getText().toString();
+                inputEmail = txtEmail.getText().toString();
+                inputPassword = txtPassword.getText().toString();
 
 //                boolean check=ValidateInfo(inputEmail, inputPassword);
                 apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
 
-                getLoginList(inputEmail,inputPassword);
+                getLoginList(inputEmail, inputPassword);
 
 
 //                if(check==true) {
-                    Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
-                    startActivity(newIntent);
+
 //                }
             }
         });
-
 
 
         txtForgot.setOnClickListener(new View.OnClickListener() {
@@ -108,51 +81,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    private boolean ValidateInfo(String inputEmail, String inputPassword) {
-//        if (inputEmail.length() == 0) {
-//            txtEmail.requestFocus();
-//            txtEmail.setError("Field cannot be empty");
-//            return false;
-//        } else if (!inputEmail.matches(emailPattern)) {
-//            txtEmail.requestFocus();
-//            txtEmail.setError("Please enter a valid email address");
-//            return false;
-//        } else if (inputPassword.length() == 0) {
-//            txtPassword.requestFocus();
-//            txtPassword.setError("Field cannot be empty");
-//            return false;
-//        }
-//        else {
-//            return true;
-//        }
-//    }
+
+    public void getLoginList(String inputEmail, String inputPassword) {
+        HashMap<String, String> params = new HashMap<>();
+        params.put("email", inputEmail);
+        params.put("password", inputPassword);
 
 
-    public void getLoginList(String inputEmail,String inputPassword){
-        HashMap<String, String> params=new HashMap<>();
-        params.put("email",inputEmail);
-        params.put("password",inputPassword);
-
-
-
-
-        Call<LoggingResponse> logResponseCall=apiCall.getLoginToken(params);
+        Call<LoggingResponse> logResponseCall = apiCall.getLoginToken(params);
         logResponseCall.enqueue(new Callback<LoggingResponse>() {
 
             @Override
             public void onResponse(Call<LoggingResponse> call, Response<LoggingResponse> response) {
 
-                if(response.body() != null) {
+                if (response.body() != null) {
                     authToken = response.body().getToken();
-                    Log.e("token",authToken);
+                    Log.e("token", authToken);
                     SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
                     SharedPreferences.Editor editor = shared.edit();
                     editor.putString("token", authToken);
                     editor.commit();
 
+                    Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
+                    startActivity(newIntent);
 
-
+                } else {
+                    Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
                 }
+
             }
 
             @Override
@@ -179,5 +135,6 @@ public class MainActivity extends AppCompatActivity {
 //        else {
 //            return true;
 //        }
+
     }
 }

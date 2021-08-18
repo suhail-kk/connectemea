@@ -21,39 +21,17 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-//        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-//
-//        String authtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiZW1haWwiOiJsdW5hQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibHVuYSIsInJlZ2lzdGVyZWQiOnRydWV9.-h25wAytDq3zqu3RPESwJ5QGfkJvncgSHBKWZoMERiI";
-//
-//        Call<StudentItem> studentCall = apiCall.getUser( authtoken);
-//        studentCall.enqueue(new Callback<StudentItem>() {
-//            @Override
-//            public void onResponse(Call<StudentItem> call, Response<StudentItem> response) {
-//
-//                 studentName = response.body().getName();
-//                Toast.makeText(HomePage.this, studentName, Toast.LENGTH_SHORT).show();
-//
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<StudentItem> call, Throwable t) {
-////                Toast.makeText(HomeFragment.this, "Failed", Toast.LENGTH_SHORT).show();
-////                Toast.makeText(HomeFragment, "Failed", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
 
 
 
         //assigning variable
-        bottomNavigation=findViewById(R.id.bottom_navigation);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
         //Add menu item
-        bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_settings));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_notes));
-        bottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_calendar));
-        bottomNavigation.add(new MeowBottomNavigation.Model(5,R.drawable.ic_user));
+        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_settings));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_notes));
+        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_home));
+        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_calendar));
+        bottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_user));
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -61,7 +39,7 @@ public class HomePage extends AppCompatActivity {
                 //initialising
                 Fragment fragment = null;
                 //Check condition
-                switch (item.getId()){
+                switch (item.getId()) {
                     case 1:
                         fragment = new SettingsFragment();
                         break;
@@ -84,24 +62,25 @@ public class HomePage extends AppCompatActivity {
         });
 
         //set home fragment initially selected
-        bottomNavigation.show(3,true);
+        bottomNavigation.show(3, true);
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(HomePage.this, "clicked" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomePage.this, "clicked", Toast.LENGTH_SHORT).show();
             }
         });
         bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(HomePage.this, "reselected" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomePage.this, "reselected", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame_layout,fragment)
+                .replace(R.id.frame_layout, fragment)
                 .commit();
     }
 }

@@ -1,5 +1,7 @@
 package com.example.emea.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,10 +32,9 @@ public class HomeFragment extends Fragment {
     String studentName;
     ApiCall apiCall;
 
-TextView displayName;
-TextView admissionNumber;
-String studentNumber;
-//   String studentName;
+    TextView displayName, admissionNumber, displayMobile;
+    String studentNumber, authtoken, studentMobile;
+    //   String studentName;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -68,25 +69,15 @@ String studentNumber;
     }
 
 
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
 
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-
 
 
     }
@@ -110,26 +101,26 @@ String studentNumber;
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
-       String authtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiZW1haWwiOiJsdW5hQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibHVuYSIsInJlZ2lzdGVyZWQiOnRydWV9.-h25wAytDq3zqu3RPESwJ5QGfkJvncgSHBKWZoMERiI";
-        Call<StudentItem> studentCall = apiCall.getUser( authtoken);
+        SharedPreferences shared = this.getActivity().getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
+        authtoken = (shared.getString("token", ""));
+        //  String authtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiZW1haWwiOiJsdW5hQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibHVuYSIsInJlZ2lzdGVyZWQiOnRydWV9.-h25wAytDq3zqu3RPESwJ5QGfkJvncgSHBKWZoMERiI";
+        Call<StudentItem> studentCall = apiCall.getUser(authtoken);
         studentCall.enqueue(new Callback<StudentItem>() {
             @Override
             public void onResponse(Call<StudentItem> call, Response<StudentItem> response) {
 
-                 studentName = response.body().getName();
+                studentName = response.body().getName();
                 studentNumber = response.body().getAdmissionNo();
-                 Log.e("name",studentName);
-                displayName  = (TextView) view.findViewById(R.id.textView);
+                studentMobile = response.body().getMobile();
 
-
+                displayName = (TextView) view.findViewById(R.id.textView);
                 displayName.setText(studentName);
 
-                admissionNumber  = (TextView) view.findViewById(R.id.admissionNumber);
+                admissionNumber = (TextView) view.findViewById(R.id.admissionNumber);
+                admissionNumber.setText(studentNumber);
 
-
-               admissionNumber.setText(studentNumber);
-
-
+                displayMobile = (TextView) view.findViewById(R.id.textPhone);
+                displayMobile.setText(studentMobile);
 
 
             }
@@ -147,27 +138,27 @@ String studentNumber;
 
     }
 
- /*   @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        LayoutInflater lf = getActivity().getLayoutInflater();
-        View view =  lf.inflate(R.layout.fragment_home, container, false); //pass the correct layout name for the fragment
+    /*   @Override
+       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+           LayoutInflater lf = getActivity().getLayoutInflater();
+           View view =  lf.inflate(R.layout.fragment_home, container, false); //pass the correct layout name for the fragment
 
-      //  displayName  = (TextView) view.findViewById(R.id.textView);
-  //     TextView text = (TextView) view.findViewById(R.id.textView);
-    //    text.setText(studentName);
-      //  displayName.setText("jane");
-
-
-        return  view;
+         //  displayName  = (TextView) view.findViewById(R.id.textView);
+     //     TextView text = (TextView) view.findViewById(R.id.textView);
+       //    text.setText(studentName);
+         //  displayName.setText("jane");
 
 
+           return  view;
+
+
+       }
+   */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
-*/
- @Override
- public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                          Bundle savedInstanceState) {
-     // Inflate the layout for this fragment
-     return inflater.inflate(R.layout.fragment_home, container, false);
- }
 
 }
