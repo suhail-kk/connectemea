@@ -37,7 +37,7 @@ TextInputEditText username;
     Button btnregister;
 
     String status;
-   String apiRegisterlist;
+  // String apiRegisterlist;
 
 
     @Override
@@ -82,11 +82,12 @@ TextInputEditText username;
 
     }
 
-    public void getRegisterResponse( String inputEmail, String inputPassword, String inputUsername) {
+    public void getRegisterResponse( String inputUsername, String inputEmail, String inputPassword) {
         HashMap<String, String> params = new HashMap<>();
+        params.put("name", inputUsername);
         params.put("email", inputEmail);
         params.put("password", inputPassword);
-        params.put("name", inputUsername);
+
      //  params.put("confirmpassword", inputConfirmPassword);
 
      //   SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
@@ -97,32 +98,31 @@ TextInputEditText username;
         RegisterCall.enqueue(new Callback<RegisterResponse>() {
                                  @Override
                                  public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                                     if (response.body() != null) {
-//                                      //   authToken = response.body().getStatus();
-//                                      //   Log.e("token", authToken);
-//                                        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//                                         SharedPreferences.Editor editor = shared.edit();
-//                                      //  editor.putString("token", authToken);
-//                                        editor.commit();
+                                    if (response.body() != null) {
+//
 
-                                         status = response.body().getStatus();
-                                         //  status=response.toString();
+                                   status = response.body().getStatus();
+
                                          if (status == "success") {
-                                             //   status = response.body().getStatus();
-                                            //    apiRegisterlist = response.body().getStatus();
+                                    //          status = response.body().getStatus();
+                                              //  apiRegisterlist = response.body().getStatus();
 
                                              Toast.makeText(RegisterPage.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
 
                                              Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
                                              startActivity(newIntent);
-                                         } else {
+                                         }
+                                     else {
                                              Toast.makeText(RegisterPage.this, "Register Failed.", Toast.LENGTH_SHORT).show();
                                          }
 
-                                     }else {
+                                    }
+                                     else {
                                          Toast.makeText(RegisterPage.this, "Register error.", Toast.LENGTH_SHORT).show();
                                      }
                                  }
+
+
 
 
                                  @Override

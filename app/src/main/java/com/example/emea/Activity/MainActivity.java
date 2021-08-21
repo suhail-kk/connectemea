@@ -42,14 +42,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        txtEmail = findViewById(R.id.logginEmail);
-        txtPassword = findViewById(R.id.logginPassword);
+        txtEmail = findViewById(R.id.password);
+        txtPassword = findViewById(R.id.Loggin_Password);
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
 
-        btnLogin = findViewById(R.id.login);
-        txtForgot = findViewById(R.id.forgot);
+      //  btnLogin = findViewById(R.id.login);
+       // txtForgot = findViewById(R.id.forgot);
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
