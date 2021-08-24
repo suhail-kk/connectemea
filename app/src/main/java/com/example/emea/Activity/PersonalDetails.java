@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +25,7 @@ import com.example.emea.Response.PersonalResponse;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,7 +51,7 @@ public class PersonalDetails extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected <val> void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
 
@@ -71,18 +71,15 @@ public class PersonalDetails extends AppCompatActivity {
         idmark1=findViewById(R.id.id1);
         idmark2=findViewById(R.id.id2);
         button1=findViewById(R.id.button);
-//drpodown
 
-        final AutoCompleteTextView actv1 = (AutoCompleteTextView) findViewById(R.id.Gender);
-        ImageView image = (ImageView) findViewById(R.id.Genderi);
-        final AutoCompleteTextView actv2 = (AutoCompleteTextView) findViewById(R.id.Bloodgroup);
-        ImageView image1 = (ImageView) findViewById(R.id.Bloodi);
-        final AutoCompleteTextView actv3 = (AutoCompleteTextView) findViewById(R.id.Marriage);
-        ImageView image2 = (ImageView) findViewById(R.id.Marriagei);
-        final AutoCompleteTextView actv4 = (AutoCompleteTextView) findViewById(R.id.Caste);
-        ImageView image3 = (ImageView) findViewById(R.id.Castei);
-        final AutoCompleteTextView actv5 = (AutoCompleteTextView) findViewById(R.id.Religion);
-        ImageView image4 = (ImageView) findViewById(R.id.Religioni);
+
+
+//drpodown
+        final AutoCompleteTextView Gender = (AutoCompleteTextView) findViewById(R.id.gender);
+        final AutoCompleteTextView BloodGroup = (AutoCompleteTextView) findViewById(R.id.bloodGroup);
+        final AutoCompleteTextView MaritalStatus = (AutoCompleteTextView) findViewById(R.id.maritalStatus);
+        final AutoCompleteTextView Religion = (AutoCompleteTextView) findViewById(R.id.religion);
+        final AutoCompleteTextView Caste = (AutoCompleteTextView) findViewById(R.id.caste);
 
         //calendar
 
@@ -137,48 +134,48 @@ public class PersonalDetails extends AppCompatActivity {
 
 //dropdown
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Gender);
-        actv1.setAdapter(adapter);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,BloodGroup);
-        actv2.setAdapter(adapter1);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Marriage);
-        actv3.setAdapter(adapter2);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Caste);
-        actv4.setAdapter(adapter3);
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Religion);
-        actv5.setAdapter(adapter4);
-        image.setOnClickListener(new View.OnClickListener() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Gender);
+        Gender.setAdapter(adapter);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) BloodGroup);
+        BloodGroup.setAdapter(adapter1);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) MaritalStatus);
+        MaritalStatus.setAdapter(adapter2);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Caste);
+        Caste.setAdapter(adapter3);
+        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Religion);
+        Religion.setAdapter(adapter4);
+        Gender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv1.showDropDown();
+                Gender.showDropDown();
             }
         });
 
-        image1.setOnClickListener(new View.OnClickListener() {
+        BloodGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv2.showDropDown();
+                BloodGroup.showDropDown();
             }
         });
 
-        image2.setOnClickListener(new View.OnClickListener() {
+        MaritalStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv3.showDropDown();
+                MaritalStatus.showDropDown();
             }
         });
 
-        image3.setOnClickListener(new View.OnClickListener() {
+        Religion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv4.showDropDown();
+                Religion.showDropDown();
             }
         });
 
-        image4.setOnClickListener(new View.OnClickListener() {
+        Caste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv5.showDropDown();
+                Caste.showDropDown();
             }
         });
 
