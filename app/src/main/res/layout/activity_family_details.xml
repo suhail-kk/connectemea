@@ -4,7 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/scrollviewfamdetails"
+        android:id="@+id/FOccupation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="134dp"
@@ -21,218 +21,251 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Father"
-            android:textColor="@color/heading"
-            android:textStyle="bold"
-            android:textSize="25dp"
+            style="@style/subheading"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.002"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/fname"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fatherName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Name"
+            android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="@+id/father"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/father"
-            app:layout_constraintTop_toBottomOf="@+id/father"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/father">
 
-        <EditText
-            android:id="@+id/feducation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/FEduQuali"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
             android:hint="Education Qualification"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/fname"
-            app:layout_constraintStart_toStartOf="@+id/fname"
-            app:layout_constraintTop_toBottomOf="@+id/fname"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/fatherName"
+            app:layout_constraintStart_toStartOf="@+id/fatherName"
+            app:layout_constraintTop_toBottomOf="@+id/fatherName">
 
-        <EditText
-            android:id="@+id/foccupation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/FOccupation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
             android:hint="Occupation"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/feducation"
-            app:layout_constraintStart_toStartOf="@+id/feducation"
-            app:layout_constraintTop_toBottomOf="@+id/feducation"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/FEduQuali"
+            app:layout_constraintStart_toStartOf="@+id/FEduQuali"
+            app:layout_constraintTop_toBottomOf="@+id/FEduQuali"
+            tools:ignore="DuplicateIds">
 
-        <EditText
-            android:id="@+id/fincome"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/FAnnualIncome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:hint="Annual Income (Rs.)"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/foccupation"
-            app:layout_constraintStart_toStartOf="@+id/foccupation"
-            app:layout_constraintTop_toBottomOf="@+id/foccupation"
-            android:importantForAutofill="no" />
+            android:hint="Annual Income"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/FOccupation"
+            app:layout_constraintStart_toStartOf="@+id/FOccupation"
+            app:layout_constraintTop_toBottomOf="@+id/FOccupation">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/guardian"
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="Guardian"
-            android:textColor="@color/heading"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/mincome"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/mincome"
-            app:layout_constraintTop_toBottomOf="@+id/mincome" />
+            android:text="Mother"
+            android:layout_marginTop="40dp"
+            style="@style/subheading"
+            app:layout_constraintEnd_toEndOf="@+id/FAnnualIncome"
+            app:layout_constraintStart_toStartOf="@+id/FAnnualIncome"
+            app:layout_constraintTop_toBottomOf="@+id/FAnnualIncome" />
 
-        <EditText
-            android:id="@+id/gname"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/MotherName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/guardian"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guardian"
-            app:layout_constraintTop_toBottomOf="@+id/guardian"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-        <EditText
-            android:id="@+id/geducation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/MEduQuali"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Education Qualification"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/gname"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/gname"
-            app:layout_constraintTop_toBottomOf="@+id/gname"
-            android:importantForAutofill="no" />
+            android:hint="Educational Qualification"
+            app:layout_constraintEnd_toEndOf="@+id/MotherName"
+            app:layout_constraintStart_toStartOf="@+id/MotherName"
+            app:layout_constraintTop_toBottomOf="@+id/MotherName">
 
-        <EditText
-            android:id="@+id/goccupation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/MOccupation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
             android:hint="Occupation"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/geducation"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/geducation"
-            app:layout_constraintTop_toBottomOf="@+id/geducation"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/MEduQuali"
+            app:layout_constraintStart_toStartOf="@+id/MEduQuali"
+            app:layout_constraintTop_toBottomOf="@+id/MEduQuali">
 
-        <EditText
-            android:id="@+id/gincome"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/MAnnualIncome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:hint="Annual Income (Rs.)"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/goccupation"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/goccupation"
-            app:layout_constraintTop_toBottomOf="@+id/goccupation"
-            android:importantForAutofill="no" />
+            android:hint="Annual Income"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/MOccupation"
+            app:layout_constraintStart_toStartOf="@+id/MOccupation"
+            app:layout_constraintTop_toBottomOf="@+id/MOccupation">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/mother"
+            android:id="@+id/textView9"
+            style="@style/subheading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="Mother"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/heading"
-            app:layout_constraintEnd_toEndOf="@+id/fincome"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/fincome"
-            app:layout_constraintTop_toBottomOf="@+id/fincome" />
+            android:layout_marginTop="40dp"
+            android:text="Guardian"
+            android:layout_marginStart="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/MAnnualIncome"
+            app:layout_constraintStart_toStartOf="@+id/MAnnualIncome"
+            app:layout_constraintTop_toBottomOf="@+id/MAnnualIncome" />
 
-        <EditText
-            android:id="@+id/mname"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/GuardName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Name"
-            app:layout_constraintEnd_toEndOf="@+id/mother"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/mother"
-            app:layout_constraintTop_toBottomOf="@+id/mother"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
 
-        <EditText
-            android:id="@+id/meducation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/GuardQuali"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Education Qualification"
-            app:layout_constraintEnd_toEndOf="@+id/mname"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/mname"
-            app:layout_constraintTop_toBottomOf="@+id/mname"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/GuardName"
+            app:layout_constraintStart_toStartOf="@+id/GuardName"
+            app:layout_constraintTop_toBottomOf="@+id/GuardName">
 
-        <EditText
-            android:id="@+id/moccupation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/GuardOccupation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
             android:hint="Occupation"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/meducation"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/meducation"
-            app:layout_constraintTop_toBottomOf="@+id/meducation"
-            android:importantForAutofill="no" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/GuardQuali"
+            app:layout_constraintStart_toStartOf="@+id/GuardQuali"
+            app:layout_constraintTop_toBottomOf="@+id/GuardQuali">
 
-        <EditText
-            android:id="@+id/mincome"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/GuardAnnInc"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:hint="Annual Income (Rs.)"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/moccupation"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/moccupation"
-            app:layout_constraintTop_toBottomOf="@+id/moccupation"
-            android:importantForAutofill="no" />
+            android:hint="Annual Income"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/GuardOccupation"
+            tools:layout_editor_absoluteX="40dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/save"
-            android:layout_width="wrap_content"
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:background="@drawable/textview_round"
-            android:text="Save"
-            app:backgroundTint="@color/button_color"
-            app:layout_constraintEnd_toEndOf="@+id/gincome"
-            app:layout_constraintHorizontal_bias="0.905"
-            app:layout_constraintStart_toStartOf="@+id/gincome"
-            app:layout_constraintTop_toBottomOf="@+id/gincome" />
+            android:text="Save Info"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ripple"
+            app:layout_constraintEnd_toEndOf="@+id/GuardAnnInc"
+            app:layout_constraintStart_toStartOf="@+id/GuardAnnInc"
+            app:layout_constraintTop_toBottomOf="@+id/GuardAnnInc" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

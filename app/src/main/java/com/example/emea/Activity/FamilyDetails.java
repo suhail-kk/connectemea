@@ -29,7 +29,7 @@ public class FamilyDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family_details);
 
-        scrollView = findViewById(R.id.scrollviewfamdetails);
+        scrollView = findViewById(R.id.FOccupation);
 
         father = findViewById(R.id.father);
         ftr = father.getText().toString();

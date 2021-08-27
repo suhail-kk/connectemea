@@ -73,7 +73,7 @@ public class EducationalDetails extends AppCompatActivity {
 
         sslc = findViewById(R.id.sslc);
         textsslc = sslc.getText().toString();
-        school = findViewById(R.id.schoolname);
+        school = findViewById(R.id.sslcSchoolName);
         //  textschool = school.getText().toString();
         medium = findViewById(R.id.medium);
         //   textmedium = medium.getText().toString();

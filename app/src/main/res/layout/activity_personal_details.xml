@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activity.PersonalDetails"
-    android:layout_gravity="center"
-    android:padding="40dp">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="40dp"
+        tools:context=".Activity.PersonalDetails">
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/PersonalName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
             android:hint="Name"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,12 +37,10 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="0dp"
             android:hint="Department"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/PersonalName"
+            app:layout_constraintStart_toStartOf="@+id/PersonalName"
             app:layout_constraintTop_toBottomOf="@+id/PersonalName">
 
             <AutoCompleteTextView
@@ -61,11 +56,10 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="0dp"
             android:hint="Admission Number"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/Department"
+            app:layout_constraintStart_toStartOf="@+id/Department"
             app:layout_constraintTop_toBottomOf="@+id/Department">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -79,8 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/RollNo"
+            app:layout_constraintStart_toStartOf="@+id/RollNo"
             app:layout_constraintTop_toBottomOf="@+id/RollNo">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -88,7 +82,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Roll No"
@@ -107,7 +100,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:hint="Admission Number">
 
@@ -124,8 +116,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +125,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Gender">
@@ -154,7 +145,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:hint="Blood Group"
                 tools:ignore="DuplicateIds">
@@ -176,9 +166,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -186,7 +175,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Date of birth">
@@ -204,7 +192,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:hint="Marital Status">
 
@@ -224,8 +211,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout4"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -233,7 +220,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Religion"
@@ -255,7 +241,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:hint="Caste"
                 tools:ignore="DuplicateIds">
@@ -276,12 +261,10 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="0dp"
             android:hint="1.Identification Mark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -297,8 +280,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="2.Identification Mark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/IdentificationMark1"
+            app:layout_constraintStart_toStartOf="@+id/IdentificationMark1"
             app:layout_constraintTop_toBottomOf="@+id/IdentificationMark1">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -307,10 +290,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ripple"
+            android:gravity="center"
+            android:text="Save Info"
+            app:layout_constraintEnd_toEndOf="@+id/IdentificationMark2"
+            app:layout_constraintStart_toStartOf="@+id/IdentificationMark2"
+            app:layout_constraintTop_toBottomOf="@+id/IdentificationMark2" />
 
 
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
