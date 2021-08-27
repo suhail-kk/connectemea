@@ -1,5 +1,6 @@
 package com.example.emea.Fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.emea.Network.ApiCall;
@@ -29,6 +31,7 @@ import retrofit2.Response;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    ProgressBar pgBar;
     String studentName;
     ApiCall apiCall;
 
@@ -74,6 +77,8 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -99,21 +104,25 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
         SharedPreferences shared = this.getActivity().getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
         authtoken = (shared.getString("token", ""));
+
+        pgBar.setVisibility(View.VISIBLE);
         //  String authtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiZW1haWwiOiJsdW5hQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibHVuYSIsInJlZ2lzdGVyZWQiOnRydWV9.-h25wAytDq3zqu3RPESwJ5QGfkJvncgSHBKWZoMERiI";
         Call<StudentItem> studentCall = apiCall.getUser(authtoken);
         studentCall.enqueue(new Callback<StudentItem>() {
             @Override
             public void onResponse(Call<StudentItem> call, Response<StudentItem> response) {
+                pgBar.setVisibility(View.GONE);
 
                 studentName = response.body().getName();
                 studentNumber = response.body().getAdmissionNo();
                 studentMobile = response.body().getMobile();
 
-                displayName = (TextView) view.findViewById(R.id.textView);
+               displayName = (TextView) view.findViewById(R.id.textView);
                 displayName.setText(studentName);
 
                 admissionNumber = (TextView) view.findViewById(R.id.admissionNumber);
@@ -158,7 +167,12 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+       View view= inflater.inflate(R.layout.fragment_home, container, false);
+
+        pgBar=view.findViewById(R.id.progressBarView);
+      //  return inflater.inflate(R.layout.fragment_home, container, false);
+        return  view;
+
     }
 
 }

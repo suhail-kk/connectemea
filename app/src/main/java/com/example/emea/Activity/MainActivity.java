@@ -2,13 +2,17 @@ package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +21,7 @@ import com.example.emea.Response.LoggingResponse;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 
@@ -26,14 +31,16 @@ import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText txtEmail, txtPassword;
+    TextInputEditText txtEmail, txtPassword;
     Button btnLogin;
-    TextView txtForgot;
+    ProgressBar pgBar;
+  //  TextView txtForgot;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String inputEmail;
     String inputPassword;
     ApiCall apiCall;
     String authToken;
+
 
 
     @Override
@@ -42,14 +49,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        txtEmail = findViewById(R.id.password);
-        txtPassword = findViewById(R.id.Loggin_Password);
+        txtEmail = findViewById(R.id.emaillogin);
+        txtPassword = findViewById(R.id.loggin_Password);
+
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
 
-      //  btnLogin = findViewById(R.id.login);
-       // txtForgot = findViewById(R.id.forgot);
+        btnLogin = findViewById(R.id.button2);
+        pgBar = findViewById(R.id.progressBar);
+
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -58,27 +67,26 @@ public class MainActivity extends AppCompatActivity {
                 inputEmail = txtEmail.getText().toString();
                 inputPassword = txtPassword.getText().toString();
 
+
+
 //                boolean check=ValidateInfo(inputEmail, inputPassword);
-                apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
 
-                getLoginList(inputEmail, inputPassword);
+                     getLoginList(inputEmail, inputPassword);
 
 
-//                if(check==true) {
 
-//                }
             }
         });
 
 
-        txtForgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
-                startActivity(newIntent);
-            }
-        });
+//        txtForgot.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
+//                startActivity(newIntent);
+//            }
+//        });
     }
 
 
@@ -87,12 +95,13 @@ public class MainActivity extends AppCompatActivity {
         params.put("email", inputEmail);
         params.put("password", inputPassword);
 
+        pgBar.setVisibility(View.VISIBLE);
 
         Call<LoggingResponse> logResponseCall = apiCall.getLoginToken(params);
         logResponseCall.enqueue(new Callback<LoggingResponse>() {
-
             @Override
             public void onResponse(Call<LoggingResponse> call, Response<LoggingResponse> response) {
+                pgBar.setVisibility(View.GONE);
 
                 if (response.body() != null) {
                     authToken = response.body().getToken();
@@ -104,8 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
                     startActivity(newIntent);
+                    
 
                 } else {
+
                     Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
                 }
 
@@ -113,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoggingResponse> call, Throwable t) {
+
+                pgBar.setVisibility(View.GONE);
                 Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT).show();
             }
         });

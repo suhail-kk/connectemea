@@ -21,13 +21,17 @@
         <activity android:name=".Activity.PersonalDetails" />
         <activity android:name=".Fragments.HomePage" />
         <activity android:name=".Activity.ForgotPassword" />
-        <activity android:name=".Activity.MainActivity"></activity>
-        <activity android:name=".Activity.RegisterPage">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Activity.RegisterPage">
+
+
         </activity>
 <!--        <activity android:name=".Activity.ForgotPassword" />-->
 <!--        <activity android:name=".Activity.MainActivity"></activity>-->

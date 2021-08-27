@@ -3,7 +3,11 @@ package com.example.emea.Network;
 
 import com.example.emea.Response.EducationResponse;
 import com.example.emea.Response.LoggingResponse;
+
 import com.example.emea.Response.RegisterResponse;
+
+import com.example.emea.Response.PersonalResponse;
+
 import com.example.emea.Response.StudentItem;
 
 import java.util.HashMap;
@@ -37,6 +41,10 @@ public interface ApiCall {
     @FormUrlEncoded
     @POST("users/register")
     Call<RegisterResponse> getRegisterToken(@FieldMap HashMap<String, String> params);
+
+    @FormUrlEncoded
+    @POST("students/add_details")
+    Call<PersonalResponse> getPersonal(@FieldMap HashMap<String, String> params, @Header("token") String authentoken);
 
 }
 

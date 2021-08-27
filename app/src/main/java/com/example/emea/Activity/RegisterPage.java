@@ -101,13 +101,13 @@ TextInputEditText username;
                                     if (response.body() != null) {
 //
 
-                                   status = response.body().getStatus();
+                               status = response.body().getStatus();
 
-                                         if (status == "success") {
-                                    //          status = response.body().getStatus();
-                                              //  apiRegisterlist = response.body().getStatus();
+                                         if (status.equals("success")) {
+//                                            status = response.body().getStatus();
 
-                                             Toast.makeText(RegisterPage.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
+
+                                             Toast.makeText(RegisterPage.this, "Added ", Toast.LENGTH_SHORT).show();
 
                                              Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
                                              startActivity(newIntent);
