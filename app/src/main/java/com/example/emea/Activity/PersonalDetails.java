@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +25,7 @@ import com.example.emea.Response.PersonalResponse;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,7 +37,7 @@ public class PersonalDetails extends AppCompatActivity {
     String dob,nmid,dptname,admsnno,rllnoid,yrfadm,idmrk1,idmrk2;
 
     EditText DisplayDate,nameid,coursename,admissionno,rollnoid,yrofadmission,idmark1,idmark2;
-    TextView name,department,admission,rollno,yrofadm,idmark;
+    TextView department;
     ImageButton birth;
     Button button1;
 
@@ -51,65 +51,56 @@ public class PersonalDetails extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
 
         DisplayDate = (EditText) findViewById(R.id.Birth);
-        name=findViewById(R.id.nametv);
+       // name=findViewById(R.id.nametv);
         nameid=findViewById(R.id.name);
         department=findViewById(R.id.departmenttv);
-        coursename=findViewById(R.id.course);
-        admission=findViewById(R.id.admissionnotv);
-        admissionno=findViewById(R.id.admissionnumber);
-        rollno=findViewById(R.id.rollnotv);
+        admissionno=findViewById(R.id.admissionno);
         rollnoid=findViewById(R.id.rollnumber);
-        yrofadm=findViewById(R.id.yearofadmtv);
-        yrofadmission=findViewById(R.id.year);
-        birth=findViewById(R.id.Birthi);
-        idmark=findViewById(R.id.identificationmark);
-        idmark1=findViewById(R.id.id1);
-        idmark2=findViewById(R.id.id2);
-        button1=findViewById(R.id.button);
-//drpodown
+        yrofadmission=findViewById(R.id.yearofadmission);
+        idmark1=findViewById(R.id.identificationmark1);
+        idmark2=findViewById(R.id.identificationmark2);
+        button1=findViewById(R.id.Savepersonal);
 
-        final AutoCompleteTextView actv1 = (AutoCompleteTextView) findViewById(R.id.Gender);
-        ImageView image = (ImageView) findViewById(R.id.Genderi);
-        final AutoCompleteTextView actv2 = (AutoCompleteTextView) findViewById(R.id.Bloodgroup);
-        ImageView image1 = (ImageView) findViewById(R.id.Bloodi);
-        final AutoCompleteTextView actv3 = (AutoCompleteTextView) findViewById(R.id.Marriage);
-        ImageView image2 = (ImageView) findViewById(R.id.Marriagei);
-        final AutoCompleteTextView actv4 = (AutoCompleteTextView) findViewById(R.id.Caste);
-        ImageView image3 = (ImageView) findViewById(R.id.Castei);
-        final AutoCompleteTextView actv5 = (AutoCompleteTextView) findViewById(R.id.Religion);
-        ImageView image4 = (ImageView) findViewById(R.id.Religioni);
+
+
+//drpodown
+        final AutoCompleteTextView Gender = (AutoCompleteTextView) findViewById(R.id.gender);
+        final AutoCompleteTextView BloodGroup = (AutoCompleteTextView) findViewById(R.id.bloodGroup);
+        final AutoCompleteTextView MaritalStatus = (AutoCompleteTextView) findViewById(R.id.maritalStatus);
+        final AutoCompleteTextView Religion = (AutoCompleteTextView) findViewById(R.id.religion);
+        final AutoCompleteTextView Caste = (AutoCompleteTextView) findViewById(R.id.caste);
 
         //calendar
 
-        birth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog  dialog = new DatePickerDialog(
-                        PersonalDetails.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        DateSetListener,
-                        year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
+//        birth.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Calendar cal = Calendar.getInstance();
+//                int year = cal.get(Calendar.YEAR);
+//                int month = cal.get(Calendar.MONTH);
+//                int day = cal.get(Calendar.DAY_OF_MONTH);
+//
+//                DatePickerDialog  dialog = new DatePickerDialog(
+//                        PersonalDetails.this,
+//                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+//                        DateSetListener,
+//                        year,month,day);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                dialog.show();
+//            }
+//        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dob=DisplayDate.getText ().toString ();
                 nmid=nameid.getText ().toString ();
-                dptname=coursename.getText ().toString ();
+//                dptname=coursename.getText ().toString ();
                 admsnno=admissionno.getText ().toString ();
                 rllnoid=rollnoid.getText ().toString ();
                 yrfadm=yrofadmission.getText ().toString ();
@@ -137,48 +128,48 @@ public class PersonalDetails extends AppCompatActivity {
 
 //dropdown
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Gender);
-        actv1.setAdapter(adapter);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,BloodGroup);
-        actv2.setAdapter(adapter1);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Marriage);
-        actv3.setAdapter(adapter2);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Caste);
-        actv4.setAdapter(adapter3);
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,Religion);
-        actv5.setAdapter(adapter4);
-        image.setOnClickListener(new View.OnClickListener() {
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Gender);
+//        Gender.setAdapter(adapter);
+//        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) BloodGroup);
+//        BloodGroup.setAdapter(adapter1);
+//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) MaritalStatus);
+//        MaritalStatus.setAdapter(adapter2);
+//        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Caste);
+//        Caste.setAdapter(adapter3);
+//        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Religion);
+//        Religion.setAdapter(adapter4);
+        Gender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv1.showDropDown();
+                Gender.showDropDown();
             }
         });
 
-        image1.setOnClickListener(new View.OnClickListener() {
+        BloodGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv2.showDropDown();
+                BloodGroup.showDropDown();
             }
         });
 
-        image2.setOnClickListener(new View.OnClickListener() {
+        MaritalStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv3.showDropDown();
+                MaritalStatus.showDropDown();
             }
         });
 
-        image3.setOnClickListener(new View.OnClickListener() {
+        Religion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv4.showDropDown();
+                Religion.showDropDown();
             }
         });
 
-        image4.setOnClickListener(new View.OnClickListener() {
+        Caste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actv5.showDropDown();
+                Caste.showDropDown();
             }
         });
 

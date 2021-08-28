@@ -128,8 +128,8 @@ public class HomeFragment extends Fragment {
                 admissionNumber = (TextView) view.findViewById(R.id.admissionNumber);
                 admissionNumber.setText(studentNumber);
 
-                displayMobile = (TextView) view.findViewById(R.id.textPhone);
-                displayMobile.setText(studentMobile);
+//                displayMobile = (TextView) view.findViewById(R.id.textPhone);
+//                displayMobile.setText(studentMobile);
 
 
             }

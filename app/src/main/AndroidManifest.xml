@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Emea"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.RecoveryPassword"></activity>
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/rounded_shape" />
@@ -21,7 +23,9 @@
         <activity android:name=".Activity.PersonalDetails" />
         <activity android:name=".Fragments.HomePage" />
         <activity android:name=".Activity.ForgotPassword" />
-        <activity android:name=".Activity.MainActivity">
+
+
+        <activity android:name=".Activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,12 +33,17 @@
             </intent-filter>
 
         </activity>
+
         <activity android:name=".Activity.RegisterPage">
 
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
         </activity>
-<!--        <activity android:name=".Activity.ForgotPassword" />-->
-<!--        <activity android:name=".Activity.MainActivity"></activity>-->
+
     </application>
 
 </manifest>

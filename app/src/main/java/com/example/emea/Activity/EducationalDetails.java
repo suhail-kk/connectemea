@@ -64,13 +64,13 @@ public class EducationalDetails extends AppCompatActivity {
 
         //
         //buttons
-        qualification1 = findViewById(R.id.addqualification);
-        qualification2 = findViewById(R.id.addqualification2);
-        saveinfo = findViewById(R.id.saveinfo);
+//        qualification1 = findViewById(R.id.addqualification);
+//        qualification2 = findViewById(R.id.addqualification2);
+//        saveinfo = findViewById(R.id.saveinfo);
         radioeng = findViewById(R.id.radioeng);
         radiomal = findViewById(R.id.radiomal);
 
-
+saveinfo=findViewById(R.id.saveinfo);
         sslc = findViewById(R.id.sslc);
         textsslc = sslc.getText().toString();
         school = findViewById(R.id.schoolname);
@@ -85,59 +85,59 @@ public class EducationalDetails extends AppCompatActivity {
         //    checkBoxmal = (CheckBox) findViewById(R.id.mlcheck);
 
         markssslc = findViewById(R.id.marks);
-        textmarkssslc = markssslc.getText().toString();
+     //   textmarkssslc = markssslc.getText().toString();
 
-        englishsslc = findViewById(R.id.englishmark);
-        textenglishsslc = englishsslc.getText().toString();
-        englishsslcbox = findViewById(R.id.englishmarkb2);
-        //  textenglishsslcbox = englishsslcbox.getText().toString();
+//        englishsslc = findViewById(R.id.englishsslc);
+     //   textenglishsslc = englishsslc.getText().toString();
+        englishsslcbox = findViewById(R.id.englishsslc);
+        // textenglishsslcbox = englishsslcbox.getText().toString();
 
-        mathssslc = findViewById(R.id.mathsmark);
-        textmathssslc = mathssslc.getText().toString();
-        mathssslcbox = findViewById(R.id.mathsmarkb2);
+      //  mathssslc = findViewById(R.id.mathsmark);
+    //    textmathssslc = mathssslc.getText().toString();
+        mathssslcbox = findViewById(R.id.mathssslc);
         //  textmathssslcbox = mathssslcbox.getText().toString();
 
-        sciencesslc = findViewById(R.id.sciencemark);
-        textsciencesslc = sciencesslc.getText().toString();
-        sciencesslcbox = findViewById(R.id.sciencemarkb2);
+    //    sciencesslc = findViewById(R.id.sciencemark);
+   //     textsciencesslc = sciencesslc.getText().toString();
+        sciencesslcbox = findViewById(R.id.sciencesslc);
         //    textsciencesslcbox = sciencesslcbox.getText().toString();
 
-        socialsciencesslc = findViewById(R.id.ssmark);
-        textsocialsslc = socialsciencesslc.getText().toString();
-        socialsciencesslcbox = findViewById(R.id.ssmarkb2);
+      //  socialsciencesslc = findViewById(R.id.ssmark);
+    //    textsocialsslc = socialsciencesslc.getText().toString();
+        socialsciencesslcbox = findViewById(R.id.socialsslc);
         //   textsocialsslcbox = socialsciencesslcbox.getText().toString();
 
 
-        plustwo = findViewById(R.id.plus2);
-        textplustwo = plustwo.getText().toString();
-        schoolplustwo = findViewById(R.id.schoolname2);
+        plustwo = findViewById(R.id.hse);
+    //    textplustwo = plustwo.getText().toString();
+        schoolplustwo = findViewById(R.id.hseschoolName);
         //  textschoolplustwo = schoolplustwo.getText().toString();
-        marksplustwo = findViewById(R.id.marks2);
-        textmarkplustwo = marksplustwo.getText().toString();
-        englishplustwo = findViewById(R.id.english2);
-        textenglishplustwo = englishplustwo.getText().toString();
-        englishplustwobox = findViewById(R.id.english2b2);
+        marksplustwo = findViewById(R.id.markshse);
+     //   textmarkplustwo = marksplustwo.getText().toString();
+     englishplustwo = findViewById(R.id.hsesubName1);
+     //   textenglishplustwo = englishplustwo.getText().toString();
+        englishplustwobox = findViewById(R.id.hsesubMark1);
         //   textenglishplustwobox = englishplustwobox.getText().toString();
-        sub1box = findViewById(R.id.sub1b2);
+        sub1box = findViewById(R.id.hsesubName2);
         //    textsub1box = sub1box.getText().toString();
-        sub2box = findViewById(R.id.sub2b2);
+        sub2box = findViewById(R.id.hsesubName3);
         //   textsub2box = sub2box.getText().toString();
-        sub3box = findViewById(R.id.sub3b2);
+        sub3box = findViewById(R.id.hsesubName4);
         //     textsub3box = sub3box.getText().toString();
-        sub4box = findViewById(R.id.sub4b2);
+       // sub4box = findViewById(R.id.hsesubName5);
         //     textsub4box = sub4box.getText().toString();
 
 
-        final AutoCompleteTextView actv1 = (AutoCompleteTextView) findViewById(R.id.allsyllabus);
-        ImageView image = (ImageView) findViewById(R.id.allsyllabusimage);
-        final AutoCompleteTextView actv2 = (AutoCompleteTextView) findViewById(R.id.sub1);
-        ImageView image1 = (ImageView) findViewById(R.id.sub1image);
-        final AutoCompleteTextView actv3 = (AutoCompleteTextView) findViewById(R.id.sub2);
-        ImageView image2 = (ImageView) findViewById(R.id.sub2image);
-        final AutoCompleteTextView actv4 = (AutoCompleteTextView) findViewById(R.id.sub3);
-        ImageView image3 = (ImageView) findViewById(R.id.sub3image);
-        final AutoCompleteTextView actv5 = (AutoCompleteTextView) findViewById(R.id.sub4);
-        ImageView image4 = (ImageView) findViewById(R.id.sub4image);
+//        final AutoCompleteTextView actv1 = (AutoCompleteTextView) findViewById(R.id.allsyllabus);
+//        ImageView image = (ImageView) findViewById(R.id.allsyllabusimage);
+//        final AutoCompleteTextView actv2 = (AutoCompleteTextView) findViewById(R.id.sub1);
+//        ImageView image1 = (ImageView) findViewById(R.id.sub1image);
+//        final AutoCompleteTextView actv3 = (AutoCompleteTextView) findViewById(R.id.sub2);
+//        ImageView image2 = (ImageView) findViewById(R.id.sub2image);
+//        final AutoCompleteTextView actv4 = (AutoCompleteTextView) findViewById(R.id.sub3);
+//        ImageView image3 = (ImageView) findViewById(R.id.sub3image);
+//        final AutoCompleteTextView actv5 = (AutoCompleteTextView) findViewById(R.id.sub4);
+//        ImageView image4 = (ImageView) findViewById(R.id.sub4image);
 
 
 //checkbox
@@ -150,114 +150,114 @@ public class EducationalDetails extends AppCompatActivity {
         radioeng = findViewById(R.id.radioeng);
         radiomal = findViewById(R.id.radiomal);
 
-        ugc = findViewById(R.id.ugc);
-        textugc = ugc.getText().toString();
-        collegename = findViewById(R.id.collegename);
-        //  textcollegename = collegename.getText().toString();
-        university = findViewById(R.id.university);
-        //  textuniversity = university.getText().toString();
-        ugccourse = findViewById(R.id.course);
-        //  textugccourse = ugccourse.getText().toString();
-        marksugc = findViewById(R.id.marks3);
-        textmarksugc = marksugc.getText().toString();
-        coremain = findViewById(R.id.coremainmark);
-        textcoremain = coremain.getText().toString();
-        ugcmainbox = findViewById(R.id.coremainmarkb2);
-        //  textugcmainbox = ugcmainbox.getText().toString();
-        coresub = findViewById(R.id.compsubmark);
-        textcoresub = coresub.getText().toString();
-        ugcsubbox = findViewById(R.id.compsubmarkb2);
-        //    textsubbox = ugcsubbox.getText().toString();
-
-        commonenglish = findViewById(R.id.commonengmark);
-        textcommonenglish = commonenglish.getText().toString();
-
-        ugcenglishbox = findViewById(R.id.commonengmarkb2);
-        //  textugcenglishbox = ugcenglishbox.getText().toString();
-
-        commonlang = findViewById(R.id.commonlangmark);
-        textcommonlang = commonlang.getText().toString();
-        ugclangbox = findViewById(R.id.commonlangmarkb2);
-        //  textugclangbox = ugclangbox.getText().toString();
-        opencourse = findViewById(R.id.openmark);
-        textopencourse = opencourse.getText().toString();
-        opencoursebox = findViewById(R.id.openmarkb2);
-        //    textopencoursebox = opencoursebox.getText().toString();
-
-        otherqual = findViewById(R.id.otherqual);
-        textotherqual = otherqual.getText().toString();
-        coursename = findViewById(R.id.coursename);
-        //    textcoursename = coursename.getText().toString();
-        coursetype = findViewById(R.id.coursetype);
-        //    textcoursetype = coursetype.getText().toString();
-        institution = findViewById(R.id.institutionname);
-        //     textinstitution= institution.getText().toString();
-        university2 = findViewById(R.id.universityname);
-        //   textuniversity2 = university2.getText().toString();
+//        ugc = findViewById(R.id.ugc);
+//        textugc = ugc.getText().toString();
+//        collegename = findViewById(R.id.collegename);
+//        //  textcollegename = collegename.getText().toString();
+//        university = findViewById(R.id.university);
+//        //  textuniversity = university.getText().toString();
+//        ugccourse = findViewById(R.id.course);
+//        //  textugccourse = ugccourse.getText().toString();
+//        marksugc = findViewById(R.id.marks3);
+//        textmarksugc = marksugc.getText().toString();
+//        coremain = findViewById(R.id.coremainmark);
+//        textcoremain = coremain.getText().toString();
+//        ugcmainbox = findViewById(R.id.coremainmarkb2);
+//        //  textugcmainbox = ugcmainbox.getText().toString();
+//        coresub = findViewById(R.id.compsubmark);
+//        textcoresub = coresub.getText().toString();
+//        ugcsubbox = findViewById(R.id.compsubmarkb2);
+//        //    textsubbox = ugcsubbox.getText().toString();
+//
+//        commonenglish = findViewById(R.id.commonengmark);
+//        textcommonenglish = commonenglish.getText().toString();
+//
+//        ugcenglishbox = findViewById(R.id.commonengmarkb2);
+//        //  textugcenglishbox = ugcenglishbox.getText().toString();
+//
+//        commonlang = findViewById(R.id.commonlangmark);
+//        textcommonlang = commonlang.getText().toString();
+//        ugclangbox = findViewById(R.id.commonlangmarkb2);
+//        //  textugclangbox = ugclangbox.getText().toString();
+//        opencourse = findViewById(R.id.openmark);
+//        textopencourse = opencourse.getText().toString();
+//        opencoursebox = findViewById(R.id.openmarkb2);
+//        //    textopencoursebox = opencoursebox.getText().toString();
+//
+//        otherqual = findViewById(R.id.otherqual);
+//        textotherqual = otherqual.getText().toString();
+//        coursename = findViewById(R.id.coursename);
+//        //    textcoursename = coursename.getText().toString();
+//        coursetype = findViewById(R.id.coursetype);
+//        //    textcoursetype = coursetype.getText().toString();
+//        institution = findViewById(R.id.institutionname);
+//        //     textinstitution= institution.getText().toString();
+//        university2 = findViewById(R.id.universityname);
+//        //   textuniversity2 = university2.getText().toString();
 
 
 //Dropdown
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus);
-        actv1.setAdapter(adapter);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus1);
-        actv2.setAdapter(adapter1);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus2);
-        actv3.setAdapter(adapter2);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus3);
-        actv4.setAdapter(adapter3);
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus4);
-        actv5.setAdapter(adapter4);
-        image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actv1.showDropDown();
-            }
-        });
-
-        image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actv2.showDropDown();
-            }
-        });
-
-        image2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actv3.showDropDown();
-            }
-        });
-
-        image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actv4.showDropDown();
-            }
-        });
-
-        image4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                actv5.showDropDown();
-            }
-        });
-
-
-        qualification1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus);
+//        actv1.setAdapter(adapter);
+//        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus1);
+//        actv2.setAdapter(adapter1);
+//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus2);
+//        actv3.setAdapter(adapter2);
+//        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus3);
+//        actv4.setAdapter(adapter3);
+//        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, syllabus4);
+//        actv5.setAdapter(adapter4);
+//        image.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                actv1.showDropDown();
+//            }
+//        });
+//
+//        image1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                actv2.showDropDown();
+//            }
+//        });
+//
+//        image2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                actv3.showDropDown();
+//            }
+//        });
+//
+//        image3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                actv4.showDropDown();
+//            }
+//        });
+//
+//        image4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                actv5.showDropDown();
+//            }
+//        });
 
 
-        qualification2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        qualification1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//
+//        qualification2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
         saveinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -267,29 +267,29 @@ public class EducationalDetails extends AppCompatActivity {
                 textsciencesslcbox = sciencesslcbox.getText().toString();
                 textsocialsslcbox = socialsciencesslcbox.getText().toString();
                 textschoolplustwo = schoolplustwo.getText().toString();
-                textallsyllabus = actv1.getText().toString();
+//                textallsyllabus = actv1.getText().toString();
                 textenglishplustwobox = englishplustwobox.getText().toString();
                 textsub1box = sub1box.getText().toString();
                 textsub2box = sub2box.getText().toString();
                 textsub3box = sub3box.getText().toString();
-                textsub4box = sub4box.getText().toString();
-                textsub1 = actv2.getText().toString();
-                textsub2 = actv3.getText().toString();
-                textsub3 = actv4.getText().toString();
-                textsub4 = actv5.getText().toString();
+//                textsub4box = sub4box.getText().toString();
+//                textsub1 = actv2.getText().toString();
+//                textsub2 = actv3.getText().toString();
+//                textsub3 = actv4.getText().toString();
+//                textsub4 = actv5.getText().toString();
 
-                textcollegename = collegename.getText().toString();
-                textuniversity = university.getText().toString();
-                textugccourse = ugccourse.getText().toString();
-                textugcmainbox = ugcmainbox.getText().toString();
-                textsubbox = ugcsubbox.getText().toString();
-                textugcenglishbox = ugcenglishbox.getText().toString();
-                textugclangbox = ugclangbox.getText().toString();
-                textopencoursebox = opencoursebox.getText().toString();
-                textcoursename = coursename.getText().toString();
-                textcoursetype = coursetype.getText().toString();
-                textinstitution = institution.getText().toString();
-                textuniversity2 = university2.getText().toString();
+//                textcollegename = collegename.getText().toString();
+//                textuniversity = university.getText().toString();
+//                textugccourse = ugccourse.getText().toString();
+//                textugcmainbox = ugcmainbox.getText().toString();
+//                textsubbox = ugcsubbox.getText().toString();
+//                textugcenglishbox = ugcenglishbox.getText().toString();
+//                textugclangbox = ugclangbox.getText().toString();
+//                textopencoursebox = opencoursebox.getText().toString();
+//                textcoursename = coursename.getText().toString();
+//                textcoursetype = coursetype.getText().toString();
+//                textinstitution = institution.getText().toString();
+//                textuniversity2 = university2.getText().toString();
 
 
                 if (radioeng.isChecked()) {

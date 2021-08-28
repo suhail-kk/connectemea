@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+//import com.example.emea.Activity.EducationalDetails;
 import com.example.emea.Activity.EducationalDetails;
 import com.example.emea.Activity.FamilyDetails;
 import com.example.emea.Activity.PersonalDetails;
@@ -84,6 +85,7 @@ public class UserFragment extends Fragment {
         educationdt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent newIntent=new Intent(getActivity().getApplicationContext(), EducationalDetails.class);
                 startActivity(newIntent);
 

@@ -10,30 +10,33 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="40dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView"
-            android:layout_width="127dp"
-            android:layout_height="121dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="136dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
             android:src="@drawable/user_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-<!--            app:shapeAppearanceOverlay="@style/roundedSquare" />-->
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--            app:shapeAppearanceOverlay="@style/roundedSquare" />-->
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="25dp"
             android:gravity="center"
-            android:text=""
+            android:text="Name"
             android:textColor="#E6000000"
             android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <ProgressBar
@@ -50,105 +53,112 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#0038BF"
+        android:padding="40dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="157dp"
-            android:layout_marginTop="400dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="#1E847F"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.43"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="160dp">
-
-            <TextView
-                android:id="@+id/admissionNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.62"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.777"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/admissionNumber" />
-
-            <TextView
-                android:id="@+id/textPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_user_home"
                 app:layout_constraintEnd_toStartOf="@+id/admissionNumber"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_telephone"
-                app:layout_constraintEnd_toStartOf="@+id/textPhone"
-                app:layout_constraintHorizontal_bias="0.6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            <TextView
+                android:id="@+id/admissionNumber"
+                style="@style/HomepageDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="Admission Number" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/ic_gmail"
-                app:layout_constraintEnd_toStartOf="@+id/textEmail"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+        <!--            <TextView-->
+        <!--                android:id="@+id/textEmail"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginLeft="70dp"-->
+        <!--                android:layout_marginTop="16dp"-->
+        <!--                android:layout_marginRight="20dp"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text=""-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="16sp"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.777"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/admissionNumber" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textPhone"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginLeft="70dp"-->
+        <!--                android:layout_marginTop="15dp"-->
+        <!--                android:layout_marginRight="20dp"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text=""-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="16sp"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textEmail" />-->
+
+        <!--           -->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView4"-->
+        <!--                android:layout_width="30dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:adjustViewBounds="true"-->
+        <!--                android:layout_marginTop="8dp"-->
+        <!--                android:src="@drawable/ic_telephone"-->
+        <!--                app:layout_constraintEnd_toStartOf="@+id/textPhone"-->
+        <!--                app:layout_constraintHorizontal_bias="0.6"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView5" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView5"-->
+        <!--                android:layout_width="30dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:adjustViewBounds="true"-->
+        <!--                android:layout_marginStart="24dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:src="@drawable/ic_gmail"-->
+        <!--                app:layout_constraintEnd_toStartOf="@+id/textEmail"-->
+        <!--                app:layout_constraintHorizontal_bias="0.0"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView2" />-->
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

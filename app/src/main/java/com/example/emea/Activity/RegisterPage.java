@@ -48,7 +48,7 @@ TextInputEditText username;
 
         username= findViewById(R.id.username);
         email=findViewById(R.id.email);
-        btnregister=findViewById(R.id.button1);
+        btnregister=findViewById(R.id.registerbutton);
         password=findViewById(R.id.password);
         confirmpassword=findViewById(R.id.confirmpassword);
 

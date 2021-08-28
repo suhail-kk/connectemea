@@ -2,8 +2,11 @@ package com.example.emea.Network;
 
 
 import com.example.emea.Response.EducationResponse;
+import com.example.emea.Response.FamilyResponse;
+import com.example.emea.Response.ForgotResponse;
 import com.example.emea.Response.LoggingResponse;
 
+import com.example.emea.Response.RecoveryResponse;
 import com.example.emea.Response.RegisterResponse;
 
 import com.example.emea.Response.PersonalResponse;
@@ -45,6 +48,21 @@ public interface ApiCall {
     @FormUrlEncoded
     @POST("students/add_details")
     Call<PersonalResponse> getPersonal(@FieldMap HashMap<String, String> params, @Header("token") String authentoken);
+
+
+   
+    @FormUrlEncoded
+    @POST("students/add_family_details")
+    Call<FamilyResponse> getFamily(@FieldMap HashMap<String, String> params, @Header("token") String authentoken);
+
+    @FormUrlEncoded
+    @POST("users/forgotpassword")
+    Call<ForgotResponse> getForgot(@FieldMap HashMap<String, String> params);
+
+    @FormUrlEncoded
+    @POST("users/recoverpassword")
+    Call<RecoveryResponse> getrecoveryToken(@FieldMap HashMap<String, String> params);
+
 
 }
 
