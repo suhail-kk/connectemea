@@ -67,6 +67,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="imageUpload">
+        <item name="color">#038DFE</item>
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
 
     <!--    <style name="borderColor" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 <!--        <item name="boxStrokeColor">#0038BF</item>-->

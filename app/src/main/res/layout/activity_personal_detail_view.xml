@@ -7,27 +7,39 @@
     android:padding="20dp"
     tools:context=".Activity.PersonalDetailView">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        style="@style/viewheading"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView15"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jhon"
-        style="@style/viewdetails"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView15"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jhon" />
+
+        <ImageView
+            android:id="@+id/usrImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/user_image"
+            android:layout_gravity="center"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintWidth_percent="0.25"/>
+
+    </LinearLayout>
+
+
+
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -35,9 +47,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15">
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout1"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
         <TextView
             android:id="@+id/textView16"
@@ -215,7 +227,7 @@
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1"
+            android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:text="Male"
             tools:layout_editor_absoluteX="237dp"
@@ -361,33 +373,33 @@
 
     <TextView
         android:id="@+id/textView36"
+        style="@style/viewheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        style="@style/viewheading"
         android:layout_marginTop="4dp"
+        android:text="Email"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout20"
         app:layout_constraintStart_toStartOf="@+id/linearLayout20"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout20" />
 
     <TextView
         android:id="@+id/textView37"
+        style="@style/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="jhon@gmail.com"
-        style="@style/viewdetails"
         android:layout_marginTop="4dp"
+        android:text="jhon@gmail.com"
         app:layout_constraintEnd_toEndOf="@+id/textView36"
         app:layout_constraintStart_toStartOf="@+id/textView36"
         app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
     <TextView
         android:id="@+id/textView38"
+        style="@style/viewheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Permanent Address"
-        style="@style/viewheading"
         android:layout_marginTop="4dp"
+        android:text="Permanent Address"
         app:layout_constraintEnd_toEndOf="@+id/textView37"
         app:layout_constraintStart_toStartOf="@+id/textView37"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
@@ -396,88 +408,88 @@
         android:id="@+id/textView39"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:text="jhon"
         android:layout_marginTop="4dp"
+        android:inputType="textMultiLine"
         android:lines="8"
         android:maxLines="10"
         android:minLines="3"
         android:scrollbars="vertical"
+        android:text="jhon"
         app:layout_constraintEnd_toEndOf="@+id/textView38"
         app:layout_constraintStart_toStartOf="@+id/textView38"
         app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
     <TextView
         android:id="@+id/textView40"
+        style="@style/viewheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Category of Admission"
-        style="@style/viewheading"
         app:layout_constraintEnd_toEndOf="@+id/textView39"
         app:layout_constraintStart_toStartOf="@+id/textView39"
         app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
     <TextView
         android:id="@+id/textView41"
+        style="@style/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="General"
-        style="@style/viewdetails"
         android:layout_marginTop="4dp"
+        android:text="General"
         app:layout_constraintEnd_toEndOf="@+id/textView40"
         app:layout_constraintStart_toStartOf="@+id/textView40"
         app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
     <TextView
         android:id="@+id/textView42"
+        style="@style/viewheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="If Management quota. Who recommended for admission"
-        style="@style/viewheading"
         android:layout_marginTop="4dp"
+        android:text="If Management quota. Who recommended for admission"
         app:layout_constraintEnd_toEndOf="@+id/textView41"
         app:layout_constraintStart_toStartOf="@+id/textView41"
         app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
     <TextView
         android:id="@+id/textView43"
+        style="@style/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1.Block mole"
-        style="@style/viewdetails"
         android:layout_marginTop="4dp"
+        android:text="1.Block mole"
         app:layout_constraintEnd_toEndOf="@+id/textView44"
         app:layout_constraintStart_toStartOf="@+id/textView44"
         app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
     <TextView
         android:id="@+id/textView44"
+        style="@style/viewheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Idenfication Marks"
-        style="@style/viewheading"
         android:layout_marginTop="4dp"
+        android:text="Idenfication Marks"
         app:layout_constraintEnd_toEndOf="@+id/textView45"
         app:layout_constraintStart_toStartOf="@+id/textView45"
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
     <TextView
         android:id="@+id/textView45"
+        style="@style/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nil"
         android:layout_marginTop="4dp"
-        style="@style/viewdetails"
+        android:text="Nil"
         app:layout_constraintStart_toStartOf="@+id/textView42"
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <TextView
         android:id="@+id/textView46"
+        style="@style/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2.Black Mole"
-        style="@style/viewdetails"
         android:layout_marginTop="4dp"
+        android:text="2.Black Mole"
         app:layout_constraintEnd_toEndOf="@+id/textView43"
         app:layout_constraintStart_toStartOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/textView43" />

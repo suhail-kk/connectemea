@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout51"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/viewheading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".5"
+            android:text="1."
+            tools:layout_editor_absoluteX="27dp"
+            tools:layout_editor_absoluteY="65dp" />
+
+        <TextView
+            android:id="@+id/textView103"
+            style="@style/viewheading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Course Name"
+            tools:layout_editor_absoluteX="203dp"
+            tools:layout_editor_absoluteY="72dp" />
+
+        <TextView
+            android:id="@+id/textView104"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="5"
+            android:text="Abcd"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout52"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout51"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout51"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout51">
+
+        <TextView
+            android:id="@+id/textView109"
+            android:layout_width="0dp"
+            android:layout_weight="2.5"
+            android:layout_height="wrap_content"
+            android:text="Course type"
+            style="@style/subheading2"
+            tools:layout_editor_absoluteX="294dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+        <TextView
+            android:id="@+id/textView11o"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:text="Abcd"
+            style="@style/viewdetails"
+            android:layout_marginStart="4dp"
+            tools:layout_editor_absoluteX="72dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout53"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout52"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout52"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout52">
+
+        <TextView
+            android:id="@+id/textView111"
+            style="@style/subheading2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:text="Instituion Name"
+            tools:layout_editor_absoluteX="294dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+        <TextView
+            android:id="@+id/textView112"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="5"
+            android:text="Abcd"
+            tools:layout_editor_absoluteX="72dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout53"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout53"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout53">
+
+        <TextView
+            android:id="@+id/textView106"
+            style="@style/subheading2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:text="University"
+            tools:layout_editor_absoluteX="294dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+        <TextView
+            android:id="@+id/textView107"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="Abcd"
+            tools:layout_editor_absoluteX="72dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
