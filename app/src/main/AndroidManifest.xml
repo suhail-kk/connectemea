@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Emea"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.RecoveryPassword"></activity>
+        <activity android:name=".Activity.EducationDetailsView"></activity>
+        <activity android:name=".Activity.FamilyDetailsView" />
+        <activity android:name=".Activity.PersonalDetailView" />
+        <activity android:name=".Activity.RecoveryPassword" />
 
         <meta-data
             android:name="com.google.android.actions"

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout110"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/viewheading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".5"
+            android:text="1." />
+
+        <TextView
+            android:id="@+id/textView103"
+            style="@style/viewheading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="College Name" />
+
+        <TextView
+            android:id="@+id/textView104"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="5"
+            android:text="Abcd"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout111"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout110"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout110"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout110">
+
+        <TextView
+            android:id="@+id/textView109"
+            style="@style/subheading2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:text="University" />
+
+        <TextView
+            android:id="@+id/textView11o"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="5"
+            android:text="Abcd" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout112"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout111"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout111"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout111">
+
+        <TextView
+            android:id="@+id/textView111"
+            style="@style/subheading2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:text="Course" />
+
+        <TextView
+            android:id="@+id/textView112"
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="5"
+            android:text="Abcd" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/linearLayout113"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marks obtained (in %)"
+        style="@style/subheading2"
+        android:autoSizeMaxTextSize="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout112"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout112"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout112" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout55"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout113"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout113"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout113">
+
+        <TextView
+            style="@style/subheading3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Core(main)"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="238dp" />
+
+        <TextView
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:text="90"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="306dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout56"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout55"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout55"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout55">
+
+        <TextView
+            style="@style/subheading3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Complementary(sub)"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="238dp" />
+
+        <TextView
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:text="90"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="306dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout57"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout56"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout56"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout56">
+
+        <TextView
+            style="@style/subheading3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Common(English)"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="238dp" />
+
+        <TextView
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:text="90"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="306dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout58"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout57"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout57"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout57">
+
+        <TextView
+            style="@style/subheading3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Common(Language)"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="238dp" />
+
+        <TextView
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:text="90"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="306dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout58"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout58"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout58">
+
+        <TextView
+            style="@style/subheading3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Open"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="238dp" />
+
+        <TextView
+            style="@style/viewdetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:text="90"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="306dp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

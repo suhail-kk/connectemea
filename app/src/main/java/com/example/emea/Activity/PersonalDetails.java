@@ -64,9 +64,9 @@ public class PersonalDetails extends AppCompatActivity {
         yrofadmission=findViewById(R.id.yearofadmission);
         idmark1=findViewById(R.id.identificationmark1);
         idmark2=findViewById(R.id.identificationmark2);
-        button1=findViewById(R.id.Savepersonal);
+    //    button1=findViewById(R.id.Savepersonal);
 
-
+button1=findViewById(R.id.uploadPersnnlDetls);
 
 //drpodown
         final AutoCompleteTextView Gender = (AutoCompleteTextView) findViewById(R.id.gender);

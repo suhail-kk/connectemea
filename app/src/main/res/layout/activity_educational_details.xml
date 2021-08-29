@@ -10,7 +10,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="40dp"
+        android:padding="10dp"
         tools:context=".Activity.EducationalDetails">
         <TextView
             android:id="@+id/sslc"
@@ -187,7 +187,7 @@
             android:id="@+id/hse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="2.HSE/VHSE"
             style="@style/subheading"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout8"
@@ -201,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="School Name"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@+id/hse"
             app:layout_constraintStart_toStartOf="@+id/hse"
             app:layout_constraintTop_toBottomOf="@+id/hse">
@@ -319,6 +319,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:layout_marginStart="8dp"
                 android:layout_height="wrap_content"
                 android:hint="">
 
@@ -363,6 +364,7 @@
                 android:id="@+id/hseSubMark3"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
+                android:layout_marginStart="8dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="">
@@ -377,12 +379,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/linearLayout43"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout12"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout12"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -418,24 +421,425 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
+        <LinearLayout
+            android:id="@+id/linearLayout44"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout43"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout43"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout43">
 
-<!--        </LinearLayout>-->
-<!--        <Button-->
-<!--            android:id="@+id/saveinfo"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/ripple"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Save Info"-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hseSubName5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="">
 
-<!--            app:layout_constraintStart_toStartOf="@+id/linearLayout2"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />-->
+                <AutoCompleteTextView
+                    android:id="@+id/hsesubName5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hseSubMark5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hsesubMark5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout44"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout44"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout44">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hseSubName6"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint=""
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/hsesubName6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hseSubMark6"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hsesubMark6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Degree"
+            style="@style/subheading"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout45"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout45"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout45" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ugCollegeName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="College Name"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/textView101"
+            app:layout_constraintEnd_toEndOf="@+id/textView101"
+            app:layout_constraintStart_toStartOf="@+id/textView101">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ugcollegeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout46"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/ugCollegeName"
+            app:layout_constraintEnd_toEndOf="@+id/ugCollegeName"
+            app:layout_constraintStart_toStartOf="@+id/ugCollegeName">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/degreeUniversity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="University"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/degreeuniversity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/degreeCourse"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Course"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/degreecourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView102"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marks obtained(in %)"
+            style="@style/subheading2"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout46"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout46"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout46" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout47"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/textView102"
+            app:layout_constraintEnd_toEndOf="@+id/textView102"
+            app:layout_constraintStart_toStartOf="@+id/textView102">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dgrSubCore"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Core(main)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dgrsubCore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dgrSubComp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_height="wrap_content"
+                android:hint="Complementary(sub)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dgrsubComp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout48"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout47"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout47"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout47">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dgrSubEng"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:hint="Common(English)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dgrsubEng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dgrSubLang"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:hint="Common(Language)"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dgrsubLang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dgrSubOpen"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:hint="Open"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dgrsubOpen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addDegree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:text="Add Degree"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout48"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout48"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout48"/>
+
+
+
+        <TextView
+            android:id="@+id/textView105"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4.Any Other Qualification"
+            style="@style/subheading"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/addDegree"
+            app:layout_constraintEnd_toEndOf="@+id/addDegree"
+            app:layout_constraintStart_toStartOf="@+id/addDegree"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout49"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/textView105"
+            app:layout_constraintEnd_toEndOf="@+id/textView105"
+            app:layout_constraintStart_toStartOf="@+id/textView105">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qualiCrsName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Course Name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/qualicrsName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qualicrsType"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Course Type"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/qualicrstype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout49"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout49"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout49">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qualiIstnName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Institution Name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/qualiIstnname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qualiUniversity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="University(If recognized)"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/qualiuniversity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addQualification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:text="Add qualification"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout50"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout50"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout50"/>
+
+        <Button
+            android:id="@+id/saveEduDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:text="Save Info"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/addQualification"
+            app:layout_constraintEnd_toEndOf="@+id/addQualification"
+            app:layout_constraintStart_toStartOf="@+id/addQualification"/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>
 

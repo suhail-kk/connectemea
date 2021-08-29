@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-btnforgot=findViewById((R.id.ForgotButton));
+//btnforgot=findViewById((R.id.ForgotButton));
         txtEmail = findViewById(R.id.emaillogin);
         txtPassword = findViewById(R.id.loggin_Password);
 
@@ -73,17 +73,17 @@ btnforgot=findViewById((R.id.ForgotButton));
 
             }
         });
-        btnforgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
-               startActivity(newIntent);
-
-            }
-        });
+//        btnforgot.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//
+//                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
+//               startActivity(newIntent);
+//
+//            }
+//        });
 
 
 //        txtForgot.setOnClickListener(new View.OnClickListener() {

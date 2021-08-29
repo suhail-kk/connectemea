@@ -40,7 +40,7 @@ public class ForgotPassword extends AppCompatActivity {
 
         txtEmail = findViewById(R.id.forgot_email);
         txtfullname = findViewById(R.id.forgotfullname);
-        btnReset = findViewById(R.id.resetPassword);
+       btnReset = findViewById(R.id.resetPassword);
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
