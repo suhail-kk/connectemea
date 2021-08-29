@@ -57,33 +57,41 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/ripple"
+        android:text="Log in"
         android:layout_marginTop="50dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/Loggin_Password"
         app:layout_constraintStart_toStartOf="@+id/Loggin_Password"
-        app:layout_constraintTop_toBottomOf="@+id/Loggin_Password">
+        app:layout_constraintTop_toBottomOf="@+id/Loggin_Password" />
 
+    <TextView
+        android:id="@+id/textView108"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Forgot the Password?"
+        style="@style/subheading2"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
-        <Button
-            android:id="@+id/outlinedButton"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Register" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="Log in" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView110"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginTop="4dp"
+        android:text="Register a new Member"
+        style="@style/subheading2"
+        app:layout_constraintEnd_toEndOf="@+id/textView108"
+        app:layout_constraintStart_toStartOf="@+id/textView108"
+        app:layout_constraintTop_toBottomOf="@+id/textView108" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

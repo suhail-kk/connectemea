@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/textview_round"
             android:gravity="center"
             android:padding="20dp"
@@ -51,7 +51,7 @@
             android:id="@+id/family"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/textview_round"
             android:padding="20dp"
             android:text="Family Details"
@@ -63,21 +63,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/education" />
 
-        <TextView
-            android:id="@+id/exammarks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:background="@drawable/textview_round"
-            android:padding="20dp"
-            android:text="University Exam Marks"
-            android:gravity="center"
-            android:textColor="@color/sub_heading"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/family" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
