@@ -11,7 +11,8 @@ import com.example.emea.Network.ApiCall;
 import com.example.emea.R;
 
 public class HomePage extends AppCompatActivity {
-    ApiCall apiCall;
+   ApiCall apiCall;
+
     String studentName;
     MeowBottomNavigation bottomNavigation;
 
@@ -28,10 +29,10 @@ public class HomePage extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottom_navigation);
         //Add menu item
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_settings));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_notes));
-        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_calendar));
-        bottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_user));
+//        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_notes));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_home));
+//        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_calendar));
+        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_user));
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -43,16 +44,16 @@ public class HomePage extends AppCompatActivity {
                     case 1:
                         fragment = new SettingsFragment();
                         break;
+//                    case 2:
+//                        fragment = new AttendenceFragment();
+//                        break;
                     case 2:
-                        fragment = new AttendenceFragment();
-                        break;
-                    case 3:
                         fragment = new HomeFragment();
                         break;
-                    case 4:
-                        fragment = new CalenderFragment();
-                        break;
-                    case 5:
+//                    case 4:
+//                        fragment = new CalenderFragment();
+//                        break;
+                    case 3:
                         fragment = new UserFragment();
                         break;
                 }
@@ -61,18 +62,19 @@ public class HomePage extends AppCompatActivity {
 
         });
 
-        //set home fragment initially selected
-        bottomNavigation.show(3, true);
+
+                //set home fragment initially selected
+                bottomNavigation.show(2, true);
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(HomePage.this, "clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomePage.this, "", Toast.LENGTH_SHORT).show();
             }
         });
         bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(HomePage.this, "reselected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomePage.this, "", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class ForgotPassword extends AppCompatActivity {
     EditText txtEmail, txtfullname;
-    Button btnReset;
+    Button btnforgot;
     String inputEmail, inputfullname;
     ApiCall apiCall;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -40,8 +40,8 @@ public class ForgotPassword extends AppCompatActivity {
 
         txtEmail = findViewById(R.id.forgot_email);
         txtfullname = findViewById(R.id.forgotfullname);
-       btnReset = findViewById(R.id.resetPassword);
-        btnReset.setOnClickListener(new View.OnClickListener() {
+       btnforgot = findViewById(R.id.resetPassword);
+        btnforgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                  inputEmail = txtEmail.getText().toString();

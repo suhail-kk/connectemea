@@ -39,126 +39,112 @@
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <ProgressBar
-            android:id="@+id/progressBarView"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="#0038BF"
-        android:padding="40dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout60"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@color/purple_700"
             android:orientation="horizontal"
-            android:padding="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_user_home"
-                app:layout_constraintEnd_toStartOf="@+id/admissionNumber"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:padding="10dp"
+                android:src="@drawable/ic_user_home" />
 
             <TextView
                 android:id="@+id/admissionNumber"
                 style="@style/HomepageDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:text="Admission Number"
+                tools:layout_editor_absoluteX="136dp"
+                tools:layout_editor_absoluteY="421dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout61"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout60"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout60"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout60">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_gmail" />
+
+            <TextView
+                android:id="@+id/textEmail"
+                style="@style/HomepageDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:text="Email" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout61"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout61">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_telephone" />
+
+            <TextView
+                android:id="@+id/textPhone"
+                style="@style/HomepageDetails"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:gravity="center"
-                android:text="Admission Number" />
+                android:layout_gravity="center"
+                android:text="4234634234"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+            <ProgressBar
+                android:id="@+id/progressBarView"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
         </LinearLayout>
 
-        <!--            <TextView-->
-        <!--                android:id="@+id/textEmail"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginLeft="70dp"-->
-        <!--                android:layout_marginTop="16dp"-->
-        <!--                android:layout_marginRight="20dp"-->
-        <!--                android:gravity="center"-->
-        <!--                android:text=""-->
-        <!--                android:textColor="@color/white"-->
-        <!--                android:textSize="16sp"-->
-        <!--                app:layout_constraintEnd_toEndOf="parent"-->
-        <!--                app:layout_constraintHorizontal_bias="0.777"-->
-        <!--                app:layout_constraintStart_toStartOf="parent"-->
-        <!--                app:layout_constraintTop_toBottomOf="@+id/admissionNumber" />-->
-
-        <!--            <TextView-->
-        <!--                android:id="@+id/textPhone"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginLeft="70dp"-->
-        <!--                android:layout_marginTop="15dp"-->
-        <!--                android:layout_marginRight="20dp"-->
-        <!--                android:gravity="center"-->
-        <!--                android:text=""-->
-        <!--                android:textColor="@color/white"-->
-        <!--                android:textSize="16sp"-->
-        <!--                app:layout_constraintEnd_toEndOf="parent"-->
-        <!--                app:layout_constraintStart_toStartOf="parent"-->
-        <!--                app:layout_constraintTop_toBottomOf="@+id/textEmail" />-->
-
-        <!--           -->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/imageView4"-->
-        <!--                android:layout_width="30dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:scaleType="fitXY"-->
-        <!--                android:adjustViewBounds="true"-->
-        <!--                android:layout_marginTop="8dp"-->
-        <!--                android:src="@drawable/ic_telephone"-->
-        <!--                app:layout_constraintEnd_toStartOf="@+id/textPhone"-->
-        <!--                app:layout_constraintHorizontal_bias="0.6"-->
-        <!--                app:layout_constraintStart_toStartOf="parent"-->
-        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView5" />-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/imageView5"-->
-        <!--                android:layout_width="30dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:scaleType="fitXY"-->
-        <!--                android:adjustViewBounds="true"-->
-        <!--                android:layout_marginStart="24dp"-->
-        <!--                android:layout_marginTop="12dp"-->
-        <!--                android:src="@drawable/ic_gmail"-->
-        <!--                app:layout_constraintEnd_toStartOf="@+id/textEmail"-->
-        <!--                app:layout_constraintHorizontal_bias="0.0"-->
-        <!--                app:layout_constraintStart_toStartOf="parent"-->
-        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView2" />-->
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

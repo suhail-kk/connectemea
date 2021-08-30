@@ -32,23 +32,22 @@ public class EducationalDetails extends AppCompatActivity {
     //
 
     TextView sslc, medium, markssslc,
-            plustwo, englishplustwo, marksplustwo;
+            plustwo, marksplustwo,ugc,ugcmarks,anyotherqual;
 
-    String textsslc, textschool, textmedium, textenglishsslcbox,
+    String  textschool, textmedium, textenglishsslcbox,
             textmathssslcbox, textsciencesslcbox, textsocialsslcbox,
-            textschoolplustwo, textenglishplustwobox, textsub1box, textsub2box,
-            textsub3box, textsub4box,
-            textallsyllabus,
+            textschoolplustwo, textallsyllabus, textsub1box, textsub2box,
+            textsub3box, textsub4box,textsub5box,textsub6box,
             textcollegename, textuniversity, textugccourse, textugcmainbox, textcoresub, textugcenglishbox,
-
-    textugclangbox, textopencoursebox;
+    textugclangbox, textopencoursebox,
+    qualcrse,qualtype,qualinstitu,qualuniversity;
     TextInputEditText school, englishsslcbox, mathssslcbox, sciencesslcbox, socialsciencesslcbox,
-            schoolplustwo, englishplustwobox, sub1box, sub2box, sub3box, sub4box, sub5box,
+            schoolplustwo,  sub1box, sub2box, sub3box, sub4box, sub5box,sub6box,
             collegename, ugcmainbox, ugcsubbox, ugcenglishbox, ugclangbox, opencoursebox,
             coursename, coursetype, institution, university2;
-    AutoCompleteTextView sub1, sub2, sub3, sub4, sub5;
+    AutoCompleteTextView  allsyllabus,sub1, sub2, sub3, sub4, sub5,sub6,universityugc,courseugc;
 
-    Button qualification1, qualification2, saveinfo;
+    Button adddegree, qualification, saveinfo;
 
     RadioButton radioeng;
     RadioButton radiomal;
@@ -68,15 +67,15 @@ public class EducationalDetails extends AppCompatActivity {
 
 
         //buttons
-//        qualification1 = findViewById(R.id.addDegree);
-//        qualification2 = findViewById(R.id.addQualification);
-      //  saveinfo = findViewById(R.id.saveEduDetail);
+//      adddegree   = findViewById(R.id.addDegree);
+//        qualification = findViewById(R.id.addQualification);
+      saveinfo = findViewById(R.id.saveEduDetail);
         radioeng = findViewById(R.id.radioeng);
         radiomal = findViewById(R.id.radiomal);
 
 
         sslc = findViewById(R.id.sslc);
-        textsslc = sslc.getText().toString();
+
         school = findViewById(R.id.schoolname);
 
         medium = findViewById(R.id.medium);
@@ -98,22 +97,22 @@ public class EducationalDetails extends AppCompatActivity {
 
         marksplustwo = findViewById(R.id.markshse);
 
-        englishplustwo = findViewById(R.id.hsesubName1);
+       sub1 = findViewById(R.id.hsesubName1);
 
-        englishplustwobox = findViewById(R.id.hsesubMark1);
+        sub1box = findViewById(R.id.hsesubMark1);
 
-        sub1 = findViewById(R.id.hsesubName2);
-        sub1box = findViewById(R.id.hsesubMark2);
+        sub2 = findViewById(R.id.hsesubName2);
+        sub2box = findViewById(R.id.hsesubMark2);
 
-        sub2 = findViewById(R.id.hsesubName3);
-        sub2box = findViewById(R.id.hsesubMark3);
+        sub3 = findViewById(R.id.hsesubName3);
+        sub3box = findViewById(R.id.hsesubMark3);
 
-        sub3 = findViewById(R.id.hsesubName4);
-        sub3box = findViewById(R.id.hsesubMark4);
-        sub4 = findViewById(R.id.hsesubName5);
-        sub4box = findViewById(R.id.hsesubMark5);
-        sub5 = findViewById(R.id.hsesubName6);
-        sub5box = findViewById(R.id.hsesubMark6);
+        sub4 = findViewById(R.id.hsesubName4);
+        sub4box = findViewById(R.id.hsesubMark4);
+        sub5 = findViewById(R.id.hsesubName5);
+        sub5box = findViewById(R.id.hsesubMark5);
+        sub6 = findViewById(R.id.hsesubName6);
+        sub6box = findViewById(R.id.hsesubMark6);
 
         arrayList_list = new ArrayList<>();
         arrayList_list.add("english");
@@ -132,27 +131,28 @@ public class EducationalDetails extends AppCompatActivity {
 //        final AutoCompleteTextView actv5 = (AutoCompleteTextView) findViewById(R.id.sub4);
 //        ImageView image4 = (ImageView) findViewById(R.id.sub4image);
 
+ugc=findViewById(R.id.degree);
+        collegename = findViewById(R.id.ugcollegeName);
 
-//        collegename = findViewById(R.id.ugcollegeName);
-//
-//        ugcmainbox = findViewById(R.id.dgrsubCore);
-//
-//        ugcsubbox = findViewById(R.id.dgrsubComp);
-//
-//        ugcenglishbox = findViewById(R.id.dgrsubEng);
-//
-//        ugclangbox = findViewById(R.id.dgrsubLang);
-//
-//        opencoursebox = findViewById(R.id.dgrsubOpen);
-//
-//        coursename = findViewById(R.id.qualicrsName);
-//
-//        coursetype = findViewById(R.id.qualicrstype);
-//
-//        institution = findViewById(R.id.qualiIstnname);
-//        university2 = findViewById(R.id.qualiuniversity);
-    }
-}
+        ugcmainbox = findViewById(R.id.dgrsubCore);
+
+        ugcsubbox = findViewById(R.id.dgrsubComp);
+
+        ugcenglishbox = findViewById(R.id.dgrsubEng);
+
+        ugclangbox = findViewById(R.id.dgrsubLang);
+
+        opencoursebox = findViewById(R.id.dgrsubOpen);
+
+        anyotherqual=findViewById(R.id.otherqual);
+
+        coursename = findViewById(R.id.qualicrsName);
+
+        coursetype = findViewById(R.id.qualicrstype);
+
+        institution = findViewById(R.id.qualiIstnname);
+        university2 = findViewById(R.id.qualiuniversity);
+
 
 
 
@@ -218,57 +218,59 @@ public class EducationalDetails extends AppCompatActivity {
 //
 //            }
 //        });
-//        saveinfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                textschool = school.getText().toString();
-//                textenglishsslcbox = englishsslcbox.getText().toString();
-//                textmathssslcbox = mathssslcbox.getText().toString();
-//                textsciencesslcbox = sciencesslcbox.getText().toString();
-//                textsocialsslcbox = socialsciencesslcbox.getText().toString();
-//                textschoolplustwo = schoolplustwo.getText().toString();
-////                textallsyllabus = actv1.getText().toString();
-//                textenglishplustwobox = englishplustwobox.getText().toString();
-//                textsub1box = sub1box.getText().toString();
-//                textsub2box = sub2box.getText().toString();
-//                textsub3box = sub3box.getText().toString();
-////                textsub4box = sub4box.getText().toString();
-////                textsub1 = actv2.getText().toString();
-////                textsub2 = actv3.getText().toString();
-////                textsub3 = actv4.getText().toString();
-////                textsub4 = actv5.getText().toString();
-//
-//                textcollegename = collegename.getText().toString();
-//                textuniversity = university.getText().toString();
-//                textugccourse = ugccourse.getText().toString();
-//                textugcmainbox = ugcmainbox.getText().toString();
-//                textsubbox = ugcsubbox.getText().toString();
-//                textugcenglishbox = ugcenglishbox.getText().toString();
-//                textugclangbox = ugclangbox.getText().toString();
-//                textopencoursebox = opencoursebox.getText().toString();
-//                textcoursename = coursename.getText().toString();
-//                textcoursetype = coursetype.getText().toString();
-//                textinstitution = institution.getText().toString();
-//                textuniversity2 = university2.getText().toString();
-//
-//
-//                if (radioeng.isChecked()) {
-//                     textmedium= radioeng.getText().toString() ;
-//                }
-//                else{
-//                    textmedium= radiomal.getText().toString() ;
-//                }
-//
-//                apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-//
-//                getEducationList(textschool,textmedium, textenglishsslcbox, textmathssslcbox, textsciencesslcbox, textsocialsslcbox,textschoolplustwo,textallsyllabus,
-//                        textenglishplustwobox,textsub1box,textsub2box,textsub3box,textsub4box,
-//                        textugccourse,textcollegename,textuniversity,textugcmainbox,textcoresub,textugcenglishbox,textugclangbox,textopencoursebox);
-//
-//
-//            }
-//        });
-//    }
+        saveinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textschool = school.getText().toString();
+                textenglishsslcbox = englishsslcbox.getText().toString();
+                textmathssslcbox = mathssslcbox.getText().toString();
+                textsciencesslcbox = sciencesslcbox.getText().toString();
+                textsocialsslcbox = socialsciencesslcbox.getText().toString();
+                textschoolplustwo = schoolplustwo.getText().toString();
+//                textallsyllabus = actv1.getText().toString();
+
+                textsub1box = sub1box.getText().toString();
+                textsub2box = sub2box.getText().toString();
+                textsub3box = sub3box.getText().toString();
+               textsub4box = sub4box.getText().toString();
+                textsub5box = sub5box.getText().toString();
+                textsub6box = sub6box.getText().toString();
+//                textsub1 = actv2.getText().toString();
+//                textsub2 = actv3.getText().toString();
+//                textsub3 = actv4.getText().toString();
+//                textsub4 = actv5.getText().toString();
+
+                textcollegename = collegename.getText().toString();
+           //     textuniversity = university.getText().toString();
+           //     textugccourse = ugccourse.getText().toString();
+                textugcmainbox = ugcmainbox.getText().toString();
+                textcoresub = ugcsubbox.getText().toString();
+                textugcenglishbox = ugcenglishbox.getText().toString();
+                textugclangbox = ugclangbox.getText().toString();
+                textopencoursebox = opencoursebox.getText().toString();
+                qualcrse = coursename.getText().toString();
+                qualtype = coursetype.getText().toString();
+               qualinstitu = institution.getText().toString();
+               qualuniversity = university2.getText().toString();
+
+
+                if (radioeng.isChecked()) {
+                     textmedium= radioeng.getText().toString() ;
+                }
+                else{
+                    textmedium= radiomal.getText().toString() ;
+                }
+
+                apiCall = ApiClient.getRetrofit().create(ApiCall.class);
+
+                getEducationList(textschool,textmedium, textenglishsslcbox, textmathssslcbox, textsciencesslcbox, textsocialsslcbox,textschoolplustwo,textallsyllabus,
+                        textsub1box,textsub2box,textsub3box,textsub4box,textsub5box,textsub6box,
+                        textallsyllabus,textcollegename,textuniversity,textugcmainbox,textcoresub,textugcenglishbox,textugclangbox,textopencoursebox);
+
+
+            }
+        });
+    }
 //
 //
 ////    private static final String[] syllabus = new String[]{"science", "commerce"};
@@ -279,96 +281,96 @@ public class EducationalDetails extends AppCompatActivity {
 //
 //
 //
-//    public void onRadioButtonClicked(View view) {
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        switch (view.getId()) {
-//            case R.id.radioeng:
-//               radiomal.setChecked(false);
-//
-//                    break;
-//            case R.id.radiomal:
-//                radioeng.setChecked(false);
-//
-//                    break;
-//        }
-//    }
-//
-//
-//    public void getEducationList(String textschool, String textmedium, String textenglishsslcbox, String textmathssslcbox, String textsciencesslcbox, String textsocialsslcbox, String textschoolplustwo, String textallsyllabus,
-//                                 String textenglishplustwobox, String textsub1box,String textsub2box,String textsub3box,String textsub4box,
-//                                 String  textugccourse,String textcollegename,String textuniversity,String textugcmainbox,String textcoresub,
-//                                String textugcenglishbox,String textugclangbox,String textopencoursebox ) {
-//
-//
-//        HashMap<String, String> params = new HashMap<>();
-//        params.put("high_school", textschool);
-//        params.put("high_school_medium", textmedium);
-//        params.put("high_school_english", textenglishsslcbox);
-//        params.put("high_school_maths", textmathssslcbox);
-//        params.put("high_school_science",textsciencesslcbox);
-//        params.put("high_school_socialscience",textsocialsslcbox);
-//       params.put("plus_two_syllabus", textallsyllabus);
-//        params.put("higher_secondary_school", textschoolplustwo);
-////        //  params.put("course_id", 1);
-////        params.put("subject_id1", textenglishplustwobox);
-////        params.put("subject_id2", textsub1box);
-////        params.put("subject_id3", textsub2box);
-////        params.put("subject_id4", textsub3box);
-////        params.put("subject_id5", textsub4box);
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch (view.getId()) {
+            case R.id.radioeng:
+               radiomal.setChecked(false);
+
+                    break;
+            case R.id.radiomal:
+                radioeng.setChecked(false);
+
+                    break;
+        }
+    }
+
+
+    public void getEducationList(String textschool, String textmedium, String textenglishsslcbox, String textmathssslcbox, String textsciencesslcbox, String textsocialsslcbox, String textschoolplustwo, String textallsyllabus,
+                                String textsub1box,String textsub2box,String textsub3box,String textsub4box,String textsub5box,String textsub6box,
+                                 String  textugccourse,String textcollegename,String textuniversity,String textugcmainbox,String textcoresub,
+                                String textugcenglishbox,String textugclangbox,String textopencoursebox ) {
+
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("high_school", textschool);
+        params.put("high_school_medium", textmedium);
+        params.put("high_school_english", textenglishsslcbox);
+        params.put("high_school_maths", textmathssslcbox);
+        params.put("high_school_science",textsciencesslcbox);
+        params.put("high_school_socialscience",textsocialsslcbox);
+       params.put("plus_two_syllabus", textallsyllabus);
+        params.put("higher_secondary_school", textschoolplustwo);
+//        //  params.put("course_id", 1);
+//        params.put("subject_id1", textenglishplustwobox);
+//        params.put("subject_id2", textsub1box);
+//        params.put("subject_id3", textsub2box);
+//        params.put("subject_id4", textsub3box);
+//        params.put("subject_id5", textsub4box);
 //        params.put("higher_secondary_mark1", textenglishplustwobox);
-//        params.put("higher_secondary_mark2", textsub1box);
-//        params.put("higher_secondary_mark3", textsub2box);
-//        params.put("higher_secondary_mark4", textsub3box);
-//        params.put("higher_secondary_mark5", textsub4box);
-//        params.put("course_name", textugccourse);
-//        params.put("college_name", textcollegename);
-//        params.put("university", textuniversity);
-//        params.put("core_mark", textugcmainbox);
-//        params.put("complementary", textcoresub);
-//        params.put("common_english", textugcenglishbox);
-//        params.put("common_language", textugclangbox);
-//        params.put("open_mark", textopencoursebox);
-////        //params.put("additional_courses_grade", textcoursename);
-////        params.put("additional_courses_instiution", textinstitution);
-////        params.put("additional_courses_recongnisation", textuniversity2);
-////        params.put("additional_courses_course_type", textcoursetype);
-////        params.put("other_qualification_course_name", textcoursename);
-////        params.put("other_qualification_grade", textcoursename);
-////        params.put(" other_qualification_instiution", textcoursename);
-////        params.put("other_qualification_recongnisation", textcoursename);
-//
-//        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//        authentoken = (shared.getString("token", ""));
-//
-//
-//        Call<EducationResponse> educationCall = apiCall.getEducation(params, authentoken);
-//
-//        educationCall.enqueue(new Callback<EducationResponse>() {
-//            @Override
-//            public void onResponse(Call<EducationResponse> call, Response<EducationResponse> response) {
-//
-//                status = response.code();
-//                if (status != 400) {
-//                    apieducationlist = response.body().getStatus();
-//
-//                    Toast.makeText(EducationalDetails.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(EducationalDetails.this, "Already registered.", Toast.LENGTH_SHORT).show();
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<EducationResponse> call, Throwable t) {
-//                Toast.makeText(EducationalDetails.this, "Failed", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//
-//    }
-//}
-//
+        params.put("higher_secondary_mark2", textsub1box);
+        params.put("higher_secondary_mark3", textsub2box);
+        params.put("higher_secondary_mark4", textsub3box);
+        params.put("higher_secondary_mark5", textsub4box);
+        params.put("course_name", textugccourse);
+        params.put("college_name", textcollegename);
+        params.put("university", textuniversity);
+        params.put("core_mark", textugcmainbox);
+        params.put("complementary", textcoresub);
+        params.put("common_english", textugcenglishbox);
+        params.put("common_language", textugclangbox);
+        params.put("open_mark", textopencoursebox);
+//        //params.put("additional_courses_grade", textcoursename);
+//        params.put("additional_courses_instiution", textinstitution);
+//        params.put("additional_courses_recongnisation", textuniversity2);
+//        params.put("additional_courses_course_type", textcoursetype);
+//        params.put("other_qualification_course_name", textcoursename);
+//        params.put("other_qualification_grade", textcoursename);
+//        params.put(" other_qualification_instiution", textcoursename);
+//        params.put("other_qualification_recongnisation", textcoursename);
+
+        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
+        authentoken = (shared.getString("token", ""));
+
+
+        Call<EducationResponse> educationCall = apiCall.getEducation(params, authentoken);
+
+        educationCall.enqueue(new Callback<EducationResponse>() {
+            @Override
+            public void onResponse(Call<EducationResponse> call, Response<EducationResponse> response) {
+
+                status = response.code();
+                if (status != 400) {
+                    apieducationlist = response.body().getStatus();
+
+                    Toast.makeText(EducationalDetails.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(EducationalDetails.this, "Already registered.", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<EducationResponse> call, Throwable t) {
+                Toast.makeText(EducationalDetails.this, "Failed", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+}
+
 
 
 

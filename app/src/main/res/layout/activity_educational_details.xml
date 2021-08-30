@@ -510,7 +510,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView101"
+            android:id="@+id/degree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="3. Degree"
@@ -527,9 +527,9 @@
             android:layout_height="wrap_content"
             android:hint="College Name"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/textView101"
-            app:layout_constraintEnd_toEndOf="@+id/textView101"
-            app:layout_constraintStart_toStartOf="@+id/textView101">
+            app:layout_constraintTop_toBottomOf="@id/degree"
+            app:layout_constraintEnd_toEndOf="@+id/degree"
+            app:layout_constraintStart_toStartOf="@+id/degree">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ugcollegeName"
@@ -714,7 +714,7 @@
 
 
         <TextView
-            android:id="@+id/textView105"
+            android:id="@+id/otherqual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="4.Any Other Qualification"
@@ -730,9 +730,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/textView105"
-            app:layout_constraintEnd_toEndOf="@+id/textView105"
-            app:layout_constraintStart_toStartOf="@+id/textView105">
+            app:layout_constraintTop_toBottomOf="@id/otherqual"
+            app:layout_constraintEnd_toEndOf="@+id/otherqual"
+            app:layout_constraintStart_toStartOf="@+id/otherqual">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/qualiCrsName"

@@ -71,7 +71,7 @@ public class UserFragment extends Fragment {
         personaldt=view.findViewById(R.id.personal);
         educationdt=view.findViewById(R.id.education);
         familydt=view.findViewById(R.id.family);
-        markdt=view.findViewById(R.id.exammarks);
+   //     markdt=view.findViewById(R.id.exammarks);
 
         personaldt.setOnClickListener(new View.OnClickListener() {
             @Override

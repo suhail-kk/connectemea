@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emea.Fragments.HomePage;
@@ -27,7 +28,8 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     TextInputEditText txtEmail, txtPassword;
-    Button btnLogin,btnforgot;
+Button btnLogin;
+TextView btnforgot,btnregister;
     ProgressBar pgBar;
   //  TextView txtForgot;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -43,15 +45,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//btnforgot=findViewById((R.id.ForgotButton));
-        txtEmail = findViewById(R.id.emaillogin);
+         btnforgot=findViewById((R.id.forgotpass));
+        btnregister=findViewById((R.id.registernew));
+
+        txtEmail = findViewById(R.id.Emaillogin);
         txtPassword = findViewById(R.id.loggin_Password);
 
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
 
-        btnLogin = findViewById(R.id.LoginButton);
+        btnLogin = findViewById(R.id.loginbutton);
         pgBar = findViewById(R.id.progressBar);
 
 
@@ -73,18 +77,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-//        btnforgot.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//
-//                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
-//               startActivity(newIntent);
-//
-//            }
-//        });
+        btnforgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+
+                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
+               startActivity(newIntent);
+
+            }
+        });
+btnregister.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent newIntent = new Intent(getApplicationContext(), RegisterPage.class);
+        startActivity(newIntent);
+
+    }
+});
 
 //        txtForgot.setOnClickListener(new View.OnClickListener() {
 //            @Override
