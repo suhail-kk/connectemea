@@ -2,6 +2,7 @@ package com.example.emea.Network;
 
 
 import com.example.emea.Response.EducationResponse;
+import com.example.emea.Response.EducationViewResponse;
 import com.example.emea.Response.FamilyResponse;
 import com.example.emea.Response.ForgotResponse;
 import com.example.emea.Response.LoggingResponse;
@@ -62,6 +63,10 @@ public interface ApiCall {
     @FormUrlEncoded
     @POST("users/recoverpassword")
     Call<RecoveryResponse> getrecoveryToken(@FieldMap HashMap<String, String> params);
+
+    @GET("students/get_educational_details")
+    Call<EducationViewResponse> getEducationView(@Header("token") String authtoken);
+
 
 
 }

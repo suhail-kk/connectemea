@@ -34,7 +34,7 @@
             android:text="College Name" />
 
         <TextView
-            android:id="@+id/textView104"
+            android:id="@+id/coursedisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             android:text="University" />
 
         <TextView
-            android:id="@+id/textView11o"
+            android:id="@+id/ugcuniversitydisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
             android:text="Course" />
 
         <TextView
-            android:id="@+id/textView112"
+            android:id="@+id/ugccoursedisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -136,6 +136,7 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
+            android:id="@+id/ugccoredispaly"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -167,6 +168,7 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
+            android:id="@+id/ugccompldisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -198,6 +200,7 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
+            android:id="@+id/ugcengdispaly"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -229,6 +232,7 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
+            android:id="@+id/langdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -258,6 +262,7 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
+            android:id="@+id/opendisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 //import com.example.emea.Activity.EducationalDetails;
+import com.example.emea.Activity.EducationDetailsView;
 import com.example.emea.Activity.EducationalDetails;
 import com.example.emea.Activity.FamilyDetails;
 import com.example.emea.Activity.PersonalDetails;
@@ -86,8 +87,12 @@ public class UserFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent newIntent=new Intent(getActivity().getApplicationContext(), EducationalDetails.class);
+                Intent newIntent=new Intent(getActivity().getApplicationContext(), EducationDetailsView.class);
                 startActivity(newIntent);
+
+
+
+
 
             }
         });

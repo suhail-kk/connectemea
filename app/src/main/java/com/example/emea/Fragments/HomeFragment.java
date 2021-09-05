@@ -3,6 +3,7 @@ package com.example.emea.Fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -36,8 +38,9 @@ public class HomeFragment extends Fragment{
     String studentName;
     ApiCall apiCall;
 
-    TextView displayName, admissionNumber, displayMobile;
-    String studentNumber, authtoken, studentMobile;
+    TextView displayName, Email, displayMobile,displayAdmission;
+    String studentEmail, authtoken, studentMobile,studentAdmission,Stringimage;
+    ImageView displayimage;
     //   String studentName;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -120,17 +123,24 @@ public class HomeFragment extends Fragment{
                 pgBar.setVisibility(View.GONE);
 
                 studentName = response.body().getName();
-                studentNumber = response.body().getAdmissionNo();
+                studentAdmission=response.body().getAdmissionNo();
+                studentEmail = response.body().getEmail();
                 studentMobile = response.body().getMobile();
-
+                Stringimage=response.body().getProfileImage();
                displayName = (TextView) view.findViewById(R.id.textView);
                 displayName.setText(studentName);
 
-                admissionNumber = (TextView) view.findViewById(R.id.admissionNumber);
-                admissionNumber.setText(studentNumber);
+                Email = (TextView) view.findViewById(R.id.textEmail);
+                Email.setText(studentEmail);
 
-//                displayMobile = (TextView) view.findViewById(R.id.textPhone);
-//                displayMobile.setText(studentMobile);
+                displayMobile = (TextView) view.findViewById(R.id.textPhone);
+                displayMobile.setText(studentMobile);
+
+                displayAdmission = (TextView) view.findViewById(R.id.admissionNumber);
+                displayAdmission.setText(studentAdmission);
+
+                displayimage=(ImageView)view.findViewById(R.id.imageView);
+              displayimage.setImageDrawable(Drawable.createFromPath(Stringimage));
 
 
             }

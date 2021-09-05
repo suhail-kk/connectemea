@@ -20,6 +20,7 @@ import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -114,9 +115,14 @@ public class EducationalDetails extends AppCompatActivity {
         sub6 = findViewById(R.id.hsesubName6);
         sub6box = findViewById(R.id.hsesubMark6);
 
+        String[] datas = new String[]{"a","b","c"};
+
         arrayList_list = new ArrayList<>();
-        arrayList_list.add("english");
-        arrayList_list.add("hindi");
+        for (String data:datas){
+            arrayList_list.add(data);
+        }
+
+//        arrayList_list.add("hindi");
         arrayAdapter_list = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_list);
         sub1.setAdapter(arrayAdapter_list);
         sub1.setThreshold(1);
@@ -131,28 +137,28 @@ public class EducationalDetails extends AppCompatActivity {
 //        final AutoCompleteTextView actv5 = (AutoCompleteTextView) findViewById(R.id.sub4);
 //        ImageView image4 = (ImageView) findViewById(R.id.sub4image);
 
-ugc=findViewById(R.id.degree);
-        collegename = findViewById(R.id.ugcollegeName);
-
-        ugcmainbox = findViewById(R.id.dgrsubCore);
-
-        ugcsubbox = findViewById(R.id.dgrsubComp);
-
-        ugcenglishbox = findViewById(R.id.dgrsubEng);
-
-        ugclangbox = findViewById(R.id.dgrsubLang);
-
-        opencoursebox = findViewById(R.id.dgrsubOpen);
-
-        anyotherqual=findViewById(R.id.otherqual);
-
-        coursename = findViewById(R.id.qualicrsName);
-
-        coursetype = findViewById(R.id.qualicrstype);
-
-        institution = findViewById(R.id.qualiIstnname);
-        university2 = findViewById(R.id.qualiuniversity);
-
+//ugc=findViewById(R.id.degree);
+//        collegename = findViewById(R.id.ugcollegeName);
+//
+//        ugcmainbox = findViewById(R.id.dgrsubCore);
+//
+//        ugcsubbox = findViewById(R.id.dgrsubComp);
+//
+//        ugcenglishbox = findViewById(R.id.dgrsubEng);
+//
+//        ugclangbox = findViewById(R.id.dgrsubLang);
+//
+//        opencoursebox = findViewById(R.id.dgrsubOpen);
+//
+//        anyotherqual=findViewById(R.id.otherqual);
+//
+//        coursename = findViewById(R.id.qualicrsName);
+//
+//        coursetype = findViewById(R.id.qualicrstype);
+//
+//        institution = findViewById(R.id.qualiIstnname);
+//        university2 = findViewById(R.id.qualiuniversity);
+//
 
 
 
@@ -240,18 +246,18 @@ ugc=findViewById(R.id.degree);
 //                textsub3 = actv4.getText().toString();
 //                textsub4 = actv5.getText().toString();
 
-                textcollegename = collegename.getText().toString();
-           //     textuniversity = university.getText().toString();
-           //     textugccourse = ugccourse.getText().toString();
-                textugcmainbox = ugcmainbox.getText().toString();
-                textcoresub = ugcsubbox.getText().toString();
-                textugcenglishbox = ugcenglishbox.getText().toString();
-                textugclangbox = ugclangbox.getText().toString();
-                textopencoursebox = opencoursebox.getText().toString();
-                qualcrse = coursename.getText().toString();
-                qualtype = coursetype.getText().toString();
-               qualinstitu = institution.getText().toString();
-               qualuniversity = university2.getText().toString();
+//                textcollegename = collegename.getText().toString();
+//           //     textuniversity = university.getText().toString();
+//           //     textugccourse = ugccourse.getText().toString();
+//                textugcmainbox = ugcmainbox.getText().toString();
+//                textcoresub = ugcsubbox.getText().toString();
+//                textugcenglishbox = ugcenglishbox.getText().toString();
+//                textugclangbox = ugclangbox.getText().toString();
+//                textopencoursebox = opencoursebox.getText().toString();
+//                qualcrse = coursename.getText().toString();
+//                qualtype = coursetype.getText().toString();
+//               qualinstitu = institution.getText().toString();
+//               qualuniversity = university2.getText().toString();
 
 
                 if (radioeng.isChecked()) {

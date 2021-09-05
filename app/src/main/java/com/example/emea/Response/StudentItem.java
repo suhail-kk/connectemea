@@ -2,177 +2,180 @@ package com.example.emea.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+public class StudentItem{
 
-public class StudentItem {
+	@SerializedName("admission_category")
+	private String admissionCategory;
 
-    @SerializedName("admission_category")
-    private String admissionCategory;
+	@SerializedName("identification_mark_1")
+	private String identificationMark1;
 
-    @SerializedName("identification_mark_1")
-    private String identificationMark1;
+	@SerializedName("identification_mark_2")
+	private String identificationMark2;
 
-    @SerializedName("identification_mark_2")
-    private String identificationMark2;
+	@SerializedName("present_address")
+	private String presentAddress;
 
-    @SerializedName("present_address")
-    private String presentAddress;
+	@SerializedName("gender")
+	private String gender;
 
-    @SerializedName("gender")
-    private String gender;
+	@SerializedName("date_of_birth")
+	private String dateOfBirth;
 
-    @SerializedName("department_id")
-    private Object departmentId;
+	@SerializedName("permanent_address")
+	private String permanentAddress;
 
-    @SerializedName("date_of_birth")
-    private String dateOfBirth;
+	@SerializedName("profile_image")
+	private String profileImage;
 
-    @SerializedName("caste")
-    private String caste;
+	@SerializedName("roll_no")
+	private String rollNo;
 
-    @SerializedName("mobile")
-    private String mobile;
+	@SerializedName("staff_id")
+	private Object staffId;
 
-    @SerializedName("distance_to_college")
-    private String distanceToCollege;
+	@SerializedName("joining_year")
+	private String joiningYear;
 
-    @SerializedName("career_plan")
-    private Object careerPlan;
+	@SerializedName("id")
+	private String id;
 
-    @SerializedName("student_id")
-    private String studentId;
+	@SerializedName("department")
+	private String department;
 
-    @SerializedName("permanent_address")
-    private String permanentAddress;
+	@SerializedName("email")
+	private String email;
 
-    @SerializedName("religion")
-    private String religion;
+	@SerializedName("caste")
+	private String caste;
 
-    @SerializedName("residing_at")
-    private String residingAt;
+	@SerializedName("mobile")
+	private String mobile;
 
-    @SerializedName("marital_status")
-    private String maritalStatus;
+	@SerializedName("distance_to_college")
+	private String distanceToCollege;
 
-    @SerializedName("profile_image")
-    private String profileImage;
+	@SerializedName("career_plan")
+	private Object careerPlan;
 
-    @SerializedName("roll_no")
-    private String rollNo;
+	@SerializedName("student_id")
+	private String studentId;
 
-    @SerializedName("staff_id")
-    private Object staffId;
+	@SerializedName("religion")
+	private String religion;
 
-    @SerializedName("name")
-    private String name;
+	@SerializedName("residing_at")
+	private String residingAt;
 
-    @SerializedName("blood_group")
-    private String bloodGroup;
+	@SerializedName("marital_status")
+	private String maritalStatus;
 
-    @SerializedName("joining_year")
-    private String joiningYear;
+	@SerializedName("name")
+	private String name;
 
-    @SerializedName("id")
-    private String id;
+	@SerializedName("blood_group")
+	private String bloodGroup;
 
-    @SerializedName("admission_no")
-    private String admissionNo;
+	@SerializedName("admission_no")
+	private String admissionNo;
 
-    public String getAdmissionCategory() {
-        return admissionCategory;
-    }
+	public String getAdmissionCategory(){
+		return admissionCategory;
+	}
 
-    public String getIdentificationMark1() {
-        return identificationMark1;
-    }
+	public String getIdentificationMark1(){
+		return identificationMark1;
+	}
 
-    public String getIdentificationMark2() {
-        return identificationMark2;
-    }
+	public String getIdentificationMark2(){
+		return identificationMark2;
+	}
 
-    public String getPresentAddress() {
-        return presentAddress;
-    }
+	public String getPresentAddress(){
+		return presentAddress;
+	}
 
-    public String getGender() {
-        return gender;
-    }
+	public String getGender(){
+		return gender;
+	}
 
-    public Object getDepartmentId() {
-        return departmentId;
-    }
+	public String getDateOfBirth(){
+		return dateOfBirth;
+	}
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
+	public String getPermanentAddress(){
+		return permanentAddress;
+	}
 
-    public String getCaste() {
-        return caste;
-    }
+	public String getProfileImage(){
+		return profileImage;
+	}
 
-    public String getMobile() {
-        return mobile;
-    }
+	public String getRollNo(){
+		return rollNo;
+	}
 
-    public String getDistanceToCollege() {
-        return distanceToCollege;
-    }
+	public Object getStaffId(){
+		return staffId;
+	}
 
-    public Object getCareerPlan() {
-        return careerPlan;
-    }
+	public String getJoiningYear(){
+		return joiningYear;
+	}
 
-    public String getStudentId() {
-        return studentId;
-    }
+	public String getId(){
+		return id;
+	}
 
-    public String getPermanentAddress() {
-        return permanentAddress;
-    }
+	public String getDepartment(){
+		return department;
+	}
 
-    public String getReligion() {
-        return religion;
-    }
+	public String getEmail(){
+		return email;
+	}
 
-    public String getResidingAt() {
-        return residingAt;
-    }
+	public String getCaste(){
+		return caste;
+	}
 
-    public String getMaritalStatus() {
-        return maritalStatus;
-    }
+	public String getMobile(){
+		return mobile;
+	}
 
-    public String getProfileImage() {
-        return profileImage;
-    }
+	public String getDistanceToCollege(){
+		return distanceToCollege;
+	}
 
-    public String getRollNo() {
-        return rollNo;
-    }
+	public Object getCareerPlan(){
+		return careerPlan;
+	}
 
-    public Object getStaffId() {
-        return staffId;
-    }
+	public String getStudentId(){
+		return studentId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getReligion(){
+		return religion;
+	}
 
-    public String getBloodGroup() {
-        return bloodGroup;
-    }
+	public String getResidingAt(){
+		return residingAt;
+	}
 
-    public String getJoiningYear() {
-        return joiningYear;
-    }
+	public String getMaritalStatus(){
+		return maritalStatus;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getName(){
+		return name;
+	}
 
+	public String getBloodGroup(){
+		return bloodGroup;
+	}
 
-    public String getAdmissionNo() {
-        return admissionNo;
-    }
+	public String getAdmissionNo(){
+		return admissionNo;
+	}
 }

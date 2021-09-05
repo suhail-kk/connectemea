@@ -171,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView56">
 
         <TextView
-            android:id="@+id/textView76"
+            android:id="@+id/sub1display"
             style="@style/subheading2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -205,7 +205,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout24">
 
         <TextView
-            android:id="@+id/textView85"
+            android:id="@+id/sub4display"
             style="@style/subheading2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -249,7 +249,7 @@
             tools:layout_editor_absoluteY="132dp" />
 
         <TextView
-            android:id="@+id/textView88"
+            android:id="@+id/sub5display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

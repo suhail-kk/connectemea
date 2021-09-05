@@ -1,10 +1,13 @@
 package com.example.emea.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,8 @@ import com.example.emea.Activity.MainActivity;
 import com.example.emea.R;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
+    SharedPreferences sharedPreferences;
+
 
 
     public SettingsFragment() {
@@ -59,11 +64,28 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                SharedPreferences shared =getActivity(). getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = shared.edit();
+                editor.clear();
+                editor.commit();
+
+
                 Intent myIntent = new Intent(getActivity(), MainActivity.class);
                 startActivity(myIntent);
+
+
+
+
+//                Log.d(TAG, sharedPreferences.getString("email", ""));
+//
+//                Log.d(TAG, sharedPreferences.getString("password", ""));
             }
         });
+
         return view;
+
 
     }
 
@@ -72,3 +94,4 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
 
     }
 }
+

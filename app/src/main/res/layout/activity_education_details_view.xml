@@ -35,10 +35,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
     <TextView
-        android:id="@+id/textView58"
+        android:id="@+id/schooldisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GHSS Ramapuram"
+
         style="@style/viewdetails"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@+id/textView55"
@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView58"
-        app:layout_constraintStart_toStartOf="@+id/textView58"
-        app:layout_constraintTop_toBottomOf="@+id/textView58">
+        app:layout_constraintEnd_toEndOf="@+id/schooldisplay"
+        app:layout_constraintStart_toStartOf="@+id/schooldisplay"
+        app:layout_constraintTop_toBottomOf="@+id/schooldisplay">
 
         <TextView
             android:id="@+id/textView59"
@@ -66,12 +66,12 @@
             tools:layout_editor_absoluteY="150dp" />
 
         <TextView
-            android:id="@+id/textView60"
+            android:id="@+id/mediumdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="English"
+
             tools:layout_editor_absoluteX="215dp"
             tools:layout_editor_absoluteY="180dp" />
 
@@ -109,13 +109,13 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/textView63"
+            android:id="@+id/englishsslcdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
-            android:text="90"
+
             tools:layout_editor_absoluteX="97dp"
             tools:layout_editor_absoluteY="306dp" />
 
@@ -144,13 +144,13 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/textView65"
+            android:id="@+id/mathssslcdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
-            android:text="90"
+
             tools:layout_editor_absoluteX="97dp"
             tools:layout_editor_absoluteY="306dp" />
 
@@ -178,13 +178,13 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/textView67"
+            android:id="@+id/sciencesslcdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
-            android:text="90"
+
             tools:layout_editor_absoluteX="97dp"
             tools:layout_editor_absoluteY="306dp" />
 
@@ -212,13 +212,13 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/textView68"
+            android:id="@+id/socialsslcdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
-            android:text="90"
+
             tools:layout_editor_absoluteX="97dp"
             tools:layout_editor_absoluteY="306dp" />
 
@@ -248,10 +248,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView70" />
 
     <TextView
-        android:id="@+id/textView72"
+        android:id="@+id/plustwoschooldisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GHSS Ramapuram"
+
         style="@style/viewdetails"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@+id/textView71"
@@ -264,9 +264,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView72"
-        app:layout_constraintStart_toStartOf="@+id/textView72"
-        app:layout_constraintTop_toBottomOf="@+id/textView72">
+        app:layout_constraintEnd_toEndOf="@+id/plustwoschooldisplay"
+        app:layout_constraintStart_toStartOf="@+id/plustwoschooldisplay"
+        app:layout_constraintTop_toBottomOf="@+id/plustwoschooldisplay">
 
         <TextView
             android:id="@+id/textView73"
@@ -279,12 +279,12 @@
             tools:layout_editor_absoluteY="443dp" />
 
         <TextView
-            android:id="@+id/textView74"
+            android:id="@+id/plustwosyllabusdisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Kerala state"
+
             tools:layout_editor_absoluteX="293dp"
             tools:layout_editor_absoluteY="398dp" />
 
@@ -323,7 +323,7 @@
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/textView76"
+            android:id="@+id/sub1display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -357,7 +357,7 @@
             tools:layout_editor_absoluteY="461dp" />
 
         <TextView
-            android:id="@+id/textView79"
+            android:id="@+id/sub2display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -389,7 +389,7 @@
             tools:layout_editor_absoluteY="488dp" />
 
         <TextView
-            android:id="@+id/textView83"
+            android:id="@+id/sub3display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -421,7 +421,7 @@
             tools:layout_editor_absoluteY="488dp" />
 
         <TextView
-            android:id="@+id/textView85"
+            android:id="@+id/sub4display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -453,7 +453,7 @@
             tools:layout_editor_absoluteY="488dp" />
 
         <TextView
-            android:id="@+id/textView88"
+            android:id="@+id/sub5display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -485,7 +485,7 @@
             tools:layout_editor_absoluteY="488dp" />
 
         <TextView
-            android:id="@+id/textView91"
+            android:id="@+id/sub6display"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
