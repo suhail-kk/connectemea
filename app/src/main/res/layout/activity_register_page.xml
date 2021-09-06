@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.RegisterPage"
-    android:padding="40dp"
+    android:padding="20dp"
+    android:background="@color/background"
     android:layout_gravity="center">
 
     <TextView
@@ -34,6 +35,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -54,6 +56,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -72,6 +75,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -92,6 +96,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirmpassword"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

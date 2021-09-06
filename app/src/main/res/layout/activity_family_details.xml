@@ -7,13 +7,14 @@
         android:id="@+id/FOccupation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="134dp"
+    android:background="@color/background"
+    tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="86dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="40dp"
+        android:padding="20dp"
         tools:context=".Activity.FamilyDetails">
 
         <TextView
@@ -40,6 +41,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fname"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -58,6 +60,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/feducation"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -77,6 +80,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/foccupation"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -95,6 +99,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fincome"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -124,6 +129,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/mname"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -142,6 +148,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/meducation"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -160,6 +167,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/moccupation"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -178,6 +186,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/mincome"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -208,6 +217,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/gname"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -226,6 +236,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/geducation"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -244,6 +255,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/goccupation"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -262,6 +274,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/gincome"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

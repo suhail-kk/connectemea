@@ -4,13 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/background"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="40dp"
+        android:padding="20dp"
         tools:context=".Activity.PersonalDetails">
 
 
@@ -28,6 +29,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -65,6 +67,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/admissionno"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -75,6 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/AdmissionNumber"
             app:layout_constraintStart_toStartOf="@+id/AdmissionNumber"
             app:layout_constraintTop_toBottomOf="@+id/AdmissionNumber">
@@ -84,13 +88,13 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Roll No"
                 tools:ignore="DuplicateIds">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/rollnumber"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -102,12 +106,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+
                 android:layout_weight="1"
                 android:hint="Year of admission">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/yearofadmission"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -120,6 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -129,7 +135,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Gender">
 
@@ -148,7 +153,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Blood Group"
                 tools:ignore="DuplicateIds">
@@ -170,6 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
             app:layout_constraintStart_toStartOf="@+id/linearLayout3"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -179,12 +184,13 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Date of birth">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Birth"
+                    android:hint="dd/mm/yyy"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -196,7 +202,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Marital Status">
 
@@ -216,6 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
             app:layout_constraintStart_toStartOf="@+id/linearLayout4"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
@@ -225,7 +231,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Religion"
                 tools:ignore="DuplicateIds">
@@ -245,7 +250,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:hint="Caste"
                 tools:ignore="DuplicateIds">
@@ -262,20 +266,57 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/IdentificationMark1"
+            android:id="@+id/outlinedTextField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Permenent Address"
             android:layout_marginTop="8dp"
-            android:hint="1.Identification Mark"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
             app:layout_constraintStart_toStartOf="@+id/linearLayout5"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="6"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/presentAddress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Present Address"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/outlinedTextField"
+            app:layout_constraintStart_toStartOf="@+id/outlinedTextField"
+            app:layout_constraintTop_toBottomOf="@+id/outlinedTextField">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="6"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/IdentificationMark1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="1.Identification Mark"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/presentAddress"
+            app:layout_constraintStart_toStartOf="@+id/presentAddress"
+            app:layout_constraintTop_toBottomOf="@+id/presentAddress">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/identificationmark1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:maxLines="2" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -292,6 +333,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/identificationmark2"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

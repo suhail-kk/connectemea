@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.HomePage">
 
@@ -29,10 +30,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:mbn_backgroundBottomColor="@color/purple_700"
+        app:mbn_backgroundBottomColor="@color/navbar"
         app:mbn_circleColor="@color/white"
         app:mbn_countBackgroundColor="#012519"
         app:mbn_countTextColor="@color/white"
         app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="@color/purple_700" />
+        app:mbn_selectedIconColor="@color/navbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

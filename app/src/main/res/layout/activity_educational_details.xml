@@ -10,7 +10,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
+        android:padding="20dp"
         tools:context=".Activity.EducationalDetails">
         <TextView
             android:id="@+id/sslc"
@@ -36,6 +36,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/schoolname"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -117,6 +118,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/englishsslc"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -133,6 +135,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/mathssslc"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -160,6 +163,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/sciencesslc"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -176,6 +180,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/socialsslc"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -208,6 +213,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/hseschoolName"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -226,6 +232,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/hsesyllabus"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -280,6 +287,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark1"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -325,6 +333,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark2"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -371,6 +380,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark3"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -415,6 +425,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark4"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -458,6 +469,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark5"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -501,6 +513,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark6"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -533,6 +546,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ugcollegeName"
+                android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -612,6 +626,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dgrsubCore"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -629,6 +644,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dgrsubComp"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -658,6 +674,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dgrsubEng"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -675,6 +692,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dgrsubLang"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -692,6 +710,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dgrsubOpen"
+                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -744,6 +763,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qualicrsName"
+                    android:maxLines="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -761,6 +781,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qualicrstype"
+                    android:maxLines="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -789,6 +810,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qualiIstnname"
+                    android:maxLines="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -806,6 +828,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qualiuniversity"
+                    android:maxLines="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
