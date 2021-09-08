@@ -1,14 +1,17 @@
 package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emea.Fragments.HomePage;
@@ -31,11 +34,23 @@ public class RecoveryPassword extends AppCompatActivity {
     Button btnReset;
     String status;
     String authentoken;
+    TextView txtRecovery;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_recovery_password);
+
+        txtRecovery = findViewById(R.id.changepassword);
+
+        txtRecovery = findViewById(R.id.login);
+
+        Typeface typeface = ResourcesCompat.getFont(
+                this,
+                R.font.poppins_regular);
+        txtRecovery.setTypeface(typeface);
 
 
         txtPassword=findViewById(R.id.recovery_password);

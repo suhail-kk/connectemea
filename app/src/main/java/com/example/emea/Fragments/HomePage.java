@@ -1,6 +1,7 @@
 package com.example.emea.Fragments;
 
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,9 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home_page);
+
 
 
 
@@ -68,13 +71,13 @@ public class HomePage extends AppCompatActivity {
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(HomePage.this, "", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HomePage.this, "", Toast.LENGTH_SHORT).show();
             }
         });
         bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(HomePage.this, "", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HomePage.this, "", Toast.LENGTH_SHORT).show();
             }
         });
     }

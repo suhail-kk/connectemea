@@ -1,14 +1,17 @@
 package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emea.Fragments.HomePage;
@@ -32,10 +35,21 @@ public class ForgotPassword extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String status;
     String authentoken;
+    TextView txtForgot;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        getSupportActionBar().hide();
+
+        txtForgot = findViewById(R.id.forgot);
+
+        Typeface typeface = ResourcesCompat.getFont(
+                this,
+                R.font.poppins_regular);
+        txtForgot.setTypeface(typeface);
 
 
         txtEmail = findViewById(R.id.forgot_email);

@@ -11,10 +11,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.emea.Activity.Help;
 import com.example.emea.Activity.MainActivity;
+import com.example.emea.Activity.PersonalDetails;
 import com.example.emea.R;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
@@ -40,26 +43,21 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        TextView account = (TextView) view.findViewById(R.id.account);
+
         TextView logout = (TextView) view.findViewById(R.id.logout);
         TextView help = (TextView) view.findViewById(R.id.help);
-        ImageView accountimg = (ImageView) view.findViewById(R.id.account_image);
-        ImageView logoutimg = (ImageView) view.findViewById(R.id.logout_image);
-        ImageView helpimg = (ImageView) view.findViewById(R.id.help_image);
 
-        account.setText("Account");
         logout.setText("Logout");
         help.setText("Help");
-        accountimg.setImageResource(R.drawable.account);
-        logoutimg.setImageResource(R.drawable.logout);
-        helpimg.setImageResource(R.drawable.help);
 
-        account.setOnClickListener(new View.OnClickListener() {
+        help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent newIntent = new Intent(getActivity().getApplicationContext(), Help.class);
+                startActivity(newIntent);
             }
         });
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

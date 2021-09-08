@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:background="@color/background"
-    tools:context=".Activity.PersonalDetailView">
+    android:padding="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.PersonalDetailView">
+
 
 
     <LinearLayout
@@ -22,24 +28,12 @@
             android:id="@+id/textView15"
             style="@style/viewdetails"
             android:layout_width="0dp"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Jhon" />
 
-        <ImageView
-            android:id="@+id/usrImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:src="@drawable/user_image"
-            android:layout_gravity="center"
-            app:layout_constraintHeight_percent="0.25"
-            app:layout_constraintWidth_percent="0.25"/>
-
     </LinearLayout>
-
-
 
 
     <LinearLayout
@@ -379,9 +373,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/textView37"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout20"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout20"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout20" />
+        app:layout_constraintEnd_toStartOf="@+id/textView37"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout20"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/textView37"
@@ -390,7 +389,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="jhon@gmail.com"
+        app:layout_constraintBottom_toTopOf="@+id/textView38"
         app:layout_constraintEnd_toEndOf="@+id/textView36"
+        app:layout_constraintEnd_toStartOf="@+id/textView38"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
         app:layout_constraintStart_toStartOf="@+id/textView36"
         app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
@@ -401,34 +404,83 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Permanent Address"
+        app:layout_constraintBottom_toTopOf="@+id/textView39"
         app:layout_constraintEnd_toEndOf="@+id/textView37"
+        app:layout_constraintEnd_toStartOf="@+id/textView39"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView37"
         app:layout_constraintStart_toStartOf="@+id/textView37"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
     <TextView
         android:id="@+id/textView39"
+        style="@style/viewdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:inputType="textMultiLine"
         android:lines="8"
-        android:maxLines="10"
+        android:maxLines="6"
         android:minLines="3"
         android:scrollbars="vertical"
         android:text="jhon"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/textView38"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintStart_toStartOf="@+id/textView38"
         app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/viewheading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Present Address"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/textView39"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView39"
+        app:layout_constraintStart_toStartOf="@+id/textView39"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/viewdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:lines="8"
+        android:maxLines="6"
+        android:minLines="3"
+        android:scrollbars="vertical"
+        android:text="Ramapuram"
+        app:layout_constraintBottom_toTopOf="@+id/textView40"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/textView40"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
 
     <TextView
         android:id="@+id/textView40"
         style="@style/viewheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="Category of Admission"
+        app:layout_constraintBottom_toTopOf="@+id/textView41"
         app:layout_constraintEnd_toEndOf="@+id/textView39"
+        app:layout_constraintEnd_toStartOf="@+id/textView41"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView41"
@@ -437,7 +489,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="General"
+        app:layout_constraintBottom_toTopOf="@+id/textView42"
         app:layout_constraintEnd_toEndOf="@+id/textView40"
+        app:layout_constraintEnd_toStartOf="@+id/textView42"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView40"
         app:layout_constraintStart_toStartOf="@+id/textView40"
         app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
@@ -448,7 +504,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="If Management quota. Who recommended for admission"
+        app:layout_constraintBottom_toTopOf="@+id/textView45"
         app:layout_constraintEnd_toEndOf="@+id/textView41"
+        app:layout_constraintEnd_toStartOf="@+id/textView43"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView41"
         app:layout_constraintStart_toStartOf="@+id/textView41"
         app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
@@ -459,7 +519,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="1.Block mole"
+        app:layout_constraintBottom_toTopOf="@+id/textView46"
         app:layout_constraintEnd_toEndOf="@+id/textView44"
+        app:layout_constraintEnd_toStartOf="@+id/textView44"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView42"
         app:layout_constraintStart_toStartOf="@+id/textView44"
         app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
@@ -470,7 +534,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Idenfication Marks"
+        app:layout_constraintBottom_toTopOf="@+id/textView43"
         app:layout_constraintEnd_toEndOf="@+id/textView45"
+        app:layout_constraintEnd_toStartOf="@+id/textView45"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView43"
         app:layout_constraintStart_toStartOf="@+id/textView45"
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
@@ -481,6 +549,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Nil"
+        app:layout_constraintBottom_toTopOf="@+id/textView44"
+        app:layout_constraintEnd_toStartOf="@+id/textView46"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView44"
         app:layout_constraintStart_toStartOf="@+id/textView42"
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
@@ -491,9 +563,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="2.Black Mole"
-        app:layout_constraintEnd_toEndOf="@+id/textView43"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView45"
         app:layout_constraintStart_toStartOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/textView43" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

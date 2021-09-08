@@ -1,20 +1,26 @@
 package com.example.emea.Fragments;
 
+import static android.graphics.Typeface.createFromAsset;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -83,6 +89,7 @@ public class HomeFragment extends Fragment{
 
 
 
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -109,18 +116,19 @@ public class HomeFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
 
+
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
         SharedPreferences shared = this.getActivity().getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
         authtoken = (shared.getString("token", ""));
 
-        pgBar.setVisibility(View.VISIBLE);
+
         //  String authtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiZW1haWwiOiJsdW5hQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibHVuYSIsInJlZ2lzdGVyZWQiOnRydWV9.-h25wAytDq3zqu3RPESwJ5QGfkJvncgSHBKWZoMERiI";
         Call<StudentItem> studentCall = apiCall.getUser(authtoken);
         studentCall.enqueue(new Callback<StudentItem>() {
             @Override
             public void onResponse(Call<StudentItem> call, Response<StudentItem> response) {
-                pgBar.setVisibility(View.GONE);
+//                pgBar.setVisibility(View.GONE);
 
                 studentName = response.body().getName();
                 studentAdmission=response.body().getAdmissionNo();
@@ -178,12 +186,14 @@ public class HomeFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view= inflater.inflate(R.layout.fragment_home, container, false);
+        View view= inflater.inflate(R.layout.fragment_home, container, false);
 
-        pgBar=view.findViewById(R.id.progressBarView);
+
+
       //  return inflater.inflate(R.layout.fragment_home, container, false);
         return  view;
 
     }
+
 
 }

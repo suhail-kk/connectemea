@@ -10,12 +10,15 @@
     <color name="button_color">#0038BF</color>
     <color name="main_heading">#0038BF</color>
     <color name="heading">#2565ae</color>
-    <color name="sub_heading">#0038BF</color>
+    <color name="sub_heading">#2565ae</color>
     <color name="text_color">#00BBFF</color>
     <color name="file_upload_theme">#038DFE</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#2565ae</color>
-    <color name="background">#f3ead8</color>
+    <color name="background">#faf7ef</color>
     <color name="navbar">#2565ae</color>
+    <color name="icon_color">#2565ae</color>
+
+<!--    f3ead8-->
 
 
 

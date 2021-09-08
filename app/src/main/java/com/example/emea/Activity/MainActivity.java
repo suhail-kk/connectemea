@@ -2,9 +2,11 @@ package com.example.emea.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +33,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     TextInputEditText txtEmail, txtPassword;
 Button btnLogin;
-TextView btnforgot,btnregister;
+TextView btnforgot,btnregister,loginText;
     ProgressBar pgBar;
   //  TextView txtForgot;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -46,7 +48,15 @@ TextView btnforgot,btnregister;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().hide();
+
+        loginText = findViewById(R.id.login);
+
+        Typeface typeface = ResourcesCompat.getFont(
+                this,
+                R.font.poppins_regular);
+        loginText.setTypeface(typeface);
+
 
 
          btnforgot=findViewById((R.id.forgotpass));
