@@ -14,12 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.emea.Fragments.HomePage;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
 import com.example.emea.Response.ForgotResponse;
-import com.example.emea.Response.RegisterResponse;
 
 import java.util.HashMap;
 

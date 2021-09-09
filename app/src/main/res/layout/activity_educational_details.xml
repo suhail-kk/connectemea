@@ -297,7 +297,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout10"
+            android:id="@+id/linearLayoutPersonal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -344,14 +344,14 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout12"
+            android:id="@+id/linearLayoutEducation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout10"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout10"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+            app:layout_constraintEnd_toEndOf="@+id/linearLayoutPersonal"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutPersonal"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutPersonal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/hseSubName3"
@@ -394,9 +394,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout12"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout12"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+            app:layout_constraintEnd_toEndOf="@+id/linearLayoutEducation"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutEducation"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutEducation">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/hseSubName4"

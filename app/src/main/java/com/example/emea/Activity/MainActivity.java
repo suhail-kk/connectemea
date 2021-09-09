@@ -1,6 +1,5 @@
 package com.example.emea.Activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
@@ -10,13 +9,11 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.emea.Fragments.HomePage;
 import com.example.emea.Response.LoggingResponse;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;

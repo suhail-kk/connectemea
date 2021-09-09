@@ -14,7 +14,7 @@
     <color name="text_color">#00BBFF</color>
     <color name="file_upload_theme">#038DFE</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#2565ae</color>
-    <color name="background">#faf7ef</color>
+    <color name="background">#dee2ff</color>
     <color name="navbar">#2565ae</color>
     <color name="icon_color">#2565ae</color>
 

@@ -103,7 +103,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout13"
+        android:id="@+id/linearLayoutFamily"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -141,9 +141,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout13"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout13"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+        app:layout_constraintEnd_toEndOf="@+id/linearLayoutFamily"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutFamily"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutFamily">
 
         <TextView
             android:id="@+id/textView22"
