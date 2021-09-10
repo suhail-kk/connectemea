@@ -14,529 +14,681 @@
         android:padding="10dp"
         tools:context=".Activity.EducationDetailsView">
 
-    <TextView
-        android:id="@+id/textView54"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1.SSLC/10"
-        style="@style/viewheading"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView55"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="School Name"
-        style="@style/subheading2"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView54"
-        app:layout_constraintStart_toStartOf="@+id/textView54"
-        app:layout_constraintTop_toBottomOf="@+id/textView54" />
-
-    <TextView
-        android:id="@+id/schooldisplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        style="@style/viewdetails"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView55"
-        app:layout_constraintStart_toStartOf="@+id/textView55"
-        app:layout_constraintTop_toBottomOf="@+id/textView55" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout28"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/schooldisplay"
-        app:layout_constraintStart_toStartOf="@+id/schooldisplay"
-        app:layout_constraintTop_toBottomOf="@+id/schooldisplay">
-
-        <TextView
-            android:id="@+id/textView59"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Medium of Instruction"
-            tools:layout_editor_absoluteX="93dp"
-            tools:layout_editor_absoluteY="150dp" />
-
-        <TextView
-            android:id="@+id/mediumdisplay"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            tools:layout_editor_absoluteX="215dp"
-            tools:layout_editor_absoluteY="180dp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView61"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Marks obtained (in %)"
-        android:layout_marginTop="4dp"
-        style="@style/subheading2"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout28"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout28"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout28" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout33"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView61"
-        app:layout_constraintStart_toStartOf="@+id/textView61"
-        app:layout_constraintTop_toBottomOf="@+id/textView61">
-
-        <TextView
-            android:id="@+id/textView62"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="English"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="238dp" />
-
-        <TextView
-            android:id="@+id/englishsslcdisplay"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-
-            tools:layout_editor_absoluteX="97dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout34"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout33"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout33"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout33">
-
-        <TextView
-            android:id="@+id/textView64"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Maths"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="238dp" />
-
-        <TextView
-            android:id="@+id/mathssslcdisplay"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-
-            tools:layout_editor_absoluteX="97dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout35"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout34"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout34"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout34">
-
-        <TextView
-            android:id="@+id/textView66"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Science"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="238dp" />
-
-        <TextView
-            android:id="@+id/sciencesslcdisplay"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-
-            tools:layout_editor_absoluteX="97dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout36"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout35"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout35"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout35">
-
-        <TextView
-            android:id="@+id/textView69"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Social Science"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="238dp" />
-
-        <TextView
-            android:id="@+id/socialsslcdisplay"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-
-            tools:layout_editor_absoluteX="97dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView70"
-        style="@style/viewheading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2.PLUS TWO/VHSE"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout36"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout36"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout36" />
-
-    <TextView
-        android:id="@+id/textView71"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="School Name"
-        style="@style/subheading2"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView70"
-        app:layout_constraintStart_toStartOf="@+id/textView70"
-        app:layout_constraintTop_toBottomOf="@+id/textView70" />
-
-    <TextView
-        android:id="@+id/plustwoschooldisplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        style="@style/viewdetails"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView71"
-        app:layout_constraintStart_toStartOf="@+id/textView71"
-        app:layout_constraintTop_toBottomOf="@+id/textView71" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout37"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/plustwoschooldisplay"
-        app:layout_constraintStart_toStartOf="@+id/plustwoschooldisplay"
-        app:layout_constraintTop_toBottomOf="@+id/plustwoschooldisplay">
-
-        <TextView
-            android:id="@+id/textView73"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Syllabus"
-            tools:layout_editor_absoluteX="132dp"
-            tools:layout_editor_absoluteY="443dp" />
-
-        <TextView
-            android:id="@+id/plustwosyllabusdisplay"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            tools:layout_editor_absoluteX="293dp"
-            tools:layout_editor_absoluteY="398dp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView75"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Marks obtained (in %)"
-        style="@style/subheading2"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout37"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout37"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout37" />
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout38"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView75"
-        app:layout_constraintStart_toStartOf="@+id/textView75"
-        app:layout_constraintTop_toBottomOf="@+id/textView75">
-
-        <TextView
-            android:id="@+id/textView77"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="English"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="238dp" />
-
-        <TextView
-            android:id="@+id/sub1display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="90"
-            tools:layout_editor_absoluteX="97dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout39"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout38"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout38"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout38">
-
-        <TextView
-            android:id="@+id/textView78"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="sub2"
-            tools:layout_editor_absoluteX="105dp"
-            tools:layout_editor_absoluteY="461dp" />
-
-        <TextView
-            android:id="@+id/sub2display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="90"
-            tools:layout_editor_absoluteX="267dp"
-            tools:layout_editor_absoluteY="480dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout40"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout39"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout39"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout39">
-
-        <TextView
-            android:id="@+id/textView80"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="sub3"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="488dp" />
-
-        <TextView
-            android:id="@+id/sub3display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="90"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="618dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout41"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout40"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout40"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout40">
-
-        <TextView
-            android:id="@+id/textView84"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="sub4"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="488dp" />
-
-        <TextView
-            android:id="@+id/sub4display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="90"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="618dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout42"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout41"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout41"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout41">
-
-        <TextView
-            android:id="@+id/textView87"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="sub5"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="488dp" />
-
-        <TextView
-            android:id="@+id/sub5display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="90"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="618dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout44"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout42"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout42"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout42">
-
-        <TextView
-            android:id="@+id/textView90"
-            style="@style/subheading3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="sub6"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="488dp" />
-
-        <TextView
-            android:id="@+id/sub6display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="90"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="618dp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView92"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="3.Degree"
-        style="@style/viewheading"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout44"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout44"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout44" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_degree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView92"
-        app:layout_constraintStart_toStartOf="@+id/textView92"
-        app:layout_constraintTop_toBottomOf="@+id/textView92" />
-
-        <TextView
-            android:id="@+id/textView125"
-            style="@style/viewheading"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            style="@style/fam_Details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4.Other Qualification"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="@+id/recycler_degree"
-            app:layout_constraintStart_toStartOf="@+id/recycler_degree"
-            app:layout_constraintTop_toBottomOf="@+id/recycler_degree" />
+            android:background="@drawable/fam_dtls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/materialCardView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_qualification"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp">
+
+                <TextView
+                    android:id="@+id/textView54"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="1.SSLC/10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView55"
+                    style="@style/subheading2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView54"
+                    android:layout_alignStart="@+id/textView54"
+                    android:layout_alignEnd="@+id/textView54"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="School Name"
+                    app:layout_constraintEnd_toEndOf="@+id/textView54"
+                    app:layout_constraintStart_toStartOf="@+id/textView54"
+                    app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+                <TextView
+                    android:id="@+id/schooldisplay"
+                    style="@style/viewdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView55"
+                    android:layout_alignStart="@+id/textView55"
+                    android:layout_alignEnd="@+id/textView55"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Gvhss kumminiparambu" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout38"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/schooldisplay"
+                    android:layout_alignStart="@+id/schooldisplay"
+                    android:layout_alignEnd="@+id/schooldisplay"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/schooldisplay"
+                    app:layout_constraintStart_toStartOf="@+id/schooldisplay"
+                    app:layout_constraintTop_toBottomOf="@+id/schooldisplay">
+
+                    <TextView
+                        android:id="@+id/linearLayout67"
+                        style="@style/subheading2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Medium of Instruction"
+                        tools:layout_editor_absoluteX="93dp"
+                        tools:layout_editor_absoluteY="150dp" />
+
+                    <TextView
+                        android:id="@+id/mediumDisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        tools:layout_editor_absoluteX="215dp"
+                        tools:layout_editor_absoluteY="180dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView61"
+                    style="@style/subheading2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout38"
+                    android:layout_alignStart="@+id/linearLayout38"
+                    android:layout_alignEnd="@+id/linearLayout38"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Marks obtained (in %)" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout323"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView61"
+                    android:layout_alignStart="@+id/textView61"
+                    android:layout_alignEnd="@+id/textView61"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/textView61"
+                    app:layout_constraintStart_toStartOf="@+id/textView61"
+                    app:layout_constraintTop_toBottomOf="@+id/textView61">
+
+                    <TextView
+                        android:id="@+id/textView762"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="English"
+                        tools:layout_editor_absoluteX="158dp"
+                        tools:layout_editor_absoluteY="238dp" />
+
+                    <TextView
+                        android:id="@+id/englishsslcdisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        tools:layout_editor_absoluteX="97dp"
+                        tools:layout_editor_absoluteY="306dp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout344"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout323"
+                    android:layout_alignStart="@+id/linearLayout323"
+                    android:layout_alignEnd="@+id/linearLayout323"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout33"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout33"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout33"
+                    tools:ignore="UnknownId">
+
+                    <TextView
+                        android:id="@+id/textView64"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maths"
+                        tools:layout_editor_absoluteX="158dp"
+                        tools:layout_editor_absoluteY="238dp" />
+
+                    <TextView
+                        android:id="@+id/mathssslcdisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+
+                        tools:layout_editor_absoluteX="97dp"
+                        tools:layout_editor_absoluteY="306dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout344"
+                    android:layout_alignStart="@+id/linearLayout344"
+                    android:layout_alignEnd="@+id/linearLayout344"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView66"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Science"
+                        tools:layout_editor_absoluteX="158dp"
+                        tools:layout_editor_absoluteY="238dp" />
+
+                    <TextView
+                        android:id="@+id/sciencesslcdisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+
+                        tools:layout_editor_absoluteX="97dp"
+                        tools:layout_editor_absoluteY="306dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout36"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout35"
+                    android:layout_alignStart="@+id/linearLayout35"
+                    android:layout_alignEnd="@+id/linearLayout35"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView69"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Social Science"
+                        tools:layout_editor_absoluteX="158dp"
+                        tools:layout_editor_absoluteY="238dp" />
+
+                    <TextView
+                        android:id="@+id/socialsslcdisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+
+                        tools:layout_editor_absoluteX="97dp"
+                        tools:layout_editor_absoluteY="306dp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            style="@style/fam_Details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="@+id/textView125"
-            app:layout_constraintStart_toStartOf="@+id/textView125"
-            app:layout_constraintTop_toBottomOf="@+id/textView125"/>
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fam_dtls"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintEnd_toStartOf="@+id/materialCardView3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp">
+
+                <TextView
+                    android:id="@+id/textView70"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="2.PLUS TWO/VHSE" />
+
+
+                <TextView
+                    android:id="@+id/textView71"
+                    style="@style/subheading2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView70"
+                    android:layout_alignStart="@+id/textView70"
+                    android:layout_alignEnd="@+id/textView70"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="School Name" />
+
+
+                <TextView
+                    android:id="@+id/plustwoschooldisplay"
+                    style="@style/viewdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView71"
+                    android:layout_alignStart="@+id/textView71"
+                    android:layout_alignEnd="@+id/textView71"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Gvhss Tharayittal"
+                    app:layout_constraintEnd_toEndOf="@+id/textView71"
+                    app:layout_constraintStart_toStartOf="@+id/textView71"
+                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/plustwoschooldisplay"
+                    android:layout_alignStart="@+id/plustwoschooldisplay"
+                    android:layout_alignEnd="@+id/plustwoschooldisplay"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView73"
+                        style="@style/subheading2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Syllabus"
+                        tools:layout_editor_absoluteX="132dp"
+                        tools:layout_editor_absoluteY="443dp" />
+
+                    <TextView
+                        android:id="@+id/plustwosyllabusdisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        tools:layout_editor_absoluteX="293dp"
+                        tools:layout_editor_absoluteY="398dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView75"
+                    style="@style/subheading2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout37"
+                    android:layout_alignStart="@+id/linearLayout37"
+                    android:layout_alignEnd="@+id/linearLayout37"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Marks obtained (in %)" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout381"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView75"
+                    android:layout_alignStart="@+id/textView75"
+                    android:layout_alignEnd="@+id/textView75"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView77"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="English"
+                        tools:layout_editor_absoluteX="158dp"
+                        tools:layout_editor_absoluteY="238dp" />
+
+                    <TextView
+                        android:id="@+id/sub1display"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:text="90"
+                        tools:layout_editor_absoluteX="97dp"
+                        tools:layout_editor_absoluteY="306dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout39"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout381"
+                    android:layout_alignStart="@+id/linearLayout381"
+                    android:layout_alignEnd="@+id/linearLayout381"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView78"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="sub2"
+                        tools:layout_editor_absoluteX="105dp"
+                        tools:layout_editor_absoluteY="461dp" />
+
+                    <TextView
+                        android:id="@+id/sub2display"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="90"
+                        tools:layout_editor_absoluteX="267dp"
+                        tools:layout_editor_absoluteY="480dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout39"
+                    android:layout_alignStart="@+id/linearLayout39"
+                    android:layout_alignEnd="@+id/linearLayout39"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView80"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="sub3"
+                        tools:layout_editor_absoluteX="154dp"
+                        tools:layout_editor_absoluteY="488dp" />
+
+                    <TextView
+                        android:id="@+id/sub3display"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="90"
+                        tools:layout_editor_absoluteX="139dp"
+                        tools:layout_editor_absoluteY="618dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout40"
+                    android:layout_alignStart="@+id/linearLayout40"
+                    android:layout_alignEnd="@+id/linearLayout40"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView84"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="sub4"
+                        tools:layout_editor_absoluteX="154dp"
+                        tools:layout_editor_absoluteY="488dp" />
+
+                    <TextView
+                        android:id="@+id/sub4display"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="90"
+                        tools:layout_editor_absoluteX="139dp"
+                        tools:layout_editor_absoluteY="618dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout41"
+                    android:layout_alignStart="@+id/linearLayout41"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView87"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="sub5"
+                        tools:layout_editor_absoluteX="154dp"
+                        tools:layout_editor_absoluteY="488dp" />
+
+                    <TextView
+                        android:id="@+id/sub5display"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="90"
+                        tools:layout_editor_absoluteX="139dp"
+                        tools:layout_editor_absoluteY="618dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout42"
+                    android:layout_alignStart="@+id/linearLayout42"
+                    android:layout_alignEnd="@+id/linearLayout42"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView90"
+                        style="@style/subheading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="sub6"
+                        tools:layout_editor_absoluteX="154dp"
+                        tools:layout_editor_absoluteY="488dp" />
+
+                    <TextView
+                        android:id="@+id/sub6display"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="90"
+                        tools:layout_editor_absoluteX="139dp"
+                        tools:layout_editor_absoluteY="618dp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
+            style="@style/fam_Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fam_dtls"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
+            app:layout_constraintEnd_toStartOf="@+id/materialCardView4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView2"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView2"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp">
+
+
+                <TextView
+                    android:id="@+id/textView92"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="3.Degree" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_degree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView92"
+                    android:layout_alignStart="@+id/textView92"
+                    android:layout_alignEnd="@+id/textView92"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp" />
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView4"
+            style="@style/fam_Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fam_dtls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView3"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView3"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp">
+
+
+                <TextView
+                    android:id="@+id/textView125"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="4.Other Qualification" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_qualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView125"
+                    android:layout_alignParentStart="@+id/textView125"
+                    android:layout_alignParentEnd="@+id/textView125"
+                    android:layout_marginTop="4dp" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

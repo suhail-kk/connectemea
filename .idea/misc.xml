@@ -9,6 +9,7 @@
         <entry key="..\:/emea_app/app/src/main/res/drawable/camera.xml" value="0.275" />
         <entry key="..\:/emea_app/app/src/main/res/drawable/contact_us.xml" value="0.2890625" />
         <entry key="..\:/emea_app/app/src/main/res/drawable/education_details.xml" value="0.2890625" />
+        <entry key="..\:/emea_app/app/src/main/res/drawable/fam_dtls.xml" value="0.2890625" />
         <entry key="..\:/emea_app/app/src/main/res/drawable/family_details.xml" value="0.2890625" />
         <entry key="..\:/emea_app/app/src/main/res/drawable/file_upload.xml" value="0.2890625" />
         <entry key="..\:/emea_app/app/src/main/res/drawable/file_upload_field.xml" value="0.2890625" />
@@ -33,6 +34,7 @@
         <entry key="..\:/emea_app/app/src/main/res/layout/activity_education_details_view.xml" value="0.33" />
         <entry key="..\:/emea_app/app/src/main/res/layout/activity_educational_details.xml" value="0.25885416666666666" />
         <entry key="..\:/emea_app/app/src/main/res/layout/activity_family_details.xml" value="0.25885416666666666" />
+        <entry key="..\:/emea_app/app/src/main/res/layout/activity_family_details_view.xml" value="0.33" />
         <entry key="..\:/emea_app/app/src/main/res/layout/activity_forgot_password.xml" value="0.25885416666666666" />
         <entry key="..\:/emea_app/app/src/main/res/layout/activity_help.xml" value="0.27291666666666664" />
         <entry key="..\:/emea_app/app/src/main/res/layout/activity_home_page.xml" value="0.25885416666666666" />
@@ -60,12 +62,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.21666666666666667" />
-      </ProjectState>
-    </option>
   </component>
 </project>

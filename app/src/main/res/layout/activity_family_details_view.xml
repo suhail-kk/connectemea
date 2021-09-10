@@ -4,445 +4,563 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:background="@color/background"
+    android:padding="10dp"
     tools:context=".Activity.FamilyDetailsView">
 
-    <TextView
-        android:id="@+id/textView47"
-        style="@style/viewheading"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        style="@style/fam_Details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Father"
+        android:background="@drawable/fam_dtls"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout21"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView47"
-        app:layout_constraintStart_toStartOf="@+id/textView47"
-        app:layout_constraintTop_toBottomOf="@+id/textView47">
-
-        <TextView
-            android:id="@+id/textView48"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:text="Name" />
-
-        <TextView
-            android:id="@+id/textView49"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:text="Joseph" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout22"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout23"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout21"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout21"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout21">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView50"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Education Qualification" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/textView51"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Plus Two" />
+            <TextView
+                android:id="@+id/textView47"
+                style="@style/viewheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
 
-    </LinearLayout>
+                android:layout_marginEnd="0dp"
+                android:text="Father"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout23"
+            <LinearLayout
+                android:id="@+id/linearLayout21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView47"
+                android:layout_alignStart="@+id/textView47"
+                android:layout_alignEnd="@+id/textView47"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView48"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:text="Name" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:text="Joseph" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout21"
+                android:layout_alignStart="@+id/linearLayout21"
+                android:layout_alignEnd="@+id/linearLayout21"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView50"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Education Qualification" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Plus Two" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout22"
+                android:layout_alignStart="@+id/linearLayout22"
+                android:layout_alignEnd="@+id/linearLayout22"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView52"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Occupation"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/textView53"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Teacher"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout23"
+                android:layout_alignStart="@+id/linearLayout23"
+                android:layout_alignEnd="@+id/linearLayout23"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView81"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Annual Income"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/textView82"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="100000"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView2"
+        style="@style/fam_Details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout22"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout22"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout22">
-
-        <TextView
-            android:id="@+id/textView52"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Occupation"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView53"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Teacher"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fam_dtls"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
 
-    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout26"
+            <TextView
+                android:id="@+id/textView56"
+                style="@style/viewheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:text="Mother"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="10dp" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView56"
+                android:layout_alignStart="@+id/textView56"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="34dp">
+
+                <TextView
+                    android:id="@+id/sub1display"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/textView77"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Luna"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout44"
+                android:layout_alignStart="@+id/linearLayout44"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="60dp">
+
+                <TextView
+                    android:id="@+id/sub4display"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Education Qualification"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/textView326"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="SSLC"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout35"
+                android:layout_alignStart="@+id/linearLayout35"
+                android:layout_alignEnd="@+id/linearLayout35"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="86dp">
+
+                <TextView
+                    android:id="@+id/textView87"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Occupation"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/sub5display"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="House Wife"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout27"
+                android:layout_alignEnd="@+id/linearLayout27"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="112dp">
+
+                <TextView
+                    android:id="@+id/textView84"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Annual Income"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/textView90"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Nil"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        style="@style/fam_Details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout23"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout23"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout23">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fam_dtls"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView2"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
 
-        <TextView
-            android:id="@+id/textView81"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Annual Income"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/textView82"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="100000"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+            <TextView
+                android:id="@+id/textView57"
+                style="@style/viewheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:text="Guardian" />
 
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView57"
+                android:layout_alignStart="@+id/textView57"
+                android:layout_alignEnd="@+id/textView57"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/textView57"
+                app:layout_constraintStart_toStartOf="@+id/textView57"
+                app:layout_constraintTop_toBottomOf="@+id/textView57">
 
-    <TextView
-        android:id="@+id/textView56"
-        style="@style/viewheading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Mother"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout26"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout26"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout26" />
+                <TextView
+                    android:id="@+id/textView94"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout24"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView56"
-        app:layout_constraintStart_toStartOf="@+id/textView56"
-        app:layout_constraintTop_toBottomOf="@+id/textView56">
-
-        <TextView
-            android:id="@+id/sub1display"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Name"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView77"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Luna"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+                <TextView
+                    android:id="@+id/textView93"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Joseph"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout25"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout24"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout24"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout24">
+            <LinearLayout
+                android:id="@+id/linearLayout31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout30"
+                android:layout_alignStart="@+id/linearLayout30"
+                android:layout_alignEnd="@+id/linearLayout30"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout30"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout30"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout30">
 
-        <TextView
-            android:id="@+id/sub4display"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Education Qualification"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
+                <TextView
+                    android:id="@+id/textView95"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Education Qualification"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
 
-        <TextView
-            android:id="@+id/textView86"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="SSLC"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout27"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout25"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout25"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout25">
-
-        <TextView
-            android:id="@+id/textView87"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Occupation"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/sub5display"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="House Wife"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+                <TextView
+                    android:id="@+id/textView96"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Plus Two"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout29"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout27"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout27"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout27">
-
-        <TextView
-            android:id="@+id/textView89"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Annual Income"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView90"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Nil"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+            </LinearLayout>
 
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout31"
+                android:layout_alignStart="@+id/linearLayout31"
+                android:layout_alignEnd="@+id/linearLayout31"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout31"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout31"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout31">
 
-    <TextView
-        android:id="@+id/textView57"
-        style="@style/viewheading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Guardian"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout29"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout29"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout29" />
+                <TextView
+                    android:id="@+id/textView97"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Occupation"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout30"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView57"
-        app:layout_constraintStart_toStartOf="@+id/textView57"
-        app:layout_constraintTop_toBottomOf="@+id/textView57">
-
-        <TextView
-            android:id="@+id/textView94"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Name"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView93"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Joseph"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+                <TextView
+                    android:id="@+id/textView98"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Teacher"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout31"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout30"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout30"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout30">
-
-        <TextView
-            android:id="@+id/textView95"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Education Qualification"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView96"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Plus Two"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+            </LinearLayout>
 
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout32"
+                android:layout_alignStart="@+id/linearLayout32"
+                android:layout_alignEnd="@+id/linearLayout32"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout32"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout32"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout32">
 
-    <LinearLayout
-        android:id="@+id/linearLayout32"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout31"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout31"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout31">
+                <TextView
+                    android:id="@+id/textView99"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Annual Income"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
 
-        <TextView
-            android:id="@+id/textView97"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Occupation"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView98"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="Teacher"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout32"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout32"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout32">
-
-        <TextView
-            android:id="@+id/textView99"
-            style="@style/subheading2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Annual Income"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="132dp" />
-
-        <TextView
-            android:id="@+id/textView100"
-            style="@style/viewdetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_weight="1"
-            android:text="100000"
-            tools:layout_editor_absoluteX="222dp"
-            tools:layout_editor_absoluteY="155dp" />
+                <TextView
+                    android:id="@+id/textView100"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="100000"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
 
 
-    </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

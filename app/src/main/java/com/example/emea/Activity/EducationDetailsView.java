@@ -114,7 +114,7 @@ public class EducationDetailsView extends AppCompatActivity {
 
                 school.setText(textschool);
                 textmedium=response.body().getMedium();
-                medium=(TextView)findViewById(R.id.mediumdisplay);
+                medium=(TextView)findViewById(R.id.mediumDisplay);
                medium.setText(textmedium);
                 textenglishsslcbox=response.body().getEnglish();
                englishsslcbox=(TextView)findViewById(R.id.englishsslcdisplay);
