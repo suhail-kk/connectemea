@@ -1,13 +1,16 @@
 package com.example.emea.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -54,6 +57,9 @@ public class PersonalDetails extends AppCompatActivity {
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         DisplayDate = (EditText) findViewById(R.id.Birth);
        // name=findViewById(R.id.nametv);
@@ -251,5 +257,11 @@ button1=findViewById(R.id.uploadPersnnlDetls);
             }
         });
 
-    }}
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+    }
+}
 

@@ -1,10 +1,13 @@
 package com.example.emea.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -85,7 +88,9 @@ public class EducationDetailsView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_education_details_view);
-//        pgBar = findViewById(R.id.progressBarView);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
 
 
@@ -159,6 +164,11 @@ public class EducationDetailsView extends AppCompatActivity {
                 Toast.makeText(EducationDetailsView.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
+        startActivityForResult(myIntent, 0);
+        return true;
     }
 }
 

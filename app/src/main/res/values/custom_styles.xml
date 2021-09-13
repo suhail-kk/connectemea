@@ -122,12 +122,13 @@
         <item name="cornerSizeBottomLeft">15dp</item>
         <item name="cardElevation">4dp</item>
         <item name="elevationOverlayColor">#000B4A</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
 
     </style>
-
-
-
-
+    <style name="MyToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="titleTextColor">@color/white</item>
+    </style>
 
 
     <!--    <style name="borderColor" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->

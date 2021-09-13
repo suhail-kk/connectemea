@@ -858,11 +858,6 @@
             app:layout_constraintTop_toBottomOf="@id/addQualification"
             app:layout_constraintEnd_toEndOf="@+id/addQualification"
             app:layout_constraintStart_toStartOf="@+id/addQualification"/>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </ScrollView>
 

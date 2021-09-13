@@ -7,17 +7,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.emea.Activity.Help;
 import com.example.emea.Activity.MainActivity;
-import com.example.emea.Activity.PersonalDetails;
 import com.example.emea.R;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {

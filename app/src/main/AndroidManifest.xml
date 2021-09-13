@@ -14,22 +14,20 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Activity.HomePage"
-            android:exported="true" />
-        <activity
-            android:name=".Activity.AppInfo"
             android:exported="true"
-            android:label="" />
+            android:label=""/>
         <activity
             android:name=".Activity.ContactUs"
             android:exported="true"
             android:label="" />
-        <activity
-            android:name=".Activity.Help"
-            android:exported="true"
-            android:label="" />
-        <activity android:name=".Activity.EducationDetailsView" />
-        <activity android:name=".Activity.FamilyDetailsView" />
-        <activity android:name=".Activity.PersonalDetailView" />
+        <activity android:name=".Activity.EducationDetailsView"
+            android:label="Education Details">
+
+        </activity>
+        <activity android:name=".Activity.FamilyDetailsView"
+            android:label="Family Details"/>
+        <activity android:name=".Activity.PersonalDetailView"
+            android:label="Personal details"/>
         <activity android:name=".Activity.RecoveryPassword" />
 
         <meta-data
@@ -38,22 +36,25 @@
 
         <activity
             android:name=".Activity.FamilyDetails"
-            android:label="Family Details" />
+            android:label="Family Details"/>
         <activity
             android:name=".Activity.EducationalDetails"
             android:label="Education Details" />
         <activity
             android:name=".Activity.PersonalDetails"
-            android:label="Personal Details" />
-        <activity android:name=".Activity.ForgotPassword" />
-        <activity android:name=".Activity.MainActivity">
+            android:label="Personal Details"/>
+        <activity android:name=".Activity.ForgotPassword"
+            android:label=""/>
+        <activity android:name=".Activity.MainActivity"
+            android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.RegisterPage" />
+        <activity android:name=".Activity.RegisterPage"
+            android:label=""/>
     </application>
 
 </manifest>

@@ -48,8 +48,10 @@ TextView btnforgot,btnregister,loginText;
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        loginText = findViewById(R.id.login);
 
+
+
+        loginText = findViewById(R.id.login);
         Typeface typeface = ResourcesCompat.getFont(
                 this,
                 R.font.poppins_regular);
