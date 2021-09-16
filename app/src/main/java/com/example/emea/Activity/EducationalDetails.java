@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.emea.Response.EducationResponse;
 import com.example.emea.Network.ApiCall;
@@ -35,7 +36,7 @@ public class EducationalDetails extends AppCompatActivity {
 
     //
 
-    TextView sslc, medium, markssslc,
+    TextView sslc, medium, markssslc,topNav,
             plustwo, marksplustwo,ugc,ugcmarks,anyotherqual;
 
     String  textschool, textmedium, textenglishsslcbox,
@@ -55,7 +56,7 @@ public class EducationalDetails extends AppCompatActivity {
 
     RadioButton radioeng;
     RadioButton radiomal;
-
+    ImageView prevPage;
     ApiCall apiCall;
     String apieducationlist;
     String authentoken;
@@ -68,15 +69,28 @@ public class EducationalDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_educational_details);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
+        getSupportActionBar();
 
 
+        topNav = findViewById(R.id.title_nav);
+        String getText = topNav.getText().toString();
+        topNav.setText("Educational Details");
+
+
+        prevPage = findViewById(R.id.backBtn);
+        prevPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(perIntent);
+            }
+        });
 
         //buttons
 //      adddegree   = findViewById(R.id.addDegree);
 //        qualification = findViewById(R.id.addQualification);
-      saveinfo = findViewById(R.id.saveEduDetail);
+        saveinfo = findViewById(R.id.saveEduDetail);
         radioeng = findViewById(R.id.radioeng);
         radiomal = findViewById(R.id.radiomal);
 

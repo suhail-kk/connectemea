@@ -2,10 +2,11 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/toolbar"
+    android:id="@+id/toolbar_activity_details"
     android:layout_height="?attr/actionBarSize"
     android:theme="@style/Theme.Emea"
-    android:padding="10dp"
+    android:background="#dee2ff"
+    app:contentInsetStart="0dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
@@ -15,11 +16,12 @@
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_back"
-        android:layout_gravity="left"/>
+        android:layout_gravity="left"
+        android:layout_marginStart="0dp"
+        android:src="@drawable/ic_back" />
 
     <TextView
-        android:id="@+id/title_top_nav"
+        android:id="@+id/title_nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
@@ -28,12 +30,5 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:fontFamily="@font/ubuntu_regular"/>
-
-    <ImageView
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_edit"
-        android:layout_gravity="right"/>
 
 </androidx.appcompat.widget.Toolbar>

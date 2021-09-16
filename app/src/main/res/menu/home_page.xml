@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/appInfo"
-        android:icon="@drawable/app_info"
-        android:title="Settins"/>
-    <item
-            android:id="@+id/contactUs"
-            android:icon="@drawable/contact_us"
-            android:title="App Info"
-             />
-
+            <item
+                android:id="@+id/appInfo"
+                android:icon="@drawable/app_info"
+                android:title="Settins"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/contactUs"
+                android:icon="@drawable/contact_us"
+                android:title="App Info"
+                app:showAsAction="never" />
 </menu>

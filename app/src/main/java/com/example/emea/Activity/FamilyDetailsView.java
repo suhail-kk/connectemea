@@ -7,10 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.emea.R;
 
 public class FamilyDetailsView extends AppCompatActivity {
+
+    TextView topNav;
 
 
     @Override
@@ -19,6 +22,10 @@ public class FamilyDetailsView extends AppCompatActivity {
         setContentView(R.layout.activity_family_details_view);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
+        topNav = findViewById(R.id.title_top_nav);
+        String getText = topNav.getText().toString();
+        topNav.setText("Family Details");
 
     }
 //    public boolean onOptionsItemSelected(MenuItem item){

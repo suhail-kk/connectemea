@@ -19,6 +19,8 @@
             android:id="@+id/include3"
             layout="@layout/toolbar_ayout"
             app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread_inside" />
 
@@ -28,7 +30,7 @@
             style="@style/fam_Details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/fam_dtls"
             app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
             app:layout_constraintEnd_toEndOf="parent"

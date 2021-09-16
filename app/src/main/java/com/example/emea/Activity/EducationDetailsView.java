@@ -43,7 +43,7 @@ public class EducationDetailsView extends AppCompatActivity {
     TextView sub4box;
     TextView sub5box;
     TextView sub6box;
-    TextView collegename;
+    TextView topNav;
     TextView universityugc;
     TextView courseugc;
     TextView ugcmainbox;
@@ -92,7 +92,9 @@ public class EducationDetailsView extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
-
+        topNav = findViewById(R.id.title_top_nav);
+        String getText = topNav.getText().toString();
+        topNav.setText("Educational Details");
 
 
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -39,20 +40,21 @@ public class HomePage extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //Creating the instance of PopupMenu
-                    PopupMenu popup = new PopupMenu(HomePage.this, settings
-                    );
-                    //Inflating the Popup using xml file
+                    PopupMenu popup = new PopupMenu(HomePage.this, settings);
                     popup.getMenuInflater().inflate(R.menu.home_page, popup.getMenu());
-
-                    //registering popup with OnMenuItemClickListener
                     popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         public boolean onMenuItemClick(MenuItem item) {
                             switch (item.getItemId()) {
                                 case R.id.contactUs:
                                     Intent newIntent=new Intent(getApplicationContext(),ContactUs.class);
                                     startActivity(newIntent);
-
+                                    return true;
+                                case R.id.appInfo:
+                                    Intent appInfo=new Intent(getApplicationContext(),AppInfo.class);
+                                    startActivity(appInfo);
+                                    return true;
+                                default:
+                                    return onOptionsItemSelected(item);
                             }
                         }
                     });
@@ -91,6 +93,12 @@ public class HomePage extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.home_page, menu);
+        return true;
+    }
 
 }

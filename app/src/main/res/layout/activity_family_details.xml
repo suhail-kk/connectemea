@@ -8,25 +8,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
     android:background="@color/background"
+    android:padding="10dp"
     tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="86dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         tools:context=".Activity.FamilyDetails">
+
+        <include
+            android:id="@+id/toolbar_family"
+            layout="@layout/toolbar_details_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/father"
+            style="@style/subheading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Father"
-            style="@style/subheading"
+            android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.002"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_family" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fatherName"

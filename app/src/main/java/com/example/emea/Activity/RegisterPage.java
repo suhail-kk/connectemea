@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
@@ -41,7 +42,8 @@ TextInputEditText username;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
-        getSupportActionBar().hide();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+
 
         txtregister = findViewById(R.id.register);
         Typeface typeface = ResourcesCompat.getFont(

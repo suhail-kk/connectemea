@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:padding="10dp"
+    android:padding="20dp"
     tools:context=".Activity.MainActivity">
 
     <TextView
@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:gravity="end"
+        android:gravity="center"
         android:text="Forgot the Password?"
         app:layout_constraintBottom_toTopOf="@+id/registernew"
         app:layout_constraintEnd_toEndOf="@+id/loginbutton"
@@ -103,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:gravity="end"
+        android:gravity="center"
         android:text="Register a new Member"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/forgotpass"

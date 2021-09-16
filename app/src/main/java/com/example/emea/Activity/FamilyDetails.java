@@ -10,9 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
@@ -30,10 +32,10 @@ public class FamilyDetails extends AppCompatActivity {
     String ftr,ftrname,ftredu,ftroccu,ftrinc;
     String mtr,mtrname,mtredu,mtroccu,mtrinc;
     String grd,grdname,grdedu,grdoccu,grdinc;
-
+    ImageView prevPage;
     ScrollView scrollView;
     
-    TextView father,mother,guardian;
+    TextView father,mother,guardian,topNav;
     EditText fname,feducation,foccupation,fincome;
     EditText mname,meducation,moccupation,mincome;
     EditText gname,geducation,goccupation,gincome;
@@ -49,8 +51,22 @@ public class FamilyDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family_details);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
+        getSupportActionBar();
+
+        topNav = findViewById(R.id.title_nav);
+        String getText = topNav.getText().toString();
+        topNav.setText("Family Details");
+
+        prevPage = findViewById(R.id.backBtn);
+        prevPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(perIntent);
+            }
+        });
+
 
       //  scrollView = findViewById(R.id.FOccupation);
 

@@ -18,8 +18,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
@@ -40,10 +42,10 @@ public class PersonalDetails extends AppCompatActivity {
     String dob,nmid,dptname,admsnno,rllnoid,yrfadm,idmrk1,idmrk2;
 
     EditText DisplayDate,nameid,coursename,admissionno,rollnoid,yrofadmission,idmark1,idmark2;
-    TextView department;
+    TextView department,textNav;
     ImageButton birth;
     Button button1;
-
+    ImageView prevPage;
     ApiCall apiCall;
     String apiPersonalList;
     String authentoken;
@@ -57,9 +59,21 @@ public class PersonalDetails extends AppCompatActivity {
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
 
+
+        prevPage = findViewById(R.id.backBtn);
+        prevPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(perIntent);
+            }
+        });
+
+        textNav = findViewById(R.id.title_nav);
+        String getText = textNav.getText().toString();
+        textNav.setText("Personal Details");
 
         DisplayDate = (EditText) findViewById(R.id.Birth);
        // name=findViewById(R.id.nametv);

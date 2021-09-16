@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
@@ -37,8 +38,9 @@ public class RecoveryPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_recovery_password);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+
 
         txtRecovery = findViewById(R.id.changepassword);
 
