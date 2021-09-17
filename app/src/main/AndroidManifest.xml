@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Emea"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activity.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Activity.AppInfo"
             android:exported="true" />
         <activity
@@ -20,12 +29,8 @@
             android:exported="true"
             android:label="" />
         <activity
-            android:name=".Activity.ContactUs"
-            android:exported="true"
-            android:label="" />
-        <activity
             android:name=".Activity.EducationDetailsView"
-            android:label="Education Details"></activity>
+            android:label="Education Details" />
         <activity
             android:name=".Activity.FamilyDetailsView"
             android:label="Family Details" />
@@ -53,11 +58,7 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.RegisterPage"

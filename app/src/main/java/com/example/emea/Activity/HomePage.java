@@ -45,13 +45,9 @@ public class HomePage extends AppCompatActivity {
                     popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         public boolean onMenuItemClick(MenuItem item) {
                             switch (item.getItemId()) {
-                                case R.id.contactUs:
-                                    Intent newIntent=new Intent(getApplicationContext(),ContactUs.class);
-                                    startActivity(newIntent);
-                                    return true;
                                 case R.id.appInfo:
-                                    Intent appInfo=new Intent(getApplicationContext(),AppInfo.class);
-                                    startActivity(appInfo);
+                                    Intent newIntent=new Intent(getApplicationContext(),AppInfo.class);
+                                    startActivity(newIntent);
                                     return true;
                                 default:
                                     return onOptionsItemSelected(item);
