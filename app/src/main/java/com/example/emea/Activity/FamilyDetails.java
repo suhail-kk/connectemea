@@ -29,16 +29,18 @@ import retrofit2.Response;
 
 public class FamilyDetails extends AppCompatActivity {
 
-    String ftr,ftrname,ftredu,ftroccu,ftrinc;
-    String mtr,mtrname,mtredu,mtroccu,mtrinc;
-    String grd,grdname,grdedu,grdoccu,grdinc;
+    String fathernamestring,fathereducationstring,fatheroccupationstring,fatherincomestring;
+    String mothernamestring,mothereducationstring,motheroccupationstring,motherincomestring;
+    String guardiannamestring,guardianeducationstring,guardianoccupationstring,guardianincomestring;
+
     ImageView prevPage;
     ScrollView scrollView;
     
     TextView father,mother,guardian,topNav;
-    EditText fname,feducation,foccupation,fincome;
-    EditText mname,meducation,moccupation,mincome;
-    EditText gname,geducation,goccupation,gincome;
+    EditText fathernameedittext,fathereducationedittext,fatheroccupationedittext,fatherincomeedittext;
+    EditText mothernameedittext,mothereducationedittext,motheroccupationedittext,motherincomeedittext;
+    EditText guardiannameedittext,guardianeducationedittext,guardianoccupationedittext,guardianincomeedittext;
+
     Button save;
 
     ApiCall apiCall;
@@ -72,35 +74,35 @@ public class FamilyDetails extends AppCompatActivity {
 
         father = findViewById(R.id.father);
 //        ftr = father.getText().toString();
-        fname = findViewById(R.id.fname);
+        fathernameedittext = findViewById(R.id.fname);
 //        ftrname = fname.getText().toString();
-        feducation = findViewById(R.id.feducation);
+        fathereducationedittext = findViewById(R.id.feducation);
 //        ftredu = feducation.getText().toString();
-        foccupation = findViewById(R.id.foccupation);
+        fatheroccupationedittext = findViewById(R.id.foccupation);
 //        ftroccu = foccupation.getText().toString();
-        fincome = findViewById(R.id.fincome);
+        fatherincomeedittext = findViewById(R.id.fincome);
 //        ftrinc = fincome.getText().toString();
 
         mother =findViewById(R.id.mother);
 //        mtr = mother.getText().toString();
-        mname = findViewById(R.id.mname);
+        mothernameedittext = findViewById(R.id.mname);
 //        mtrname = mname.getText().toString();
-        meducation = findViewById(R.id.meducation);
+        mothereducationedittext = findViewById(R.id.meducation);
 //        mtredu = meducation.getText().toString();
-        moccupation = findViewById(R.id.moccupation);
+        motheroccupationedittext = findViewById(R.id.moccupation);
 //        mtroccu = moccupation.getText().toString();
-        mincome = findViewById(R.id.mincome);
+        motherincomeedittext = findViewById(R.id.mincome);
 //        mtrinc = mincome.getText().toString();
 
         guardian = findViewById(R.id.guardian);
 //        grd = guardian.getText().toString();
-        gname = findViewById(R.id.gname);
+        guardiannameedittext = findViewById(R.id.gname);
 //        grdname = gname.getText().toString();
-        geducation = findViewById(R.id.geducation);
+        guardianeducationedittext = findViewById(R.id.geducation);
 //        grdedu = geducation.getText().toString();
-        goccupation = findViewById(R.id.goccupation);
+        guardianoccupationedittext = findViewById(R.id.goccupation);
 //        grdoccu = goccupation.getText().toString();
-        gincome = findViewById(R.id.gincome);
+        guardianincomeedittext = findViewById(R.id.gincome);
 //        grdinc = gincome.getText().toString();
 
         save = findViewById(R.id.savefamily);
@@ -109,46 +111,51 @@ public class FamilyDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                ftr = father.getText().toString();
-                ftrname = fname.getText().toString();
-                ftredu = feducation.getText().toString();
-                ftroccu = foccupation.getText().toString();
-                ftrinc = fincome.getText().toString();
+                fathernamestring = fathernameedittext.getText().toString();
+                fathereducationstring = fathereducationedittext.getText().toString();
+                fatheroccupationstring = fatheroccupationedittext.getText().toString();
+                fatherincomestring = fatherincomeedittext.getText().toString();
 
 //                mtr = mother.getText().toString();
-                mtrname = mname.getText().toString();
-                mtredu = meducation.getText().toString();
-                mtroccu = moccupation.getText().toString();
-                mtrinc = mincome.getText().toString();
+                mothernamestring = mothernameedittext.getText().toString();
+                mothereducationstring = mothereducationedittext.getText().toString();
+                motheroccupationstring = motheroccupationedittext.getText().toString();
+                motherincomestring = motherincomeedittext.getText().toString();
 
 //                grd = guardian.getText().toString();
-                grdname = gname.getText().toString();
-                grdedu = geducation.getText().toString();
-                grdoccu = goccupation.getText().toString();
-                grdinc = gincome.getText().toString();
+                guardiannamestring = guardiannameedittext.getText().toString();
+                guardianeducationstring = guardianeducationedittext.getText().toString();
+                guardianoccupationstring = guardianoccupationedittext.getText().toString();
+                guardianincomestring = guardianincomeedittext.getText().toString();
 
                 apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
-                getFamilyList(ftrname, ftredu, ftroccu, ftrinc, mtrname, mtredu, mtroccu, mtrinc, grdname, grdedu, grdoccu, grdinc);
+                getFamilyList(fathernamestring, fathereducationstring, fatheroccupationstring, fatherincomestring,
+                        mothernamestring, mothereducationstring, motheroccupationstring, motherincomestring,
+                        guardiannamestring, guardianeducationstring, guardianoccupationstring, guardianincomestring);
 
             }
         });
     }
 
-    public void getFamilyList(String ftrname,String ftredu,String ftroccu,String ftrinc,String mtrname,String mtredu,String mtroccu,String mtrinc,String grdname,String grdedu,String grdoccu,String grdinc){
+    public void getFamilyList( String fathernamestring, String fathereducationstring, String fatheroccupationstring,
+                               String fatherincomestring, String mothernamestring, String mothereducationstring,
+                               String motheroccupationstring, String motherincomestring,String guardiannamestring,
+                               String guardianeducationstring, String guardianoccupationstring, String guardianincomestring){
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("father_name",this.ftrname);
-        params.put("edu_qualification_father",this.ftredu);
-        params.put("occupation_father",this.ftroccu);
-        params.put("annual_income_father",this.ftrinc);
-        params.put("mother_name",this.mtrname);
-        params.put("edu_qualification_mother",this.mtredu);
-        params.put("occupation_mother",this.mtroccu);
-        params.put("annual_income_mother",this.mtrinc);
-        params.put("guardian_name",this.grdname);
-        params.put("edu_qualification_guardian",this.grdedu);
-        params.put("occupation_guardian",this.grdoccu);
-        params.put("annual_income_guardian",this.grdinc);
+        params.put("father_name",this.fathernamestring);
+        params.put("edu_qualification_father",this.fathereducationstring);
+        params.put("occupation_father",this.fatheroccupationstring);
+        params.put("annual_income_father",this.fatherincomestring);
+        params.put("mother_name",this.mothernamestring);
+        params.put("edu_qualification_mother",this.mothereducationstring);
+        params.put("occupation_mother",this.motheroccupationstring);
+        params.put("annual_income_mother",this.motherincomestring);
+        params.put("guardian_name",this.guardiannamestring);
+        params.put("edu_qualification_guardian",this.guardianeducationstring);
+        params.put("occupation_guardian",this.guardianoccupationstring);
+        params.put("annual_income_guardian",this.guardianincomestring);;
 
 
         SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
@@ -164,6 +171,9 @@ public class FamilyDetails extends AppCompatActivity {
                     apifamilylist = response.body().getStatus();
 
                     Toast.makeText(FamilyDetails.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
+                    Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
+                    startActivity(perIntent);
+                    finish();
                 } else {
                     Toast.makeText(FamilyDetails.this, "Already registered.", Toast.LENGTH_SHORT).show();
                 }

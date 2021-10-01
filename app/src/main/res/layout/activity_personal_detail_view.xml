@@ -44,7 +44,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/namedisplay"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -60,9 +60,9 @@
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView15"
-                    android:layout_alignStart="@+id/textView15"
-                    android:layout_alignEnd="@+id/textView15"
+                    android:layout_below="@+id/namedisplay"
+                    android:layout_alignStart="@+id/namedisplay"
+                    android:layout_alignEnd="@+id/namedisplay"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
@@ -104,7 +104,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/classdisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
                         tools:layout_editor_absoluteY="416dp" />
 
                     <TextView
-                        android:id="@+id/textView19"
+                        android:id="@+id/rollnodisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -176,7 +176,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView22"
+                        android:id="@+id/admnodisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -184,7 +184,7 @@
                         android:text="19BCS2134" />
 
                     <TextView
-                        android:id="@+id/textView23"
+                        android:id="@+id/dobdisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -253,7 +253,7 @@
                         tools:layout_editor_absoluteY="391dp" />
 
                     <TextView
-                        android:id="@+id/textView27"
+                        android:id="@+id/genderdisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -315,7 +315,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView30"
+                        android:id="@+id/bloodgrpdisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -325,7 +325,7 @@
                         tools:layout_editor_absoluteY="440dp" />
 
                     <TextView
-                        android:id="@+id/textView31"
+                        android:id="@+id/maritaldisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -388,7 +388,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView34"
+                        android:id="@+id/religiondisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -398,7 +398,7 @@
                         tools:layout_editor_absoluteY="474dp" />
 
                     <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/castedisplay"
                         style="@style/viewdetails"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -412,9 +412,8 @@
                 </LinearLayout>
 
 
-                <TextView
-                    android:id="@+id/textView36"
-                    style="@style/viewheading"
+                <LinearLayout
+                    android:id="@+id/linearLayout199"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/linearLayout20"
@@ -423,11 +422,87 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView322"
+                        style="@style/viewheading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Date of join"
+                        tools:layout_editor_absoluteX="43dp"
+                        tools:layout_editor_absoluteY="374dp" />
+
+                    <TextView
+                        android:id="@+id/textView333"
+                        style="@style/viewheading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="Mobile Number"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="407dp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout200"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout199"
+                    android:layout_alignStart="@+id/linearLayout199"
+                    android:layout_alignEnd="@+id/linearLayout199"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/joindisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="02/03/2000"
+                        tools:layout_editor_absoluteX="96dp"
+                        tools:layout_editor_absoluteY="474dp" />
+
+                    <TextView
+                        android:id="@+id/mobiledisplay"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="555555555555"
+                        tools:layout_editor_absoluteX="235dp"
+                        tools:layout_editor_absoluteY="516dp" />
+
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/textView36"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout200"
+                    android:layout_alignStart="@+id/linearLayout200"
+                    android:layout_alignEnd="@+id/linearLayout200"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
                     android:text="Email" />
 
 
                 <TextView
-                    android:id="@+id/textView37"
+                    android:id="@+id/emaildisplay"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -445,9 +520,9 @@
                     style="@style/viewheading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView37"
-                    android:layout_alignStart="@+id/textView37"
-                    android:layout_alignEnd="@+id/textView37"
+                    android:layout_below="@+id/emaildisplay"
+                    android:layout_alignStart="@+id/emaildisplay"
+                    android:layout_alignEnd="@+id/emaildisplay"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
@@ -455,7 +530,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView39"
+                    android:id="@+id/permenantaddressdisplay"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -477,9 +552,9 @@
                     style="@style/viewheading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView39"
-                    android:layout_alignStart="@+id/textView39"
-                    android:layout_alignEnd="@+id/textView39"
+                    android:layout_below="@+id/permenantaddressdisplay"
+                    android:layout_alignStart="@+id/permenantaddressdisplay"
+                    android:layout_alignEnd="@+id/permenantaddressdisplay"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
@@ -487,7 +562,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/presentaddressdisplay"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -505,13 +580,78 @@
 
 
                 <TextView
+                    android:id="@+id/textView388"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/presentaddressdisplay"
+                    android:layout_alignStart="@+id/presentaddressdisplay"
+                    android:layout_alignEnd="@+id/presentaddressdisplay"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Now Residing at/as" />
+
+
+                <TextView
+                    android:id="@+id/residingdisplay"
+                    style="@style/viewdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView388"
+                    android:layout_alignStart="@+id/textView388"
+                    android:layout_alignEnd="@+id/textView388"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:maxLines="6"
+                    android:minLines="3"
+                    android:scrollbars="vertical"
+                    android:text="jhon" />
+
+                <TextView
+                    android:id="@+id/textView444"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/residingdisplay"
+                    android:layout_alignStart="@+id/residingdisplay"
+                    android:layout_alignEnd="@+id/residingdisplay"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Distance from percent recidence to the college" />
+
+
+                <TextView
+                    android:id="@+id/distancedisplay"
+                    style="@style/viewdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView444"
+                    android:layout_alignStart="@+id/textView444"
+                    android:layout_alignEnd="@+id/textView444"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:lines="8"
+                    android:maxLines="6"
+                    android:minLines="3"
+                    android:scrollbars="vertical"
+                    android:text="..kms" />
+
+
+
+                <TextView
                     android:id="@+id/textView40"
                     style="@style/viewheading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView5"
-                    android:layout_alignStart="@+id/textView5"
-                    android:layout_alignEnd="@+id/textView5"
+                    android:layout_below="@+id/distancedisplay"
+                    android:layout_alignStart="@+id/distancedisplay"
+                    android:layout_alignEnd="@+id/distancedisplay"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
@@ -519,7 +659,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView41"
+                    android:id="@+id/admctgrydisplay"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -537,9 +677,9 @@
                     style="@style/viewheading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView41"
-                    android:layout_alignStart="@+id/textView41"
-                    android:layout_alignEnd="@+id/textView41"
+                    android:layout_below="@+id/admctgrydisplay"
+                    android:layout_alignStart="@+id/admctgrydisplay"
+                    android:layout_alignEnd="@+id/admctgrydisplay"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
@@ -574,7 +714,7 @@
                     android:text="Idenfication Marks" />
 
                 <TextView
-                    android:id="@+id/textView45"
+                    android:id="@+id/identification1display"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -588,13 +728,13 @@
 
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/identification2display"
                     style="@style/viewdetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView45"
-                    android:layout_alignStart="@+id/textView45"
-                    android:layout_alignEnd="@+id/textView45"
+                    android:layout_below="@+id/identification1display"
+                    android:layout_alignStart="@+id/identification1display"
+                    android:layout_alignEnd="@+id/identification1display"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"

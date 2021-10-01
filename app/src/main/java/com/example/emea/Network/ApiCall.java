@@ -1,17 +1,23 @@
 package com.example.emea.Network;
 
 
+import com.example.emea.Response.DepartmentDropdownResponse;
+import com.example.emea.Response.EducationDropdownResponse;
 import com.example.emea.Response.EducationResponse;
 import com.example.emea.Response.EducationViewResponse;
+//import com.example.emea.Response.EducationeditResponse;
+import com.example.emea.Response.EducationeditResponse;
+import com.example.emea.Response.FamilyEditResponse;
 import com.example.emea.Response.FamilyResponse;
+import com.example.emea.Response.FamilyViewResponse;
 import com.example.emea.Response.ForgotResponse;
 import com.example.emea.Response.LoggingResponse;
-
+import com.example.emea.Response.PersonalDropdownResponse;
+import com.example.emea.Response.PersonalEditResponse;
+import com.example.emea.Response.PersonalResponse;
+import com.example.emea.Response.PersonalViewResponse;
 import com.example.emea.Response.RecoveryResponse;
 import com.example.emea.Response.RegisterResponse;
-
-import com.example.emea.Response.PersonalResponse;
-
 import com.example.emea.Response.StudentItem;
 
 import java.util.HashMap;
@@ -34,8 +40,7 @@ public interface ApiCall {
     @POST("users/login")
     Call<LoggingResponse> getLoginToken(@FieldMap HashMap<String, String> params);
 
-//    @POST("users/register")
-//    Call<RegisterResponse> getRegistrationStatus(@FieldMap HashMap<String,String> params);
+
 
     //educational details
     @FormUrlEncoded
@@ -50,7 +55,9 @@ public interface ApiCall {
     @POST("students/add_details")
     Call<PersonalResponse> getPersonal(@FieldMap HashMap<String, String> params, @Header("token") String authentoken);
 
-
+//     @FormUrlEncoded
+//    @POST("students/add_details")
+//    Call<PersonalResponse> uploadImage(@Field("userfile") String image, @Header("token") String authentoken);
    
     @FormUrlEncoded
     @POST("students/add_family_details")
@@ -66,6 +73,42 @@ public interface ApiCall {
 
     @GET("students/get_educational_details")
     Call<EducationViewResponse> getEducationView(@Header("token") String authtoken);
+
+    @FormUrlEncoded
+    @POST("students/edit_educational_details")
+    Call<EducationeditResponse> getEducationEdit(@FieldMap HashMap<String, String> params, @Header("token") String authtoken);
+
+    @GET("students/get_family_details")
+    Call<FamilyViewResponse> getFamilyView(@Header("token") String authtoken);
+
+    @FormUrlEncoded
+    @POST("students/edit_family_details")
+    Call<FamilyEditResponse> getFamilyEdit(@FieldMap HashMap<String, String> params, @Header("token") String authtoken);
+
+
+
+    @FormUrlEncoded
+    @POST("students/edit_personal_details")
+    Call<PersonalEditResponse> getPersonalEdit(@FieldMap HashMap<String, String> params, @Header("token") String authtoken);
+
+
+    @GET("students/get_personal_dropdowns")
+    Call<PersonalDropdownResponse> getPersonalDropdown();
+
+    @GET("students/get_educational_dropdowns")
+    Call<EducationDropdownResponse> geteducationDropdown();
+
+
+
+
+    @GET("students/get_department_dropdown")
+    Call<DepartmentDropdownResponse> getDepartmentDropdown();
+
+
+
+    @GET("students/view/id")
+    Call<PersonalViewResponse> getPersonalView(@Header("token") String authtoken);
+
 
 
 

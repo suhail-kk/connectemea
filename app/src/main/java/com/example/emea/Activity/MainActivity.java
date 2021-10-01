@@ -1,26 +1,22 @@
 package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import com.example.emea.Response.LoggingResponse;
+//import com.example.emea.Fragments.HomePage;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
+import com.example.emea.Response.LoggingResponse;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
@@ -32,10 +28,10 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     TextInputEditText txtEmail, txtPassword;
-Button btnLogin;
-TextView btnforgot,btnregister,loginText;
+    Button btnLogin;
+    TextView btnforgot,btnregister;
     ProgressBar pgBar;
-  //  TextView txtForgot;
+    //  TextView txtForgot;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String inputEmail;
     String inputPassword;
@@ -48,19 +44,10 @@ TextView btnforgot,btnregister,loginText;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
-
-        loginText = findViewById(R.id.login);
-        Typeface typeface = ResourcesCompat.getFont(
-                this,
-                R.font.poppins_regular);
-        loginText.setTypeface(typeface);
-
-
-
-         btnforgot=findViewById((R.id.forgotpass));
+        btnforgot=findViewById((R.id.forgotpass));
         btnregister=findViewById((R.id.registernew));
 
         txtEmail = findViewById(R.id.Emaillogin);
@@ -86,7 +73,7 @@ TextView btnforgot,btnregister,loginText;
 //                boolean check=ValidateInfo(inputEmail, inputPassword);
 
 
-                     getLoginList(inputEmail, inputPassword);
+                getLoginList(inputEmail, inputPassword);
 
 
 
@@ -99,18 +86,18 @@ TextView btnforgot,btnregister,loginText;
 
 
                 Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
-               startActivity(newIntent);
+                startActivity(newIntent);
 
             }
         });
-btnregister.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent newIntent = new Intent(getApplicationContext(), RegisterPage.class);
-        startActivity(newIntent);
+        btnregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newIntent = new Intent(getApplicationContext(), RegisterPage.class);
+                startActivity(newIntent);
 
-    }
-});
+            }
+        });
 
 //        txtForgot.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -143,9 +130,18 @@ btnregister.setOnClickListener(new View.OnClickListener() {
                     editor.putString("token", authToken);
                     editor.commit();
 
-                    Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
-                    startActivity(newIntent);
-                    
+                    if(response.body().isRegistered()){
+                        Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
+                        startActivity(newIntent);
+                        finish();
+                    }else {
+                        Intent newIntent = new Intent(getApplicationContext(), PersonalDetails.class);
+                        startActivity(newIntent);
+                        finish();
+                    }
+
+
+
 
                 } else {
 

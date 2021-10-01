@@ -21,7 +21,7 @@ public class ApiClient {
         OkHttpClient client = getClient();
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://18.218.79.95/studentsprofile/api/")
+                    .baseUrl("http://172.16.0.94/studentsprofile/api/")
 
 
 //                    .baseUrl("http://192.168.1.6:9000/api/")

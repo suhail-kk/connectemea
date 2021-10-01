@@ -3,6 +3,7 @@
     package="com.example.emea">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +15,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Activity.SplashScreen"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,21 +25,58 @@
         </activity>
         <activity
             android:name=".Activity.AppInfo"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".Activity.HomePage"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:label="" />
         <activity
             android:name=".Activity.EducationDetailsView"
+            android:screenOrientation="portrait"
+            android:label="Education Details" />
+        <activity android:name=".Activity.RecoveryPassword"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.EducationEdit"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@drawable/rounded_shape" />
+
+        <activity
+            android:name=".Activity.EducationalDetails"
+            android:screenOrientation="portrait"
             android:label="Education Details" />
         <activity
+            android:name=".Activity.PersonalDetails"
+            android:screenOrientation="portrait"
+            android:label="Personal Details" />
+        <activity
+            android:name=".Activity.ForgotPassword"
+            android:screenOrientation="portrait"
+            android:label="" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="">
+
+        </activity>
+        <activity
+            android:name=".Activity.RegisterPage"
+            android:screenOrientation="portrait"
+            android:label="" />
+
+        <activity
             android:name=".Activity.FamilyDetailsView"
+            android:screenOrientation="portrait"
             android:label="Family Details" />
         <activity
             android:name=".Activity.PersonalDetailView"
+            android:screenOrientation="portrait"
             android:label="Personal details" />
-        <activity android:name=".Activity.RecoveryPassword" />
+
 
         <meta-data
             android:name="com.google.android.actions"
@@ -45,24 +84,22 @@
 
         <activity
             android:name=".Activity.FamilyDetails"
+            android:screenOrientation="portrait"
             android:label="Family Details" />
         <activity
-            android:name=".Activity.EducationalDetails"
-            android:label="Education Details" />
-        <activity
-            android:name=".Activity.PersonalDetails"
-            android:label="Personal Details" />
-        <activity
-            android:name=".Activity.ForgotPassword"
-            android:label="" />
-        <activity
-            android:name=".Activity.MainActivity"
-            android:label="">
+            android:name=".Activity.FamilyEdit"
+            android:screenOrientation="portrait"
+            android:label="Family Details" />
 
-        </activity>
+
         <activity
-            android:name=".Activity.RegisterPage"
-            android:label="" />
+            android:name=".Activity.PersonalEdit"
+            android:screenOrientation="portrait"
+            android:label="Peronal Details" />
+
     </application>
+
+
+
 
 </manifest>

@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
+        android:id="@+id/studentimageview"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
@@ -24,7 +24,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/profile_img"
         app:cardPreventCornerOverlap="false"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/studentnameview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         app:shapeAppearanceOverlay="@style/roundedImageView" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/studentnameview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -43,11 +43,11 @@
         android:textColor="#E6000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/studentadmissionview"
+        app:layout_constraintEnd_toEndOf="@+id/studentimageview"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/studentimageview"
+        app:layout_constraintTop_toBottomOf="@+id/studentimageview" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -55,10 +55,10 @@
         android:layout_height="350dp"
         android:background="@drawable/shapes"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/studentadmissionview"
         app:layout_constraintHeight_percent=".7"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/studentadmissionview"
+        app:layout_constraintTop_toBottomOf="@+id/studentadmissionview"
         app:layout_constraintVertical_bias="1.0"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut">
 
@@ -195,7 +195,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/studentadmissionview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
@@ -203,10 +203,21 @@
         android:textColor="@color/black"
         android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/studentnameview"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/studentnameview"
+        app:layout_constraintTop_toBottomOf="@+id/studentnameview" />
+
+    <ProgressBar
+        android:id="@+id/progressBarView"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

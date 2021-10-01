@@ -71,7 +71,7 @@
                     android:text="Name" />
 
                 <TextView
-                    android:id="@+id/textView49"
+                    android:id="@+id/ftrname"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                     android:text="Education Qualification" />
 
                 <TextView
-                    android:id="@+id/textView51"
+                    android:id="@+id/ftredu"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/ftroccu"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView82"
+                    android:id="@+id/ftrinc"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -250,7 +250,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/mtrname"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView326"
+                    android:id="@+id/mtredu"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -325,7 +325,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/sub5display"
+                    android:id="@+id/mtroccu"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -362,7 +362,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView90"
+                    android:id="@+id/mtrinc"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -437,7 +437,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView93"
+                    android:id="@+id/grdname"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -476,7 +476,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView96"
+                    android:id="@+id/grdedu"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -516,7 +516,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView98"
+                    android:id="@+id/grdoccu"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -555,7 +555,7 @@
                     tools:layout_editor_absoluteY="132dp" />
 
                 <TextView
-                    android:id="@+id/textView100"
+                    android:id="@+id/grdinc"
                     style="@style/viewdetails"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

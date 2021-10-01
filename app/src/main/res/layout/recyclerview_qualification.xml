@@ -39,7 +39,7 @@
             tools:layout_editor_absoluteY="72dp" />
 
         <TextView
-            android:id="@+id/coursedisplay"
+            android:id="@+id/coursename"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
             tools:layout_editor_absoluteY="144dp" />
 
         <TextView
-            android:id="@+id/ugcuniversitydisplay"
+            android:id="@+id/coursetype"
             android:layout_width="0dp"
             android:layout_weight="5"
             android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
             tools:layout_editor_absoluteY="144dp" />
 
         <TextView
-            android:id="@+id/ugccoursedisplay"
+            android:id="@+id/institutionname"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
             tools:layout_editor_absoluteY="144dp" />
 
         <TextView
-            android:id="@+id/textView107"
+            android:id="@+id/university"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

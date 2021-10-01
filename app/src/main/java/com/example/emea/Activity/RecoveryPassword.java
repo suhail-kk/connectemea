@@ -46,10 +46,10 @@ public class RecoveryPassword extends AppCompatActivity {
 
         txtRecovery = findViewById(R.id.login);
 
-        Typeface typeface = ResourcesCompat.getFont(
-                this,
-                R.font.poppins_regular);
-        txtRecovery.setTypeface(typeface);
+//        Typeface typeface = ResourcesCompat.getFont(
+//                this,
+//                R.font.poppins_regular);
+//        txtRecovery.setTypeface(typeface);
 
 
         txtPassword=findViewById(R.id.recovery_password);

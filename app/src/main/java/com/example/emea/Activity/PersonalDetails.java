@@ -1,22 +1,20 @@
 package com.example.emea.Activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,11 +24,20 @@ import android.widget.Toolbar;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
+import com.example.emea.Response.BloodGroupItem;
+import com.example.emea.Response.CategoryOfAdmissionItem;
+import com.example.emea.Response.DepartmentDropdownResponse;
+import com.example.emea.Response.DepartmentsItem;
+import com.example.emea.Response.GenderItem;
+import com.example.emea.Response.MaritalStatusItem;
+import com.example.emea.Response.PersonalDropdownResponse;
 import com.example.emea.Response.PersonalResponse;
+import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.Calendar;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,16 +46,62 @@ import retrofit2.Response;
 public class PersonalDetails extends AppCompatActivity {
 
     private static final String TAG = "Personal Details";
-    String dob,nmid,dptname,admsnno,rllnoid,yrfadm,idmrk1,idmrk2;
+    String dateOfBirth;
+    String name;
+    String admissionNo;
+    String rollNo;
+    String yearOfAdmission;
+    String religion;
+    String caste;
+    String identificationMark1;
+    String identificationMark2;
+    String permenentAddress;
+    String presentAddress;
+    String blood_group;
+    String admission_category;
+    String gender_;
+    String marital_status;
+    String department_;
+    String textMobilenumber,textResiding,textDistance;
 
-    EditText DisplayDate,nameid,coursename,admissionno,rollnoid,yrofadmission,idmark1,idmark2;
-    TextView department,textNav;
+    TextInputEditText dateOfBirthField, nameField, admissionNoField, rollNoField, yearOfAdmissionField,
+            identificationMark1Field, identificationMark2Field, permenentAddressField, presentAddressField,
+            religionField, casteField,Mobilenumber,Residing,Distance;
     ImageButton birth;
-    Button button1;
-    ImageView prevPage;
+    TextView textNav;
+    Button saveInfo;
+    ImageView addImage, prevPage;
     ApiCall apiCall;
     String apiPersonalList;
-    String authentoken;
+    String authtoken;
+    Bitmap bitmap;
+    AutoCompleteTextView bloodgroupdropdown;
+    AutoCompleteTextView admissioncategorydropdown;
+    AutoCompleteTextView genderdropdown;
+    AutoCompleteTextView maritalstatusdropdown;
+    AutoCompleteTextView departmentdropdown;
+
+    ArrayList<BloodGroupItem> bloodGroupItem;
+    ArrayList<String> bloodgroups;
+    ArrayAdapter<String> arrayAdapter_list;
+
+    ArrayList<CategoryOfAdmissionItem> categoryOfAdmissionItem;
+    ArrayList<String> admissioncategory;
+    ArrayAdapter<String> arrayAdapter_admissioncategory;
+
+    ArrayList<GenderItem> genderItem;
+    ArrayList<String> gender;
+    ArrayAdapter<String> arrayAdapter_gender;
+
+    ArrayList<MaritalStatusItem> maritalStatusItem;
+    ArrayList<String> maritalstatus;
+    ArrayAdapter<String> arrayAdapter_maritalstatus;
+
+    ArrayList<DepartmentsItem> departmentDropdownResponseItem;
+    ArrayList<String> department;
+    ArrayAdapter<String> arrayAdapter_department;
+
+    private static final int IMAGE = 100;
 
     int status;
 
@@ -56,7 +109,7 @@ public class PersonalDetails extends AppCompatActivity {
 
 
     @Override
-    protected  void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
@@ -75,179 +128,234 @@ public class PersonalDetails extends AppCompatActivity {
         String getText = textNav.getText().toString();
         textNav.setText("Personal Details");
 
-        DisplayDate = (EditText) findViewById(R.id.Birth);
-       // name=findViewById(R.id.nametv);
-        nameid=findViewById(R.id.name);
-        department=findViewById(R.id.departmenttv);
-        admissionno=findViewById(R.id.admissionno);
-        rollnoid=findViewById(R.id.rollnumber);
-        yrofadmission=findViewById(R.id.yearofadmission);
-        idmark1=findViewById(R.id.identificationmark1);
-        idmark2=findViewById(R.id.identificationmark2);
-    //    button1=findViewById(R.id.Savepersonal);
+//        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
+//        departmentdropdowncall();
 
-button1=findViewById(R.id.uploadPersnnlDetls);
+        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
+        dropdowncall();
+        departmentdropdowncall();
 
-//drpodown
-        final AutoCompleteTextView Gender = (AutoCompleteTextView) findViewById(R.id.gender);
-        final AutoCompleteTextView BloodGroup = (AutoCompleteTextView) findViewById(R.id.bloodGroup);
-        final AutoCompleteTextView MaritalStatus = (AutoCompleteTextView) findViewById(R.id.maritalStatus);
-        final AutoCompleteTextView Religion = (AutoCompleteTextView) findViewById(R.id.religion);
-        final AutoCompleteTextView Caste = (AutoCompleteTextView) findViewById(R.id.caste);
 
-        //calendar
+        bloodgroups = new ArrayList<>();
+        admissioncategory = new ArrayList<>();
+        gender = new ArrayList<>();
+        maritalstatus = new ArrayList<>();
+        department = new ArrayList<>();
 
-//        birth.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Calendar cal = Calendar.getInstance();
-//                int year = cal.get(Calendar.YEAR);
-//                int month = cal.get(Calendar.MONTH);
-//                int day = cal.get(Calendar.DAY_OF_MONTH);
-//
-//                DatePickerDialog  dialog = new DatePickerDialog(
-//                        PersonalDetails.this,
-//                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-//                        DateSetListener,
-//                        year,month,day);
-//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                dialog.show();
-//            }
-//        });
+        bloodgroupdropdown = findViewById(R.id.bloodGroup);
+        admissioncategorydropdown = findViewById(R.id.admissioncategory);
+        genderdropdown = findViewById(R.id.gender);
+        maritalstatusdropdown = findViewById(R.id.maritalStatus);
+        departmentdropdown = findViewById(R.id.department);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        nameField = findViewById(R.id.name);
+        admissionNoField = findViewById(R.id.admissionno);
+        rollNoField = findViewById(R.id.rollnumber);
+        dateOfBirthField = findViewById(R.id.dateofbirth);
+        yearOfAdmissionField = findViewById(R.id.yearofadmission);
+        religionField = findViewById(R.id.religion);
+        casteField = findViewById(R.id.caste);
+        identificationMark1Field = findViewById(R.id.identificationmark1);
+        identificationMark2Field = findViewById(R.id.identificationmark2);
+        permenentAddressField = findViewById(R.id.permenentaddress);
+        presentAddressField = findViewById(R.id.presentaddress);
+        addImage = findViewById(R.id.addimageview);
+        Mobilenumber=findViewById(R.id.mobileno);
+        Residing=findViewById(R.id.residing);
+        Distance=findViewById(R.id.distance);
+
+
+        saveInfo = findViewById(R.id.savepersonalinfo);
+
+        addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dob=DisplayDate.getText ().toString ();
-                nmid=nameid.getText ().toString ();
-//                dptname=coursename.getText ().toString ();
-                admsnno=admissionno.getText ().toString ();
-                rllnoid=rollnoid.getText ().toString ();
-                yrfadm=yrofadmission.getText ().toString ();
-                idmrk1=idmark1.getText ().toString ();
-                idmrk2=idmark2.getText ().toString ();
-
-                apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-                getPersonalList( dob,nmid,dptname,admsnno,rllnoid,yrfadm,idmrk1,idmrk2);
-
-
-
-            }
-        });
-        DateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: dd/mm/yyy: " + day + "/" + month + "/" + year);
-
-                String date = day + "/" + month + "/" + year;
-                DisplayDate.setText(date);
-            }
-        };
-
-
-//dropdown
-
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Gender);
-//        Gender.setAdapter(adapter);
-//        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) BloodGroup);
-//        BloodGroup.setAdapter(adapter1);
-//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) MaritalStatus);
-//        MaritalStatus.setAdapter(adapter2);
-//        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Caste);
-//        Caste.setAdapter(adapter3);
-//        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, (List<String>) Religion);
-//        Religion.setAdapter(adapter4);
-        Gender.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Gender.showDropDown();
+                selectImage();
             }
         });
 
-        BloodGroup.setOnClickListener(new View.OnClickListener() {
+//        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
+//        dropdowncall();
+
+        arrayAdapter_list = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, bloodgroups);
+        bloodgroupdropdown.setAdapter(arrayAdapter_list);
+        bloodgroupdropdown.setThreshold(1);
+
+        arrayAdapter_admissioncategory = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, admissioncategory);
+        admissioncategorydropdown.setAdapter(arrayAdapter_admissioncategory);
+        admissioncategorydropdown.setThreshold(1);
+
+        arrayAdapter_gender = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, gender);
+        genderdropdown.setAdapter(arrayAdapter_gender);
+        genderdropdown.setThreshold(1);
+
+        arrayAdapter_maritalstatus = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, maritalstatus);
+        maritalstatusdropdown.setAdapter(arrayAdapter_maritalstatus);
+        maritalstatusdropdown.setThreshold(1);
+
+        arrayAdapter_department = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, department);
+        departmentdropdown.setAdapter(arrayAdapter_department);
+        departmentdropdown.setThreshold(1);
+
+
+        saveInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BloodGroup.showDropDown();
+                name = nameField.getText().toString();
+//                departmentdropdown = department.getText ().toString ();
+                blood_group = bloodgroupdropdown.getText().toString();
+                admission_category = admissioncategorydropdown.getText().toString();
+                gender_ = genderdropdown.getText().toString();
+                marital_status = maritalstatusdropdown.getText().toString();
+                department_ = departmentdropdown.getText().toString();
+
+                admissionNo = admissionNoField.getText().toString();
+                rollNo = rollNoField.getText().toString();
+                dateOfBirth = dateOfBirthField.getText().toString();
+                yearOfAdmission = yearOfAdmissionField.getText().toString();
+                religion = religionField.getText().toString();
+                caste = casteField.getText().toString();
+                permenentAddress = permenentAddressField.getText().toString();
+                presentAddress = presentAddressField.getText().toString();
+                identificationMark1 = identificationMark1Field.getText().toString();
+                identificationMark2 = identificationMark2Field.getText().toString();
+                textMobilenumber=Mobilenumber.getText().toString();
+                textResiding=Residing.getText().toString();
+                textDistance=Distance.getText().toString();
+
+
+                getPersonalList(name, blood_group, admission_category, gender_, marital_status, department_,
+                        admissionNo, rollNo, dateOfBirth, yearOfAdmission, religion, caste, permenentAddress, presentAddress,
+                        identificationMark1, identificationMark2,textMobilenumber,textResiding,textDistance);
+
             }
         });
-
-        MaritalStatus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MaritalStatus.showDropDown();
-            }
-        });
-
-        Religion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Religion.showDropDown();
-            }
-        });
-
-        Caste.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Caste.showDropDown();
-            }
-        });
-
 
     }
 
-    private static final String[] Gender = new String[]{"Male", "Female"};
-    private static final String[] BloodGroup = new String[]{"A+", "B+","o+","AB+", "A-","B-", "o-","AB-"};
-    private static final String[] Marriage = new String[]{"single", "married"};
-    private static final String[] Caste = new String[]{"OBC", "SC","ST"};
-    private static final String[] Religion = new String[]{"Islam", "Hindu","Christian","Nil"};
+    private void departmentdropdowncall() {
+        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
-    public void getPersonalList( String dob, String nmid, String dptname, String admsnno, String rllnoid, String yrfadm,String idmrk1,String idmrk2) {
+        Call<DepartmentDropdownResponse> departmentDropdownResponseCall = apiCall.getDepartmentDropdown();
+        departmentDropdownResponseCall.enqueue(new Callback<DepartmentDropdownResponse>() {
+            @Override
+            public void onResponse(Call<DepartmentDropdownResponse> call, Response<DepartmentDropdownResponse> response) {
+                departmentDropdownResponseItem = response.body().getDepartments();
+                for (DepartmentsItem item : departmentDropdownResponseItem) {
+                    department.add(item.getDepartmentName());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DepartmentDropdownResponse> call, Throwable t) {
+                Toast.makeText(PersonalDetails.this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void dropdowncall() {
+        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
+        Call<PersonalDropdownResponse> dropdownResponseCall = apiCall.getPersonalDropdown();
+        dropdownResponseCall.enqueue(new Callback<PersonalDropdownResponse>() {
+            @Override
+            public void onResponse(Call<PersonalDropdownResponse> call, Response<PersonalDropdownResponse> response) {
+                bloodGroupItem = response.body().getBloodGroup();
+                for (BloodGroupItem item : bloodGroupItem) {
+                    bloodgroups.add(item.getBloodGroup());
+                }
+
+                categoryOfAdmissionItem = response.body().getCategoryOfAdmission();
+                for (CategoryOfAdmissionItem item : categoryOfAdmissionItem) {
+                    admissioncategory.add(item.getAdmissionCategory());
+                }
+
+                genderItem = response.body().getGender();
+                for (GenderItem item : genderItem) {
+                    gender.add(item.getGender());
+                }
+
+                maritalStatusItem = response.body().getMaritalStatus();
+                for (MaritalStatusItem item : maritalStatusItem) {
+                    maritalstatus.add(item.getMaritalStatus());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<PersonalDropdownResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void selectImage() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, IMAGE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IMAGE && resultCode == RESULT_OK && data != null) {
+            Uri path = data.getData();
+
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
+                addImage.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private String convertToString() {
+        if (bitmap != null) {
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+            byte[] imgByte = byteArrayOutputStream.toByteArray();
+            return Base64.encodeToString(imgByte, Base64.DEFAULT);
+        }
+        return "";
+    }
+
+
+    public void getPersonalList(String name, String blood_group, String admission_category, String gender_, String marital_status, String department_, String admissionNo, String rollNo, String dateOfBirth, String yearOfAdmission, String religion, String caste, String permenentAddress, String presentAddress, String identificationMark1, String identificationMark2, String textMobilenumber, String textResiding, String textDistance) {
+
+        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
+        authtoken = (shared.getString("token", ""));
+
+        String image = convertToString();
 
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("name", this.nmid);
-//        params.put("mobile", textmedium);
-//        params.put("gender", this.);
-        params.put("admission_no", this.admsnno);
-        params.put("roll_no", this.rllnoid);
-        params.put("date_of_birth", this.dob);
-//        params.put("blood_group",this.)
-//        params.put("syllabus", textallsyllabus);
-//        params.put("12th_school_name", textschoolplustwo);
-//        //  params.put("course_id", 1);
-//        params.put("subject_id1", textenglishplustwobox);
-//        params.put("subject_id2", textsub1box);
-//        params.put("subject_id3", textsub2box);
-//        params.put("subject_id4", textsub3box);
-//        params.put("subject_id5", textsub4box);
-//        params.put("subject_1_mark", textenglishplustwobox);
-//        params.put("subject_2_mark", textsub1box);
-//        params.put("subject_3_mark", textsub2box);
-//        params.put("subject_4_mark", textsub3box);
-//        params.put("subject_5_mark", textsub4box);
-//        params.put("course_name", textugccourse);
-//        params.put("college_name", textcollegename);
-//        params.put("university", textuniversity);
-//        params.put("core_mark", textugcmainbox);
-//        params.put("sub_mark", textcoresub);
-//        params.put("english_mark", textugcenglishbox);
-//        params.put("language_mark", textugclangbox);
-//        params.put("open_mark", textopencoursebox);
-//        //params.put("additional_courses_grade", textcoursename);
-//        params.put("additional_courses_instiution", textinstitution);
-//        params.put("additional_courses_recongnisation", textuniversity2);
-//        params.put("additional_courses_course_type", textcoursetype);
-//        params.put("other_qualification_course_name", textcoursename);
-//        params.put("other_qualification_grade", textcoursename);
-//        params.put(" other_qualification_instiution", textcoursename);
-//        params.put("other_qualification_recongnisation", textcoursename);
-
-        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-        authentoken = (shared.getString("token", ""));
+        params.put("name", name);
+        params.put("blood_group", blood_group);
+        params.put("admission_no", admissionNo);
+        params.put("roll_no", rollNo);
+        params.put("joining_year", yearOfAdmission);
+        params.put("image", image);
+        params.put("admission_category", admission_category);
+        params.put("department", department_);
+        params.put("gender", gender_);
+        params.put("date_of_birth", dateOfBirth);
+        params.put("marital_status", marital_status);
+        params.put("religion", religion);
+        params.put("caste", caste);
+        params.put("permanent_address", permenentAddress);
+        params.put("present_address", presentAddress);
+        params.put("identification_mark_1", identificationMark1);
+        params.put("identification_mark_2", identificationMark2);
+        params.put("mobile", textMobilenumber);
+        params.put("residing_at", textResiding);
+        params.put("distance_to_college", textDistance);
 
 
-        Call<PersonalResponse> PersonalCall = apiCall.getPersonal(params, authentoken);
+        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
+
+
+        Call<PersonalResponse> PersonalCall = apiCall.getPersonal(params, authtoken);
 
         PersonalCall.enqueue(new Callback<PersonalResponse>() {
             @Override
@@ -258,6 +366,9 @@ button1=findViewById(R.id.uploadPersnnlDetls);
                     apiPersonalList = response.body().getStatus();
 
                     Toast.makeText(PersonalDetails.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
+                    Intent newIntent = new Intent(getApplicationContext(), EducationalDetails.class);
+                    startActivity(newIntent);
+                    finish();
                 } else {
                     Toast.makeText(PersonalDetails.this, "Already registered.", Toast.LENGTH_SHORT).show();
                 }
@@ -272,10 +383,10 @@ button1=findViewById(R.id.uploadPersnnlDetls);
         });
 
     }
-    public boolean onOptionsItemSelected(MenuItem item){
+
+    public boolean onOptionsItemSelected(MenuItem item) {
         Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
         startActivityForResult(myIntent, 0);
         return true;
     }
 }
-

@@ -430,7 +430,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="90"
+
                         tools:layout_editor_absoluteX="97dp"
                         tools:layout_editor_absoluteY="306dp" />
 
@@ -464,7 +464,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+
                         tools:layout_editor_absoluteX="267dp"
                         tools:layout_editor_absoluteY="480dp" />
 
@@ -498,7 +498,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+
                         tools:layout_editor_absoluteX="139dp"
                         tools:layout_editor_absoluteY="618dp" />
 
@@ -532,7 +532,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+
                         tools:layout_editor_absoluteX="139dp"
                         tools:layout_editor_absoluteY="618dp" />
 
@@ -565,7 +565,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+
                         tools:layout_editor_absoluteX="139dp"
                         tools:layout_editor_absoluteY="618dp" />
 
@@ -599,7 +599,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+
                         tools:layout_editor_absoluteX="139dp"
                         tools:layout_editor_absoluteY="618dp" />
 
