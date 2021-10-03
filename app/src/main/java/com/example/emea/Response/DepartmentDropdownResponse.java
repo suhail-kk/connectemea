@@ -6,10 +6,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class DepartmentDropdownResponse{
 
-	@SerializedName("departments")
-	private ArrayList<DepartmentsItem> departments;
+	@SerializedName("department")
+	private ArrayList<DepartmentItem> department;
 
-	public ArrayList<DepartmentsItem> getDepartments(){
-		return departments;
+	public ArrayList<DepartmentItem> getDepartment(){
+		return department;
 	}
 }

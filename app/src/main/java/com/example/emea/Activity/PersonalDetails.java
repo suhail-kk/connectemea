@@ -17,6 +17,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -27,11 +28,12 @@ import com.example.emea.R;
 import com.example.emea.Response.BloodGroupItem;
 import com.example.emea.Response.CategoryOfAdmissionItem;
 import com.example.emea.Response.DepartmentDropdownResponse;
-import com.example.emea.Response.DepartmentsItem;
+import com.example.emea.Response.DepartmentItem;
 import com.example.emea.Response.GenderItem;
 import com.example.emea.Response.MaritalStatusItem;
 import com.example.emea.Response.PersonalDropdownResponse;
 import com.example.emea.Response.PersonalResponse;
+import com.example.emea.Response.ResidingAtItem;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
@@ -61,7 +63,7 @@ public class PersonalDetails extends AppCompatActivity {
     String admission_category;
     String gender_;
     String marital_status;
-    String department_;
+    String department_,reside_;
     String textMobilenumber,textResiding,textDistance;
 
     TextInputEditText dateOfBirthField, nameField, admissionNoField, rollNoField, yearOfAdmissionField,
@@ -79,7 +81,8 @@ public class PersonalDetails extends AppCompatActivity {
     AutoCompleteTextView admissioncategorydropdown;
     AutoCompleteTextView genderdropdown;
     AutoCompleteTextView maritalstatusdropdown;
-    AutoCompleteTextView departmentdropdown;
+    AutoCompleteTextView departmentdropdown,residedropdown;
+
 
     ArrayList<BloodGroupItem> bloodGroupItem;
     ArrayList<String> bloodgroups;
@@ -97,9 +100,15 @@ public class PersonalDetails extends AppCompatActivity {
     ArrayList<String> maritalstatus;
     ArrayAdapter<String> arrayAdapter_maritalstatus;
 
-    ArrayList<DepartmentsItem> departmentDropdownResponseItem;
+    ArrayList<DepartmentItem> departmentDropdownResponseItem;
     ArrayList<String> department;
     ArrayAdapter<String> arrayAdapter_department;
+
+
+    ArrayList<ResidingAtItem> residingAtItems;
+    ArrayList<String> reside;
+    ArrayAdapter<String> arrayAdapter_reside;
+
 
     private static final int IMAGE = 100;
 
@@ -141,12 +150,15 @@ public class PersonalDetails extends AppCompatActivity {
         gender = new ArrayList<>();
         maritalstatus = new ArrayList<>();
         department = new ArrayList<>();
+        reside=new ArrayList<>();
 
         bloodgroupdropdown = findViewById(R.id.bloodGroup);
         admissioncategorydropdown = findViewById(R.id.admissioncategory);
         genderdropdown = findViewById(R.id.gender);
         maritalstatusdropdown = findViewById(R.id.maritalStatus);
         departmentdropdown = findViewById(R.id.department);
+        residedropdown=findViewById(R.id.residing);
+
 
         nameField = findViewById(R.id.name);
         admissionNoField = findViewById(R.id.admissionno);
@@ -161,7 +173,7 @@ public class PersonalDetails extends AppCompatActivity {
         presentAddressField = findViewById(R.id.presentaddress);
         addImage = findViewById(R.id.addimageview);
         Mobilenumber=findViewById(R.id.mobileno);
-        Residing=findViewById(R.id.residing);
+
         Distance=findViewById(R.id.distance);
 
 
@@ -197,6 +209,11 @@ public class PersonalDetails extends AppCompatActivity {
         departmentdropdown.setAdapter(arrayAdapter_department);
         departmentdropdown.setThreshold(1);
 
+        arrayAdapter_reside = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, reside);
+        residedropdown.setAdapter(arrayAdapter_reside);
+        residedropdown.setThreshold(1);
+
+
 
         saveInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,6 +225,7 @@ public class PersonalDetails extends AppCompatActivity {
                 gender_ = genderdropdown.getText().toString();
                 marital_status = maritalstatusdropdown.getText().toString();
                 department_ = departmentdropdown.getText().toString();
+                reside_=residedropdown.getText().toString();
 
                 admissionNo = admissionNoField.getText().toString();
                 rollNo = rollNoField.getText().toString();
@@ -226,7 +244,7 @@ public class PersonalDetails extends AppCompatActivity {
 
                 getPersonalList(name, blood_group, admission_category, gender_, marital_status, department_,
                         admissionNo, rollNo, dateOfBirth, yearOfAdmission, religion, caste, permenentAddress, presentAddress,
-                        identificationMark1, identificationMark2,textMobilenumber,textResiding,textDistance);
+                        identificationMark1, identificationMark2,textMobilenumber,textResiding,textDistance,reside_);
 
             }
         });
@@ -240,8 +258,8 @@ public class PersonalDetails extends AppCompatActivity {
         departmentDropdownResponseCall.enqueue(new Callback<DepartmentDropdownResponse>() {
             @Override
             public void onResponse(Call<DepartmentDropdownResponse> call, Response<DepartmentDropdownResponse> response) {
-                departmentDropdownResponseItem = response.body().getDepartments();
-                for (DepartmentsItem item : departmentDropdownResponseItem) {
+                departmentDropdownResponseItem = response.body().getDepartment();
+                for (DepartmentItem item : departmentDropdownResponseItem) {
                     department.add(item.getDepartmentName());
                 }
             }
@@ -277,6 +295,11 @@ public class PersonalDetails extends AppCompatActivity {
                 maritalStatusItem = response.body().getMaritalStatus();
                 for (MaritalStatusItem item : maritalStatusItem) {
                     maritalstatus.add(item.getMaritalStatus());
+                }
+
+                residingAtItems = response.body().getResidingAt();
+                for (ResidingAtItem item : residingAtItems) {
+                    reside.add(item.getResiding());
                 }
 
             }
@@ -321,7 +344,7 @@ public class PersonalDetails extends AppCompatActivity {
     }
 
 
-    public void getPersonalList(String name, String blood_group, String admission_category, String gender_, String marital_status, String department_, String admissionNo, String rollNo, String dateOfBirth, String yearOfAdmission, String religion, String caste, String permenentAddress, String presentAddress, String identificationMark1, String identificationMark2, String textMobilenumber, String textResiding, String textDistance) {
+    public void getPersonalList(String name, String blood_group, String admission_category, String gender_, String marital_status, String department_, String admissionNo, String rollNo, String dateOfBirth, String yearOfAdmission, String religion, String caste, String permenentAddress, String presentAddress, String identificationMark1, String identificationMark2, String textMobilenumber, String textResiding, String textDistance,String reside_) {
 
         SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
         authtoken = (shared.getString("token", ""));
@@ -348,8 +371,9 @@ public class PersonalDetails extends AppCompatActivity {
         params.put("identification_mark_1", identificationMark1);
         params.put("identification_mark_2", identificationMark2);
         params.put("mobile", textMobilenumber);
-        params.put("residing_at", textResiding);
+
         params.put("distance_to_college", textDistance);
+        params.put("residing_at", reside_);
 
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);

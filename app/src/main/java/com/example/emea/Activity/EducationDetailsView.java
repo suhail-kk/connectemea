@@ -127,9 +127,13 @@ public class EducationDetailsView extends AppCompatActivity {
                 marklist12th = response.body().getMarklist12th();
 
 
-                textmathssslcbox = marklist10.getMaths();
-                mathssslcbox = findViewById(R.id.mathssslcdisplay);
+                textmathssslcbox=marklist10.getMaths();
+                mathssslcbox=findViewById(R.id.mathssslcdisplay);
                 mathssslcbox.setText(textmathssslcbox);
+
+//                textmathssslcbox = marklist10.getMaths();
+//                mathssslcbox = findViewById(R.id.mathssslcdisplay);
+//                mathssslcbox.setText(textmathssslcbox);
                 textschool = educational10thDetails.getSchoolName();
                 school = findViewById(R.id.schooldisplay);
                 school.setText(textschool);

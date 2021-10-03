@@ -2,7 +2,7 @@ package com.example.emea.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DepartmentsItem{
+public class DepartmentItem{
 
 	@SerializedName("department_img")
 	private Object departmentImg;

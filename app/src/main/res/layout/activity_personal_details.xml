@@ -147,6 +147,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/rollnumber"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -325,20 +326,24 @@
             app:layout_constraintStart_toStartOf="@+id/linearLayout5"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/Residing"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Now Residing at/as"
-                tools:ignore="DuplicateIds">
+                android:hint="Residing at">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/residing"
-                    android:singleLine="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+            <AutoCompleteTextView
+                android:id="@+id/residing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+
+
 
             </com.google.android.material.textfield.TextInputLayout>
 

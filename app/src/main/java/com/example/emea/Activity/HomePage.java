@@ -100,7 +100,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent eduIntent = new Intent(getApplicationContext(), PersonalDetails.class);
+                Intent eduIntent = new Intent(getApplicationContext(), EducationDetailsView.class);
                 startActivity(eduIntent);
 
             }
@@ -156,7 +156,7 @@ public class HomePage extends AppCompatActivity {
 
                     displayName.setText(studentName);
                     displayAdmission.setText(studentAdmissionNo);
-                    Picasso.get().load("http://172.16.0.94/studentsprofile/assets/images/students/" + studentImage).into(studentImageView);
+                    Picasso.get().load("http://172.20.10.4/studentsprofile/assets/images/students/" + studentImage).into(studentImageView);
 
 
                 }

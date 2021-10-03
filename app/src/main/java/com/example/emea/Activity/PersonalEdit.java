@@ -12,9 +12,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -27,14 +27,13 @@ import com.example.emea.R;
 import com.example.emea.Response.BloodGroupItem;
 import com.example.emea.Response.CategoryOfAdmissionItem;
 import com.example.emea.Response.DepartmentDropdownResponse;
-import com.example.emea.Response.DepartmentsItem;
-import com.example.emea.Response.FamilyEditResponse;
+import com.example.emea.Response.DepartmentItem;
 import com.example.emea.Response.GenderItem;
 import com.example.emea.Response.MaritalStatusItem;
 import com.example.emea.Response.PersonalDropdownResponse;
 import com.example.emea.Response.PersonalEditResponse;
 import com.example.emea.Response.PersonalViewResponse;
-import com.google.android.material.textfield.TextInputEditText;
+import com.example.emea.Response.ResidingAtItem;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -75,7 +74,7 @@ public class PersonalEdit extends AppCompatActivity {
     textadmissioncategorydropdownedit,
             textgenderdropdownedit,
     textmaritalstatusdropdownedit,
-            textdepartmentdropdownedit;       ;
+            textdepartmentdropdownedit,reside_;       ;
     ImageButton birth;
     TextView textNav;
     TextView gender;
@@ -85,12 +84,12 @@ public class PersonalEdit extends AppCompatActivity {
     String apiPersonalList;
     String authtoken;
     Bitmap bitmap;
-
+ProgressBar pgbar1;
     AutoCompleteTextView bloodgroupdropdownedit;
     AutoCompleteTextView admissioncategorydropdownedit;
     AutoCompleteTextView genderdropdownedit;
     AutoCompleteTextView maritalstatusdropdownedit;
-    AutoCompleteTextView departmentdropdownedit;
+    AutoCompleteTextView departmentdropdownedit,residedropdown;
 
     ArrayList<BloodGroupItem> bloodGroupItem;
     ArrayList<String> bloodgrp;
@@ -108,9 +107,13 @@ public class PersonalEdit extends AppCompatActivity {
     ArrayList<String> maritalstatus;
     ArrayAdapter<String> arrayAdapter_maritalstatus;
 
-    ArrayList<DepartmentsItem> departmentDropdownResponseItem;
+    ArrayList<DepartmentItem> departmentDropdownResponseItem;
     ArrayList<String> department;
     ArrayAdapter<String> arrayAdapter_department;
+
+    ArrayList<ResidingAtItem> residingAtItems;
+    ArrayList<String> reside;
+    ArrayAdapter<String> arrayAdapter_reside;
 
     Button saveinfo;
 
@@ -121,6 +124,8 @@ public class PersonalEdit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
+
+        pgbar1=findViewById(R.id.progressBar1);
 
         prevPage = findViewById(R.id.backBtn);
         prevPage.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +151,7 @@ public class PersonalEdit extends AppCompatActivity {
         gender2 = new ArrayList<>();
         maritalstatus = new ArrayList<>();
         department = new ArrayList<>();
+        reside=new ArrayList<>();
 
 //        bloodgroupdropdownedit = findViewById(R.id.bloodGroup);
 //        admissioncategorydropdownedit = findViewById(R.id.admissioncategory);
@@ -196,12 +202,15 @@ public class PersonalEdit extends AppCompatActivity {
 
         SharedPreferences shared = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
         authtoken = (shared.getString("token", ""));
+        pgbar1.setVisibility(View.VISIBLE);
 
         Call<PersonalViewResponse> personalCall = apiCall.getPersonalView(authtoken);
         personalCall.enqueue(new Callback<PersonalViewResponse>() {
+
+
             @Override
             public void onResponse(Call<PersonalViewResponse> call, Response<PersonalViewResponse> response) {
-
+                pgbar1.setVisibility(View.GONE);
                 nameeditField = response.body().getName();
                 nameedit = (TextView) findViewById(R.id.name);
                 nameedit.setText(nameeditField);
@@ -241,6 +250,7 @@ public class PersonalEdit extends AppCompatActivity {
                 textblood = response.body().getBloodGroup();
                 blood = (TextView) findViewById(R.id.bloodGroup);
                 blood.setText(textblood);
+
 
 
                 textmarital = response.body().getMaritalStatus();
@@ -323,6 +333,11 @@ public class PersonalEdit extends AppCompatActivity {
                 departmentdropdownedit.setAdapter(arrayAdapter_department);
                 departmentdropdownedit.setThreshold(1);
 
+                residedropdown=findViewById(R.id.residing);
+                arrayAdapter_reside = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, reside);
+                residedropdown.setAdapter(arrayAdapter_reside);
+                residedropdown.setThreshold(1);
+
                 apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
                 dropdowncall();
@@ -332,7 +347,7 @@ public class PersonalEdit extends AppCompatActivity {
             @Override
             public void onFailure(Call<PersonalViewResponse> call, Throwable t) {
                 Toast.makeText(PersonalEdit.this, "Failed", Toast.LENGTH_SHORT).show();
-
+                pgbar1.setVisibility(View.GONE);
             }
         });
 
@@ -364,7 +379,8 @@ public class PersonalEdit extends AppCompatActivity {
                 identificationMark1editField = identificationmark1edit.getText().toString();
                 identificationMark2editField = identificationmark2edit.getText().toString();
                 textmobilenumber=Mobilenumber.getText().toString();
-                textresidingat=Residing.getText().toString();
+                reside_=residedropdown.getText().toString();
+//                textresidingat=Residing.getText().toString();
                 textdistancekm=Distance.getText().toString();
                 textbloodgroupdropdownedit = bloodgroupdropdownedit.getText().toString();
                 textadmissioncategorydropdownedit=admissioncategorydropdownedit.getText().toString();
@@ -376,7 +392,7 @@ public class PersonalEdit extends AppCompatActivity {
                         religioneditField,casteeditField, permenentAddresseditField,presentAddresseditField,
                         identificationMark1editField,identificationMark2editField,
                         genderstring,bloodgroupstring,maritalstatusstring,admissioncategorystring,departmentstring,textmobilenumber,textdistancekm,textresidingat,
-                        textadmissioncategorydropdownedit,textdepartmentdropdownedit,textbloodgroupdropdownedit,textgenderdropdownedit,textmaritalstatusdropdownedit);
+                        textadmissioncategorydropdownedit,textdepartmentdropdownedit,textbloodgroupdropdownedit,textgenderdropdownedit,textmaritalstatusdropdownedit,reside_);
 
             }
         });
@@ -407,6 +423,10 @@ public class PersonalEdit extends AppCompatActivity {
                 for (MaritalStatusItem item : maritalStatusItem) {
                     maritalstatus.add(item.getMaritalStatus());
                 }
+                residingAtItems = response.body().getResidingAt();
+                for (ResidingAtItem item : residingAtItems) {
+                    reside.add(item.getResiding());
+                }
 
 
 
@@ -426,8 +446,8 @@ public class PersonalEdit extends AppCompatActivity {
         departmentDropdownResponseCall.enqueue(new Callback<DepartmentDropdownResponse>() {
             @Override
             public void onResponse(Call<DepartmentDropdownResponse> call, Response<DepartmentDropdownResponse> response) {
-                departmentDropdownResponseItem = response.body().getDepartments();
-                for (DepartmentsItem item : departmentDropdownResponseItem) {
+                departmentDropdownResponseItem = response.body().getDepartment();
+                for (DepartmentItem item : departmentDropdownResponseItem) {
                     department.add(item.getDepartmentName());
                 }
             }
@@ -477,7 +497,8 @@ public class PersonalEdit extends AppCompatActivity {
                                     String presentAddresseditField, String identificationMark1editField, String identificationMark2editField,
                                     String genderstring, String maritalstatusstring, String departmentstring, String admissioncategorystring,
                                     String bloodgroupstring,String textmobilenumber,String textdistancekm,String textresidingat,String textadmissioncategorydropdownedit,
-                                    String textdepartmentdropdownedit,String textbloodgroupdropdownedit,String textgenderdropdownedit,String textmaritalstatusdropdownedit){
+                                    String textdepartmentdropdownedit,String textbloodgroupdropdownedit,String textgenderdropdownedit,String textmaritalstatusdropdownedi,
+                                    String reside_){
 
         SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
         authtoken = (shared.getString("token", ""));
@@ -503,8 +524,9 @@ public class PersonalEdit extends AppCompatActivity {
         params.put("identification_mark_1", identificationMark1editField);
         params.put("identification_mark_2", identificationMark2editField);
         params.put("mobile", textmobilenumber);
-        params.put("residing_at", textresidingat);
+//        params.put("residing_at", textresidingat);
         params.put("dist_to_college", textdistancekm);
+        params.put("residing_at", reside_);
 //
 //        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
 //        authtoken = (shared.getString("token", ""));
