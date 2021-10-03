@@ -238,7 +238,7 @@ public class PersonalDetails extends AppCompatActivity {
                 identificationMark1 = identificationMark1Field.getText().toString();
                 identificationMark2 = identificationMark2Field.getText().toString();
                 textMobilenumber=Mobilenumber.getText().toString();
-                textResiding=Residing.getText().toString();
+//                textResiding=Residing.getText().toString();
                 textDistance=Distance.getText().toString();
 
 
