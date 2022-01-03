@@ -190,6 +190,43 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/linearLayoutextracirricular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayoutEducation"
+                android:layout_alignStart="@+id/linearLayoutEducation"
+                android:layout_alignEnd="@+id/linearLayoutEducation"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutFamily"
+                tools:layout_editor_absoluteX="30dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/family_details" />
+
+                <TextView
+                    android:id="@+id/extracurricular"
+                    style="@style/HomepageDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Extra Curricular" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/forward_icon" />
+
+            </LinearLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

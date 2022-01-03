@@ -18,7 +18,8 @@ import android.widget.Toolbar;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
-import com.example.emea.Response.ForgotResponse;
+import com.example.emea.Response.forgotpackage.Data;
+import com.example.emea.Response.forgotpackage.ForgotResponse;
 
 import java.util.HashMap;
 
@@ -35,7 +36,8 @@ public class ForgotPassword extends AppCompatActivity {
     String status;
     String authentoken;
     TextView txtForgot;
-
+    Data data;
+    String authToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +63,6 @@ public class ForgotPassword extends AppCompatActivity {
                  inputEmail = txtEmail.getText().toString();
                inputfullname = txtfullname.getText().toString();
 
-
-        //        boolean check = ValidateInfo(inputEmail);
-
-//                if (check == true) {
-//                    Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
-//                    startActivity(newIntent);
-//
-//                }
                 apiCall = ApiClient.getRetrofit().create(ApiCall.class);
                 getForgotList(inputEmail, inputfullname);
             }
@@ -92,13 +86,9 @@ public class ForgotPassword extends AppCompatActivity {
 
     public void getForgotList(String inputEmail, String inputfullname) {
 
-//        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//        SharedPreferences.Editor editor = shared.edit();
-//        editor.putString("token", authentoken);
-//        editor.commit();
         HashMap<String, String> params = new HashMap<>();
 
-        params.put("name", inputfullname);
+        params.put("username", inputfullname);
         params.put("email", inputEmail);
 
         Call<ForgotResponse> ForgotCall = apiCall.getForgot(params);
@@ -106,45 +96,43 @@ public class ForgotPassword extends AppCompatActivity {
             @Override
             public void onResponse(Call<ForgotResponse> call, Response<ForgotResponse> response) {
 
-             //   ForgotResponse forgotResponse = response.body();
-//                authentoken = response.headers().get("token");
                 if (response.body() != null) {
-                    authentoken = response.headers().get("token");
-                    SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = shared.edit();
-                    editor.putString("token", authentoken);
-                    editor.commit();
-                    Log.e("tokenTAG", "Token : " + authentoken);
+
+//                    authToken = response.headers().get("token");
+                    data = response.body().getData();
+                    authentoken=data.getUserToken();
+                    Toast.makeText(ForgotPassword.this, authentoken, Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+
+
+
+//                    SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = shared.edit();
+//                    editor.putString("token", authentoken);
+//                    editor.commit();
+//                    Log.e("tokenTAG", "Token : " + authentoken);
 
                     Toast.makeText(ForgotPassword.this, "Added ", Toast.LENGTH_SHORT).show();
 
                         Intent newIntent = new Intent(getApplicationContext(),RecoveryPassword.class);
+                    newIntent.putExtra("token", authentoken);
                         startActivity(newIntent);
 
-                }
-             //   Toast.makeText(context, ForgotPassword.getMessage() + "", Toast.LENGTH_SHORT).show();
 
-//                if (response.body() != null) {
-////
-//
-//                    status = response.body().getStatus();
-//
-//                    if (status.equals("success")) {
-////                                            status = response.body().getStatus();
-//
-//
-//                        Toast.makeText(ForgotPassword.this, "Added ", Toast.LENGTH_SHORT).show();
-//
-//                        Intent newIntent = new Intent(getApplicationContext(),RecoveryPassword.class);
-//                        startActivity(newIntent);
-//                    }
+
+
+
+                }
+
                     else {
                         Toast.makeText(ForgotPassword.this, "Register Failed.", Toast.LENGTH_SHORT).show();
                     }
 
-//                } else {
-//                    Toast.makeText(ForgotPassword.this, " error.", Toast.LENGTH_SHORT).show();
-//                }
             }
 
 

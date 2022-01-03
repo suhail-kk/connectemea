@@ -1,6 +1,5 @@
 package com.example.emea.Activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -10,7 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +16,11 @@ import android.widget.Toast;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
-import com.example.emea.Response.PersonalViewResponse;
+import com.example.emea.Response.getDetails.Data;
+import com.example.emea.Response.getDetails.GetResponse;
+import com.example.emea.Response.getDetails.PersonalDetails;
+import com.example.emea.Response.getDetails.Student;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,14 +31,26 @@ public class PersonalDetailView extends AppCompatActivity {
     TextView topNav;
 
     ApiCall apiCall;
+    //    Data data;
+    PersonalDetails personaldetails;
+    TextView name, course, rollno, admno, dob, age, gender, blood, marital, religion, caste, email, permaddress, presaddress;
+    TextView admcategory, managementreco, identification1, identification2, joining, mobilenumber, residingat, distancekm;
 
-    TextView name,course,rollno,admno,dob,age,gender,blood,marital,religion,caste,email,permaddress,presaddress;
-    TextView admcategory,managementreco,identification1,identification2,joining,mobilenumber,residingat,distancekm;
-
-    String textname,textcourse,textrollno,textadmno,textdob,textage,textgender,textblood;
-    String textmarital,textreligion,textcaste,textemail,textpermaddress,textpresaddress,textadmcategory;
-    String textmanagementreco,textidentification1,textidentification2,textjoining,textmobilenumber,textresidingat,textdistancekm;
+    String textname, textcourse, textrollno, textadmno, textdob, textage, textgender, textblood;
+    String textmarital, textreligion, textcaste, textemail, textpermaddress, textpresaddress, textadmcategory;
+    String textmanagementreco;
+    String textidentification1;
+    String textidentification2;
+    String textjoining;
+    int textmobilenumber;
+    String textresidingat;
+    String textdistancekm;
     String authtoken;
+    String authToken;
+    String userid;
+    Data data;
+    Student student;
+
 
     ImageView edit;
     ImageView backbutton;
@@ -81,89 +95,95 @@ public class PersonalDetailView extends AppCompatActivity {
         });
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-
+//
         SharedPreferences shared = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
         authtoken = (shared.getString("token", ""));
 
-        Call<PersonalViewResponse> personalCall = apiCall.getPersonalView(authtoken);
-        personalCall.enqueue(new Callback<PersonalViewResponse>() {
-            @Override
-            public void onResponse(Call<PersonalViewResponse> call, Response<PersonalViewResponse> response) {
+        SharedPreferences pref = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
+         userid = (pref.getString("userId", ""));
 
-                textname = response.body().getName();
+        Call<GetResponse> personalCall = apiCall.getDetailsView(authtoken);
+        personalCall.enqueue(new Callback<GetResponse>() {
+            @Override
+            public void onResponse(Call<GetResponse> call, Response<GetResponse> response) {
+//                 data = response.body().getData();
+////                authToken=data.getPersonalDetails();
+//                personaldetails = data.getPersonalDetails();
+                data = response.body().getData();
+                 student = data.getStudent();
+                personaldetails=student.getPersonalDetails();
+
+
+                textname = personaldetails.getName();
                 name = (TextView) findViewById(R.id.namedisplay);
                 name.setText(textname);
 
-                textcourse = response.body().getDepartment();
-                course = (TextView) findViewById(R.id.classdisplay);
-                course.setText(textcourse);
+//                textcourse = personaldetails.get
+//                course = (TextView) findViewById(R.id.classdisplay);
+//                course.setText(textcourse);
 
-                textrollno = response.body().getRollNo();
+                textrollno = personaldetails.getEmail();
                 rollno = (TextView) findViewById(R.id.rollnodisplay);
                 rollno.setText(textrollno);
 
-                textadmno = response.body().getAdmissionNo();
+                textadmno = personaldetails.getAdmissionNO();
                 admno = (TextView) findViewById(R.id.admnodisplay);
                 admno.setText(textadmno);
 
-                textdob = response.body().getDateOfBirth();
+                textdob = personaldetails.getDateOfBirth();
                 dob = (TextView) findViewById(R.id.dobdisplay);
                 dob.setText(textdob);
 
-                textdistancekm = response.body().getDistanceToCollege();
+                textdistancekm = personaldetails.getDistanceFromCollege();
                 distancekm = (TextView) findViewById(R.id.distancedisplay);
                 distancekm.setText(textdistancekm);
 
 
-                textresidingat = response.body().getResidingAt();
+                textresidingat = personaldetails.getResidence();
                 residingat = (TextView) findViewById(R.id.residingdisplay);
                 residingat.setText(textresidingat);
 
-                textjoining = response.body().getJoiningYear();
+                textjoining =personaldetails.getYearOfJoin();
                 joining = (TextView) findViewById(R.id.joindisplay);
                 joining.setText(textjoining);
 
-                textmobilenumber = response.body().getMobile();
+                textmobilenumber = personaldetails.getMobileNo();
                 mobilenumber = (TextView) findViewById(R.id.mobiledisplay);
-                mobilenumber.setText(textmobilenumber);
+                mobilenumber.setText(String.valueOf(textmobilenumber));
 
-//                textage=response.body().getFatherName();
-//                age=(TextView)findViewById(R.id.agedisplay);
-//                age.setText(textage);
-
-                textgender = response.body().getGender();
+                textgender = personaldetails.getGender();
                 gender = (TextView) findViewById(R.id.genderdisplay);
                 gender.setText(textgender);
 
-                textblood = response.body().getBloodGroup();
+                textblood = personaldetails.getBloodGroup();
                 blood = (TextView) findViewById(R.id.bloodgrpdisplay);
                 blood.setText(textblood);
 
-                textmarital = response.body().getMaritalStatus();
+                textmarital = personaldetails.getMaritalStatus();
                 marital = (TextView) findViewById(R.id.maritaldisplay);
                 marital.setText(textmarital);
 
-                textreligion = response.body().getReligion();
+                textreligion = personaldetails.getReligion();
                 religion = (TextView) findViewById(R.id.religiondisplay);
                 religion.setText(textreligion);
 
-                textcaste = response.body().getCaste();
+                textcaste = personaldetails.getCaste();
                 caste = (TextView) findViewById(R.id.castedisplay);
                 caste.setText(textcaste);
 
-                textemail = response.body().getEmail();
+                textemail =personaldetails.getEmail();
                 email = (TextView) findViewById(R.id.emaildisplay);
                 email.setText(textemail);
 
-                textpermaddress = response.body().getPermanentAddress();
+                textpermaddress =personaldetails.getPermenentAddress();
                 permaddress = (TextView) findViewById(R.id.permenantaddressdisplay);
                 permaddress.setText(textpermaddress);
 
-                textpresaddress = response.body().getPresentAddress();
+                textpresaddress = personaldetails.getPresentAddress();
                 presaddress = (TextView) findViewById(R.id.presentaddressdisplay);
                 presaddress.setText(textpresaddress);
 
-                textadmcategory = response.body().getAdmissionCategory();
+                textadmcategory = personaldetails.getCategoryOfAdmission();
                 admcategory = (TextView) findViewById(R.id.admctgrydisplay);
                 admcategory.setText(textadmcategory);
 
@@ -171,25 +191,25 @@ public class PersonalDetailView extends AppCompatActivity {
 //                managementreco=(TextView)findViewById(R.id.managementrecodisplay);
 //                managementreco.setText(textmanagementreco);
 
-                textidentification1 = response.body().getIdentificationMark1();
+                textidentification1 = personaldetails.getIdentificationMarkOne();
                 identification1 = (TextView) findViewById(R.id.identification1display);
                 identification1.setText(textidentification1);
 
-                textidentification2 = response.body().getIdentificationMark2();
+                textidentification2 = personaldetails.getIdentificationMarkTwo();
                 identification2 = (TextView) findViewById(R.id.identification2display);
                 identification2.setText(textidentification2);
 
             }
+                @Override
+                public void onFailure (Call < GetResponse > call, Throwable t){
 
-            @Override
-            public void onFailure(Call<PersonalViewResponse> call, Throwable t) {
+                    Toast.makeText(PersonalDetailView.this, "Failed", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(PersonalDetailView.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
 
-            }
+
+
         });
-
-        //   setContentView(R.layout.activity_personal_detail_view);
     }
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
@@ -197,3 +217,8 @@ public class PersonalDetailView extends AppCompatActivity {
         return true;
     }
 }
+
+
+
+
+

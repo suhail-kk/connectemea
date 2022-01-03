@@ -414,7 +414,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView77"
+                        android:id="@+id/subid1"
                         style="@style/subheading3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -449,7 +449,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView78"
+                        android:id="@+id/subid2"
                         style="@style/subheading3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -483,7 +483,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView80"
+                        android:id="@+id/subid3"
                         style="@style/subheading3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -517,7 +517,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView84"
+                        android:id="@+id/subid4"
                         style="@style/subheading3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -550,7 +550,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView87"
+                        android:id="@+id/subid5"
                         style="@style/subheading3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

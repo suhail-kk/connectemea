@@ -1,11 +1,8 @@
 package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +14,7 @@ import android.widget.Toolbar;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
-import com.example.emea.Response.RecoveryResponse;
+import com.example.emea.Response.reset.ResetResponse;
 
 import java.util.HashMap;
 
@@ -30,26 +27,25 @@ public class RecoveryPassword extends AppCompatActivity {
     ApiCall apiCall;
     EditText txtPassword,txtConfirm;
     Button btnReset;
-    String status;
+    String message;
     String authentoken;
     TextView txtRecovery;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recovery_password);
+        Intent intent=getIntent();
+        authentoken=intent.getStringExtra("token");
+
+
+
+//       getIntent().getStringExtra("token");
+        Toast.makeText(this, authentoken, Toast.LENGTH_SHORT).show();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
-
-
-        txtRecovery = findViewById(R.id.changepassword);
-
-        txtRecovery = findViewById(R.id.login);
-
-//        Typeface typeface = ResourcesCompat.getFont(
-//                this,
-//                R.font.poppins_regular);
-//        txtRecovery.setTypeface(typeface);
 
 
         txtPassword=findViewById(R.id.recovery_password);
@@ -63,7 +59,7 @@ public class RecoveryPassword extends AppCompatActivity {
                 inputConfirmPassword = txtConfirm.getText().toString();
                 if (!inputPassword.equals(inputConfirmPassword)) {
                     Toast.makeText(RecoveryPassword.this, "Password doesn't match.", Toast.LENGTH_SHORT).show();
-                    //    return;
+
                 }
                 apiCall = ApiClient.getRetrofit().create(ApiCall.class);
 
@@ -74,32 +70,36 @@ public class RecoveryPassword extends AppCompatActivity {
     }
 
     public void getRegisterResponse(String inputPassword) {
-        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-        authentoken = (shared.getString("token", ""));
+
+
+
+//        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
+//        authentoken = (shared.getString("token", ""));
         HashMap<String, String> params = new HashMap<>();
 
         params.put("password", inputPassword);
-      params.put("token",authentoken);
+        params.put("token",authentoken);
 
 
 
 
-        Call<RecoveryResponse> RecoveryCall = apiCall.getrecoveryToken(params);
-        RecoveryCall.enqueue(new Callback<RecoveryResponse>() {
+        Call<ResetResponse> RecoveryCall = apiCall.getrecoveryToken(params,authentoken);
+        RecoveryCall.enqueue(new Callback<ResetResponse>() {
             @Override
-            public void onResponse(Call<RecoveryResponse> call, Response<RecoveryResponse> response) {
+            public void onResponse(Call<ResetResponse> call, Response<ResetResponse> response) {
 
                 if (response.body() != null) {
-                    status = response.body().getStatus();
-                    if (status.equals("success")) {
-
-                        Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(newIntent);
-
-                    }
-                    else {
-                        Toast.makeText(RecoveryPassword.this, "Register Failed.", Toast.LENGTH_SHORT).show();
-                    }
+                    message = response.body().getMessage();
+                    Toast.makeText(RecoveryPassword.this, message, Toast.LENGTH_SHORT).show();
+//                    if (message.equals("success")) {
+//
+//                        Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
+//                        startActivity(newIntent);
+//
+//                    }
+//                    else {
+//                        Toast.makeText(RecoveryPassword.this, "Register Failed.", Toast.LENGTH_SHORT).show();
+//                    }
             }
                 else {
                     Toast.makeText(RecoveryPassword.this, "Register error.", Toast.LENGTH_SHORT).show();
@@ -107,7 +107,7 @@ public class RecoveryPassword extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<RecoveryResponse> call, Throwable t) {
+            public void onFailure(Call<ResetResponse> call, Throwable t) {
                 Toast.makeText(RecoveryPassword.this, "failed", Toast.LENGTH_SHORT).show();
 
             }

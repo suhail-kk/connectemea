@@ -53,6 +53,11 @@
             android:name=".Activity.PersonalDetails"
             android:screenOrientation="portrait"
             android:label="Personal Details" />
+
+        <activity
+            android:name=".Activity.ExtraCurricularActivity"
+            android:screenOrientation="portrait"
+            android:label="ExtraCurricular Details" />
         <activity
             android:name=".Activity.ForgotPassword"
             android:screenOrientation="portrait"

@@ -83,7 +83,7 @@
                 android:id="@+id/department"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,7 +147,6 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/rollnumber"
-                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -197,7 +196,7 @@
                     android:id="@+id/gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none" />
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -216,7 +215,7 @@
                     android:id="@+id/bloodGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+
                     tools:ignore="DuplicateIds" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -263,7 +262,7 @@
                     android:id="@+id/maritalStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+
                     tools:ignore="DuplicateIds" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -340,7 +339,7 @@
                 android:id="@+id/residing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                />
 
 
 
@@ -420,7 +419,7 @@
                 android:id="@+id/admissioncategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 

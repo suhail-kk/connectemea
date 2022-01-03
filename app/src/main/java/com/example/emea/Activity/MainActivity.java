@@ -16,7 +16,8 @@ import android.widget.Toast;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
-import com.example.emea.Response.LoggingResponse;
+import com.example.emea.Response.Login.Data;
+import com.example.emea.Response.Login.LoginResponse;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
@@ -36,16 +37,14 @@ public class MainActivity extends AppCompatActivity {
     String inputEmail;
     String inputPassword;
     ApiCall apiCall;
+    Data data;
     String authToken;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
 
         btnforgot=findViewById((R.id.forgotpass));
         btnregister=findViewById((R.id.registernew));
@@ -55,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-
-
         btnLogin = findViewById(R.id.loginbutton);
         pgBar = findViewById(R.id.progressBar);
 
@@ -67,11 +64,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 inputEmail = txtEmail.getText().toString();
                 inputPassword = txtPassword.getText().toString();
-
-
-
-//                boolean check=ValidateInfo(inputEmail, inputPassword);
-
 
                 getLoginList(inputEmail, inputPassword);
 
@@ -99,13 +91,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        txtForgot.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent newIntent = new Intent(getApplicationContext(), ForgotPassword.class);
-//                startActivity(newIntent);
-//            }
-//        });
     }
 
 
@@ -116,29 +101,35 @@ public class MainActivity extends AppCompatActivity {
 
         pgBar.setVisibility(View.VISIBLE);
 
-        Call<LoggingResponse> logResponseCall = apiCall.getLoginToken(params);
-        logResponseCall.enqueue(new Callback<LoggingResponse>() {
+        Call<LoginResponse> logResponseCall = apiCall.getLoginToken(params);
+        logResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<LoggingResponse> call, Response<LoggingResponse> response) {
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 pgBar.setVisibility(View.GONE);
 
                 if (response.body() != null) {
-                    authToken = response.body().getToken();
+                    data = response.body().getData();
+                    authToken=data.getUserToken();
+                    Toast.makeText(MainActivity.this, authToken, Toast.LENGTH_SHORT).show();
+
                     Log.e("token", authToken);
                     SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
                     SharedPreferences.Editor editor = shared.edit();
                     editor.putString("token", authToken);
                     editor.commit();
 
-                    if(response.body().isRegistered()){
-                        Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
+                    Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
                         startActivity(newIntent);
-                        finish();
-                    }else {
-                        Intent newIntent = new Intent(getApplicationContext(), PersonalDetails.class);
-                        startActivity(newIntent);
-                        finish();
-                    }
+
+//                    if(response.body().isRegistered()){
+//                        Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
+//                        startActivity(newIntent);
+//                        finish();
+//                    }else {
+//                        Intent newIntent = new Intent(getApplicationContext(), PersonalDetails.class);
+//                        startActivity(newIntent);
+//                        finish();
+//                    }
 
 
 
@@ -151,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<LoggingResponse> call, Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
 
                 pgBar.setVisibility(View.GONE);
                 Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT).show();

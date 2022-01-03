@@ -81,6 +81,8 @@
                 android:layout_height="wrap_content"
                 android:onClick="onRadioButtonClicked"
                 android:text="English"
+                android:checked="false"
+
                 tools:layout_editor_absoluteX="40dp"
                 tools:layout_editor_absoluteY="190dp" />
 
@@ -90,6 +92,8 @@
                 android:layout_height="wrap_content"
                 android:onClick="onRadioButtonClicked"
                 android:text="Malayalam"
+                android:checked="false"
+
                 style="@style/option"
                 tools:layout_editor_absoluteX="106dp"
                 tools:layout_editor_absoluteY="182dp" />
@@ -235,15 +239,33 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hseCourse"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Course"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/hseSchoolName"
+            app:layout_constraintStart_toStartOf="@+id/hseSchoolName"
+            app:layout_constraintTop_toBottomOf="@+id/hseSchoolName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hsecourse"
+                android:maxLines="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/hseSyllabus"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="Syllabus"
-            app:layout_constraintEnd_toEndOf="@+id/hseSchoolName"
-            app:layout_constraintStart_toStartOf="@+id/hseSchoolName"
-            app:layout_constraintTop_toBottomOf="@+id/hseSchoolName">
+            app:layout_constraintEnd_toEndOf="@+id/hseCourse"
+            app:layout_constraintStart_toStartOf="@+id/hseCourse"
+            app:layout_constraintTop_toBottomOf="@+id/hseCourse">
 
 
 <!--            <AutoCompleteTextView-->
@@ -256,7 +278,7 @@
                 android:id="@+id/hsesyllabus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -1028,18 +1050,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-                    <Button
-                        android:id="@+id/remove"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:background="@drawable/ripple"
-                        android:text="remove"
-                        android:textAllCaps="false"
-                        app:layout_constraintEnd_toEndOf="@+id/linearLayout482"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/linearLayout482"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout482" />
+<!--                    <Button-->
+<!--                        android:id="@+id/remove"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:background="@drawable/ripple"-->
+<!--                        android:text="remove"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        app:layout_constraintEnd_toEndOf="@+id/linearLayout482"-->
+<!--                        app:layout_constraintHorizontal_bias="0.0"-->
+<!--                        app:layout_constraintStart_toStartOf="@+id/linearLayout482"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/linearLayout482" />-->
         </LinearLayout>
 
         <!--        <Button-->

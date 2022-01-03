@@ -2,10 +2,10 @@ package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +20,15 @@ import android.widget.Toolbar;
 import com.example.emea.Network.ApiCall;
 import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
-import com.example.emea.Response.StudentItem;
+import com.example.emea.Response.Adddetails.EducationDetails;
+import com.example.emea.Response.HomePage.Data;
+import com.example.emea.Response.HomePage.ProfileResponse;
+import com.example.emea.Response.HomePage.Student;
+import com.example.emea.Response.HomePage.UserId;
 import com.squareup.picasso.Picasso;
+
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,15 +36,29 @@ import retrofit2.Response;
 
 public class HomePage extends AppCompatActivity {
 
-    LinearLayout linearLayoutPersonalDtls, linearLayoutEducaionDtls, linearLayoutFamilyDtls;
+    LinearLayout linearLayoutPersonalDtls, linearLayoutEducaionDtls, linearLayoutFamilyDtls,linearLayoutExtraCurricular;
 
     ProgressBar pgBar;
 
     ApiCall apiCall;
-
-    TextView displayName, displayAdmission;
-    String studentName, authtoken, studentAdmissionNo, studentImage;
+Data data;
+    TextView displayName;
+    TextView displayAdmission;
+    String studentName;
+    String authtoken;
+    String studentAdmissionNo;
+    String studentImage;
     ImageView studentImageView;
+    Student student;
+    String userid;
+
+
+
+//    Data personalDetails;
+com.example.emea.Response.HomePage.PersonalDetails personalDetails;
+
+
+
 
     ImageView settings, logout;
 
@@ -48,7 +69,7 @@ public class HomePage extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home);
         getSupportActionBar();
 
-        displayName = findViewById(R.id.studentnameview);
+       displayName = findViewById(R.id.studentnameview);
         displayAdmission = findViewById(R.id.studentadmissionview);
         studentImageView = findViewById(R.id.studentimageview);
        pgBar=findViewById(R.id.progressBarView);
@@ -56,6 +77,7 @@ public class HomePage extends AppCompatActivity {
         linearLayoutPersonalDtls = findViewById(R.id.linearLayoutPersonal);
         linearLayoutEducaionDtls = findViewById(R.id.linearLayoutEducation);
         linearLayoutFamilyDtls = findViewById(R.id.linearLayoutFamily);
+        linearLayoutExtraCurricular=findViewById(R.id.linearLayoutextracirricular);
 
         settings = findViewById(R.id.more);
         logout = findViewById(R.id.logout);
@@ -90,7 +112,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent perIntent = new Intent(getApplicationContext(),PersonalDetailView.class);
+                Intent perIntent = new Intent(getApplicationContext(), PersonalDetailView.class);
                 startActivity(perIntent);
 
             }
@@ -100,17 +122,28 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent eduIntent = new Intent(getApplicationContext(), EducationDetailsView.class);
+                Intent eduIntent = new Intent(getApplicationContext(),  EducationalDetails.class);
                 startActivity(eduIntent);
 
             }
         });
 
+        linearLayoutExtraCurricular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent extraIntent = new Intent(getApplicationContext(), ExtraCurricularActivity.class);
+                startActivity(extraIntent);
+
+            }
+        });
+
+
         linearLayoutFamilyDtls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent famIntent = new Intent(getApplicationContext(), FamilyDetailsView.class);
+                Intent famIntent = new Intent(getApplicationContext(), FamilyDetails.class);
                 startActivity(famIntent);
 
             }
@@ -143,27 +176,41 @@ public class HomePage extends AppCompatActivity {
         authtoken = (shared.getString("token", ""));
 
 //      pgBar.setVisibility(View.VISIBLE);
-        Call<StudentItem> studentCall = apiCall.getUser(authtoken);
-        studentCall.enqueue(new Callback<StudentItem>() {
+        Call<ProfileResponse> studentCall = apiCall.getProfileView(authtoken);
+        studentCall.enqueue(new Callback<ProfileResponse>() {
             @Override
-            public void onResponse(Call<StudentItem> call, Response<StudentItem> response) {
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
 //              pgBar.setVisibility(View.GONE);
 
                 if (response.body() != null) {
-                    studentName = response.body().getName();
-                    studentAdmissionNo = response.body().getAdmissionNo();
-                    studentImage = response.body().getProfileImage();
+
+
+
+
+                    data = response.body().getData();
+                    student=data.getStudent();
+                    personalDetails=student.getPersonalDetails();
+                    studentName=personalDetails.getName();
+                    studentAdmissionNo=personalDetails.getAdmissionNO();
 
                     displayName.setText(studentName);
                     displayAdmission.setText(studentAdmissionNo);
-                    Picasso.get().load("http://172.20.10.4/studentsprofile/assets/images/students/" + studentImage).into(studentImageView);
 
+                    userid = student.getId();
+//                    Picasso.get().load("http://172.16.0.220/studentsprofile/assets/images/students/" + studentImage).into(studentImageView);
+                    Log.e("_id", userid);
+
+                    SharedPreferences pref = getSharedPreferences("My PREF_NAME", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    editor.putString("_id", userid);
+                    editor.commit();
 
                 }
             }
 
             @Override
-            public void onFailure(Call<StudentItem> call, Throwable t) {
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
                 Toast.makeText(HomePage.this, "Failed", Toast.LENGTH_SHORT).show();
             }
 

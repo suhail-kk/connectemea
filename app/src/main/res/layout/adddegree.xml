@@ -202,11 +202,11 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="25dp"
-        android:id="@+id/addGraduation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--    <LinearLayout-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:id="@+id/addGraduation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
 
 <!--        <Button-->
 <!--            android:id="@+id/deleteaddDegree"-->
@@ -225,7 +225,7 @@
 <!--            android:layout_height="wrap_content"-->
 <!--            android:background="@drawable/ripple"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 
     <Button

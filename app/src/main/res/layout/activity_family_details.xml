@@ -114,6 +114,24 @@
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/FofficialAddress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Official Address"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/FAnnualIncome"
+            app:layout_constraintStart_toStartOf="@+id/FAnnualIncome"
+            app:layout_constraintTop_toBottomOf="@+id/FAnnualIncome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fofficailaaddress"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/mother"
@@ -122,9 +140,9 @@
             android:text="Mother"
             android:layout_marginTop="40dp"
             style="@style/subheading"
-            app:layout_constraintEnd_toEndOf="@+id/FAnnualIncome"
-            app:layout_constraintStart_toStartOf="@+id/FAnnualIncome"
-            app:layout_constraintTop_toBottomOf="@+id/FAnnualIncome" />
+            app:layout_constraintEnd_toEndOf="@+id/FofficialAddress"
+            app:layout_constraintStart_toStartOf="@+id/FofficialAddress"
+            app:layout_constraintTop_toBottomOf="@+id/FofficialAddress" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/MotherName"
@@ -202,6 +220,24 @@
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/MofficialAddress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Official Address"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/MAnnualIncome"
+            app:layout_constraintStart_toStartOf="@+id/MAnnualIncome"
+            app:layout_constraintTop_toBottomOf="@+id/MAnnualIncome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mofficailaaddress"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/guardian"
@@ -211,9 +247,9 @@
             android:layout_marginTop="40dp"
             android:text="Guardian"
             android:layout_marginStart="30dp"
-            app:layout_constraintEnd_toEndOf="@+id/MAnnualIncome"
-            app:layout_constraintStart_toStartOf="@+id/MAnnualIncome"
-            app:layout_constraintTop_toBottomOf="@+id/MAnnualIncome" />
+            app:layout_constraintEnd_toEndOf="@+id/MofficialAddress"
+            app:layout_constraintStart_toStartOf="@+id/MofficialAddress"
+            app:layout_constraintTop_toBottomOf="@+id/MofficialAddress" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/GuardName"
@@ -291,6 +327,24 @@
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/GfficialAddress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Official Address"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/GuardAnnInc"
+            app:layout_constraintStart_toStartOf="@+id/GuardAnnInc"
+            app:layout_constraintTop_toBottomOf="@+id/GuardAnnInc">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/gofficailaaddress"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/savefamily"
@@ -299,9 +353,9 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/ripple"
             android:text="Save Info"
-            app:layout_constraintEnd_toEndOf="@+id/GuardAnnInc"
-            app:layout_constraintStart_toStartOf="@+id/GuardAnnInc"
-            app:layout_constraintTop_toBottomOf="@+id/GuardAnnInc" />
+            app:layout_constraintEnd_toEndOf="@+id/GfficialAddress"
+            app:layout_constraintStart_toStartOf="@+id/GfficialAddress"
+            app:layout_constraintTop_toBottomOf="@+id/GfficialAddress" />
 
         <ProgressBar
             android:id="@+id/progressBar3"

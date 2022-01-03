@@ -315,7 +315,7 @@
                 tools:layout_editor_absoluteY="86dp">
 
                 <TextView
-                    android:id="@+id/textView87"
+                    android:id="@+id/subid5"
                     style="@style/subheading2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -352,7 +352,7 @@
                 tools:layout_editor_absoluteY="112dp">
 
                 <TextView
-                    android:id="@+id/textView84"
+                    android:id="@+id/subid4"
                     style="@style/subheading2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
