@@ -33,12 +33,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Course Name"
+            android:text="Institution"
             tools:layout_editor_absoluteX="203dp"
             tools:layout_editor_absoluteY="72dp" />
 
         <TextView
-            android:id="@+id/coursename"
+            android:id="@+id/InstitutionName"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -99,12 +99,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2.5"
-            android:text="Instituion Name"
+            android:text="Grade"
             tools:layout_editor_absoluteX="294dp"
             tools:layout_editor_absoluteY="144dp" />
 
         <TextView
-            android:id="@+id/institutionname"
+            android:id="@+id/Grade"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

@@ -16,17 +16,17 @@ public class PersonalDetails{
 	@SerializedName("caste")
 	private String caste;
 
-	@SerializedName("permenentAddress")
-	private String permenentAddress;
-
 	@SerializedName("categoryOfAdmission")
 	private String categoryOfAdmission;
 
 	@SerializedName("dateOfBirth")
 	private String dateOfBirth;
 
+	@SerializedName("profileImage")
+	private String profileImage;
+
 	@SerializedName("mobileNo")
-	private int mobileNo;
+	private long mobileNo;
 
 	@SerializedName("distanceFromCollege")
 	private String distanceFromCollege;
@@ -49,8 +49,11 @@ public class PersonalDetails{
 	@SerializedName("identificationMarkOne")
 	private String identificationMarkOne;
 
+	@SerializedName("permanentAddress")
+	private String permanentAddress;
+
 	@SerializedName("department")
-	private String department;
+	private Department department;
 
 	@SerializedName("residence")
 	private String residence;
@@ -77,10 +80,6 @@ public class PersonalDetails{
 		return caste;
 	}
 
-	public String getPermenentAddress(){
-		return permenentAddress;
-	}
-
 	public String getCategoryOfAdmission(){
 		return categoryOfAdmission;
 	}
@@ -89,7 +88,11 @@ public class PersonalDetails{
 		return dateOfBirth;
 	}
 
-	public int getMobileNo(){
+	public String getProfileImage(){
+		return profileImage;
+	}
+
+	public long getMobileNo(){
 		return mobileNo;
 	}
 
@@ -121,7 +124,11 @@ public class PersonalDetails{
 		return identificationMarkOne;
 	}
 
-	public String getDepartment(){
+	public String getPermanentAddress(){
+		return permanentAddress;
+	}
+
+	public Department getDepartment(){
 		return department;
 	}
 

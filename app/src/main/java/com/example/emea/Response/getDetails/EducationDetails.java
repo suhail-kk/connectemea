@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class EducationDetails{
 
 	@SerializedName("additionalCourse")
-	private List<Object> additionalCourse;
+	private List<AdditionalCourseItem> additionalCourse;
 
 	@SerializedName("tenthStd")
 	private TenthStd tenthStd;
@@ -15,15 +15,15 @@ public class EducationDetails{
 	private TwelthStd twelthStd;
 
 	@SerializedName("degree")
-	private List<Object> degree;
+	private List<DegreeItem> degree;
 
 	@SerializedName("extraCurricular")
-	private List<Object> extraCurricular;
+	private List<ExtraCurricularItem> extraCurricular;
 
 	@SerializedName("otherQualifications")
-	private List<Object> otherQualifications;
+	private List<OtherQualificationsItem> otherQualifications;
 
-	public List<Object> getAdditionalCourse(){
+	public List<AdditionalCourseItem> getAdditionalCourse(){
 		return additionalCourse;
 	}
 
@@ -35,15 +35,15 @@ public class EducationDetails{
 		return twelthStd;
 	}
 
-	public List<Object> getDegree(){
+	public List<DegreeItem> getDegree(){
 		return degree;
 	}
 
-	public List<Object> getExtraCurricular(){
+	public List<ExtraCurricularItem> getExtraCurricular(){
 		return extraCurricular;
 	}
 
-	public List<Object> getOtherQualifications(){
+	public List<OtherQualificationsItem> getOtherQualifications(){
 		return otherQualifications;
 	}
 }

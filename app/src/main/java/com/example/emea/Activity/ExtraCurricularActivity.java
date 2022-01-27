@@ -1,70 +1,79 @@
 package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.emea.Network.ApiCall;
-import com.example.emea.Network.ApiClient;
 import com.example.emea.R;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ExtraCurricularActivity extends AppCompatActivity {
 
-    RecyclerView recyclerExtraCurricular;
     String textactivity, textprice, textyearofparticipation, textdetailsofexcellence;
-    TextInputEditText activity, price, yearofparticipation, detailsofexcellence;
-    Button addextraactivity, saveinfo;
-    LinearLayout add;
-    String authentoken;
-    ApiCall apiCall;
+    TextInputEditText activity, price, yearofparticipation, detailsofexcellence, courseName, institutionName, cgp, university;
+    Button addextraactivity, saveinfoextra, addadditional;
+    String textcourse, textinstitution, textuniversity, textcgp;
+    LinearLayout itemextra, itemadditional;
+    ImageView prevPage;
 
-//    Button Remove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.recyclerview_extra_curricular_activity);
+        setContentView(R.layout.activity_extra_curricular);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
+        getSupportActionBar();
+
+        prevPage = findViewById(R.id.backBtn);
+        prevPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(perIntent);
+            }
+        });
 
         Intent intent = getIntent();
         HashMap<String, Object> personalDetails = (HashMap<String, Object>) intent.getSerializableExtra("personalDetails");
         HashMap<String, Object> educationDetails = (HashMap<String, Object>) intent.getSerializableExtra("educationDetails");
 
-        recyclerExtraCurricular = findViewById(R.id.extracurricularrecycler);
-        saveinfo=findViewById(R.id.saveinfo);
+        saveinfoextra = findViewById(R.id.saveExtraDetail);
 
-        activity = findViewById(R.id.activityName);
-        price = findViewById(R.id.priceActivity);
-        yearofparticipation = findViewById(R.id.yearOfParicipation);
-        detailsofexcellence = findViewById(R.id.detailsofexcellence);
-        addextraactivity = findViewById(R.id.addExtraActivity);
+        activity = findViewById(R.id.course_name);
+        price = findViewById(R.id.institution_name);
+        yearofparticipation = findViewById(R.id.addCourseUniversity);
+        detailsofexcellence = findViewById(R.id.course_mark);
 
 
-//        addextraactivity.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                add.setVisibility(View.VISIBLE);
-////                Remove.setOnClickListener(new View.OnClickListener() {
-////                    @Override
-////                    public void onClick(View v) {
-////                        add.setVisibility(View.GONE);
-////
-////                    }
-////                });
-//            }
-//        });
+        courseName = findViewById(R.id.course_name1);
+        institutionName = findViewById(R.id.institution_name1);
+        university = findViewById(R.id.addCourseUniversity1);
 
-        saveinfo.setOnClickListener(new View.OnClickListener() {
+        cgp = findViewById(R.id.course_mark1);
+
+
+        itemextra = findViewById(R.id.newExtraLayout);
+
+        itemadditional = findViewById(R.id.newAdditionalLayout);
+
+
+
+
+        saveinfoextra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textactivity = activity.getText().toString();
@@ -72,7 +81,10 @@ public class ExtraCurricularActivity extends AppCompatActivity {
                 textyearofparticipation = yearofparticipation.getText().toString();
                 textdetailsofexcellence = detailsofexcellence.getText().toString();
 
-
+                textcourse = courseName.getText().toString();
+                textinstitution = institutionName.getText().toString();
+                textuniversity = university.getText().toString();
+                textcgp = cgp.getText().toString();
 
 
                 HashMap<String, Object> extraCurricular1 = new HashMap<>();
@@ -80,35 +92,28 @@ public class ExtraCurricularActivity extends AppCompatActivity {
                 extraCurricular1.put("yearOfParticipation", textyearofparticipation);
                 extraCurricular1.put("Price", textprice);
                 extraCurricular1.put("detailsOfExcellenceInPerformance", textdetailsofexcellence);
-//
 
                 Object[] extraCurricular = {extraCurricular1};
-//
-//
-//                HashMap<String, Object> extraCurricular = new HashMap<>();
-//                extraCurricular.put("extraCurricular",extraCurricular);
-//
-                educationDetails.put("extraCurricular",extraCurricular);
-//
-//
 
+
+                HashMap<String, Object> additional = new HashMap<>();
+                additional.put("courseName", textcourse);
+                additional.put("institutionName", textinstitution);
+                additional.put("university", textuniversity);
+                additional.put("cgp", textcgp);
+                Object[] additional1 = {additional};
+                educationDetails.put("extraCurricular", extraCurricular);
+                educationDetails.put("additionalCourse", additional1);
 
                 Intent newIntent = new Intent(ExtraCurricularActivity.this, FamilyDetails.class);
-//                newIntent.putExtra("personal",personal);
+
                 newIntent.putExtra("personalDetails", personalDetails);
                 newIntent.putExtra("educationDetails", educationDetails);
-//                newIntent.putExtra("extraCurricular", extraCurricular);
-
 
                 startActivity(newIntent);
             }
         });
 
     }
+
 }
-//    public void getExtraCurricularList (String textactivity, String textprice,
-//                                        String textyearofparticipation, String textdetailsofexcellence) {
-//        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//        authentoken = (shared.getString("token", ""));
-//    }
-//}

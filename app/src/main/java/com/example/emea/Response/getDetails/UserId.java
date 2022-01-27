@@ -7,6 +7,9 @@ public class UserId{
 	@SerializedName("_id")
 	private String id;
 
+	@SerializedName("profileImage")
+	private String profileImage;
+
 	@SerializedName("email")
 	private String email;
 
@@ -18,6 +21,10 @@ public class UserId{
 
 	public String getId(){
 		return id;
+	}
+
+	public String getProfileImage(){
+		return profileImage;
 	}
 
 	public String getEmail(){

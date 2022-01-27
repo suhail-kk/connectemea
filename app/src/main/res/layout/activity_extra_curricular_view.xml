@@ -16,24 +16,108 @@
         tools:context=".Activity.EducationDetailsView">
 
         <include
-            android:id="@+id/include"
+            android:id="@+id/include3"
             layout="@layout/toolbar_ayout"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
 
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
+            style="@style/fam_Details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fam_dtls"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/include"
-            app:layout_constraintTop_toBottomOf="@+id/include">
+            app:layout_constraintEnd_toStartOf="@+id/materialCardView4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+
+                <TextView
+                    android:id="@+id/textView92"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="1.Extra Curricular" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_extra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView92"
+                    android:layout_alignStart="@+id/textView92"
+                    android:layout_alignEnd="@+id/textView92"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp" />
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView4"
+            style="@style/fam_Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/fam_dtls"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView3"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView3"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3"
+            app:layout_goneMarginBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+
+                <TextView
+                    android:id="@+id/textView125"
+                    style="@style/viewheading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="2.Additional Course" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_additional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView125"
+                    android:layout_alignParentStart="@+id/textView125"
+                    android:layout_alignParentEnd="@+id/textView125"
+                    android:layout_marginTop="4dp" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

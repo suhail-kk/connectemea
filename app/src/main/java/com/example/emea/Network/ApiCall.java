@@ -3,6 +3,7 @@ package com.example.emea.Network;
 
 import com.example.emea.Response.Adddetails.CreateResponse;
 //import com.example.emea.Response.EducationeditResponse;
+import com.example.emea.Response.DepartmentDropdown.DepartmentDropdownResponse;
 import com.example.emea.Response.HomePage.ProfileResponse;
 //import com.example.emea.Response.Homepage.ProfileResponse;
 import com.example.emea.Response.Login.LoginResponse;
@@ -11,6 +12,7 @@ import com.example.emea.Response.Register.RegisterResponse1;
 import com.example.emea.Response.edit.EditResponse;
 import com.example.emea.Response.forgotpackage.ForgotResponse;
 import com.example.emea.Response.getDetails.GetResponse;
+import com.example.emea.Response.photo.PhotoResponse;
 import com.example.emea.Response.reset.ResetResponse;
 
 import java.util.HashMap;
@@ -32,70 +34,57 @@ import retrofit2.http.Path;
 
 public interface ApiCall {
 
+    @GET("department")
+    Call<DepartmentDropdownResponse> getDepartmentDropdown(@Header("token") String authtoken);
 
-//    @GET("students/view")
-//    Call<StudentItem> getUser(@Header("token") String authtoken);
 
 
-//    @FormUrlEncoded
     @POST("user/login")
     Call<LoginResponse> getLoginToken(@Body HashMap<String, String> params);
 
 
 
-//    @FormUrlEncoded
     @PATCH("user/register")
     Call<RegisterResponse1> getRegisterToken(@Body HashMap<String, String> params);
 
 
-//     @FormUrlEncoded
-//    @POST("students/add_details")
-//    Call<PersonalResponse> uploadImage(@Field("userfile") String image, @Header("token") String authentoken);
-
-//    @FormUrlEncoded
-//    @POST("students/")
-//    Call<FamilyResponse> getFamily(@FieldMap HashMap<String, String> params, @Header("token") String authentoken);
-
-
-
     @POST("student/")
     Call<CreateResponse> getFamily(@Body HashMap<String, Object> data, @Header("token") String authentoken);
-//    @FormUrlEncoded
-//    @POST("users/forgotpassword")
-//    Call<ForgotResponse> getForgot(@FieldMap HashMap<String, String> params);
 
-//    @FormUrlEncoded
+
     @POST("user/forgot")
     Call<ForgotResponse> getForgot(@Body HashMap<String, String> params);
-
-//    @FormUrlEncoded
-//    @POST("users/recoverpassword")
-//    Call<RecoveryResponse> getrecoveryToken(@FieldMap HashMap<String, String> params);
 
 
     @PATCH("user/reset")
     Call<ResetResponse> getrecoveryToken(@Body HashMap<String, String> params, @Header("token") String authentoken);
 
 
-
+    @Multipart
+    @PATCH("upload")
+    Call<PhotoResponse> getPhoto(@Part MultipartBody.Part fileToUpload, @Header("token") String authtoken);
 
     @GET("student/me")
-    Call<ProfileResponse> getProfileView(@Header("token") String authtoken);
+    Call<GetResponse> getProfileView(@Header("token") String authtoken);
 
-//    @PATCH("student/61ce9695021f72f46fbfd7ca")
-//    Call<EditResponse> getEdit(@Body HashMap<String, Object> familyDetails, @Header("token") String authtoken);
 
     @PATCH("student/{userid}")
-    Call<EditResponse> getEdit(@Path(value="userid", encoded = true)  String userid,@Body HashMap<String, Object> familyDetails,@Header("token") String authtoken);
-//
+    Call<EditResponse> getfamilyedit(@Path("userid") String userid,@Body HashMap<String, Object> familyDetails,@Header("token") String authtoken);
 
-//    @PATCH("student/{61ce9695021f72f46fbfd7ca}")
-//    Call<EditResponse> getEdit( @Body HashMap<String, Object> familyDetails,@Header("token") String authtoken);
+
+    @PATCH("student/{userid}")
+    Call<EditResponse> getpersonalEdit(@Path("userid") String userid,@Body HashMap<String, Object> personalDetails,@Header("token") String authtoken);
+
+    @PATCH("student/{userid}")
+    Call<EditResponse> geteducationEdit(@Path("userid") String userid,@Body HashMap<String, Object> educationDetails,@Header("token") String authtoken);
+
+    @PATCH("student/{userid}")
+    Call<EditResponse> getextracurricularEdit(@Path("userid") String userid,@Body HashMap<String, Object> educationDetails,@Header("token") String authtoken);
+
 
     @GET("student/me")
     Call<GetResponse> getDetailsView(@Header("token") String authtoken);
 
-//    Call<Users> getUsers(@Path(value = "fullUrl", encoded = true) String fullUrl);
 
 
 }

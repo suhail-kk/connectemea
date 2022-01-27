@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".Activity.FamilyDetailsView">
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.FamilyDetailsView">
 
     <include
         android:id="@+id/include"
@@ -182,9 +187,81 @@
                     android:text="100000"
                     tools:layout_editor_absoluteX="222dp"
                     tools:layout_editor_absoluteY="155dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout26"
+                android:layout_alignStart="@+id/linearLayout26"
+                android:layout_alignEnd="@+id/linearLayout26"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fphone_number"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Phone Number"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/fPhone_Number"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="0498309823"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout6"
+                android:layout_alignStart="@+id/linearLayout6"
+                android:layout_alignEnd="@+id/linearLayout6"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/officialAddress"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Official Address"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/fofficailaaddress"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="abc road"
+                    android:maxLines="5"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
 
 
             </LinearLayout>
+
 
 
         </RelativeLayout>
@@ -374,6 +451,81 @@
 
 
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout39"
+                android:layout_alignEnd="@+id/linearLayout39"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="112dp">
+
+                <TextView
+                    android:id="@+id/mphonenumber"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Phone Number"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/m_phone_number"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Nil"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayou9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout9"
+                android:layout_alignEnd="@+id/linearLayout9"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="112dp">
+
+                <TextView
+                    android:id="@+id/MofficialAddress"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Official Address"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/m_official_address"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Nil"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+
 
 
         </RelativeLayout>
@@ -387,6 +539,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/fam_dtls"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -531,6 +684,7 @@
 
 
             <LinearLayout
+                android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linearLayout32"
@@ -568,11 +722,91 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:layout_alignStart="@+id/line1"
+                android:layout_alignEnd="@+id/line1"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout32"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout32"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout32">
+
+                <TextView
+                    android:id="@+id/gPhoneNumber"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Phone Number"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/g_phone_number"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="745734634"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_alignStart="@+id/line2"
+                android:layout_alignEnd="@+id/line2"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/line2"
+                app:layout_constraintStart_toStartOf="@+id/line2"
+                app:layout_constraintTop_toBottomOf="@+id/line2">
+
+                <TextView
+                    android:id="@+id/gOfficialAddress"
+                    style="@style/subheading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Official Address"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="132dp" />
+
+                <TextView
+                    android:id="@+id/gofficailaaddress"
+                    style="@style/viewdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="745734634"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="155dp" />
+
+
+            </LinearLayout>
+
+
+
 
         </RelativeLayout>
 
 
     </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -10,8 +10,8 @@ public class FamilyDetails{
 	@SerializedName("father")
 	private Father father;
 
-	@SerializedName("gardian")
-	private Gardian gardian;
+	@SerializedName("guardian")
+	private Guardian guardian;
 
 	public Mother getMother(){
 		return mother;
@@ -21,7 +21,7 @@ public class FamilyDetails{
 		return father;
 	}
 
-	public Gardian getGardian(){
-		return gardian;
+	public Guardian getGuardian(){
+		return guardian;
 	}
 }

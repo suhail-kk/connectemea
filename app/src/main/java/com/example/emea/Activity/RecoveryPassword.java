@@ -41,9 +41,6 @@ public class RecoveryPassword extends AppCompatActivity {
         Intent intent=getIntent();
         authentoken=intent.getStringExtra("token");
 
-
-
-//       getIntent().getStringExtra("token");
         Toast.makeText(this, authentoken, Toast.LENGTH_SHORT).show();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
 
@@ -71,17 +68,10 @@ public class RecoveryPassword extends AppCompatActivity {
 
     public void getRegisterResponse(String inputPassword) {
 
-
-
-//        SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//        authentoken = (shared.getString("token", ""));
         HashMap<String, String> params = new HashMap<>();
 
         params.put("password", inputPassword);
         params.put("token",authentoken);
-
-
-
 
         Call<ResetResponse> RecoveryCall = apiCall.getrecoveryToken(params,authentoken);
         RecoveryCall.enqueue(new Callback<ResetResponse>() {
@@ -91,15 +81,6 @@ public class RecoveryPassword extends AppCompatActivity {
                 if (response.body() != null) {
                     message = response.body().getMessage();
                     Toast.makeText(RecoveryPassword.this, message, Toast.LENGTH_SHORT).show();
-//                    if (message.equals("success")) {
-//
-//                        Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
-//                        startActivity(newIntent);
-//
-//                    }
-//                    else {
-//                        Toast.makeText(RecoveryPassword.this, "Register Failed.", Toast.LENGTH_SHORT).show();
-//                    }
             }
                 else {
                     Toast.makeText(RecoveryPassword.this, "Register error.", Toast.LENGTH_SHORT).show();

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -27,7 +26,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity {
     TextInputEditText txtEmail, txtPassword;
     Button btnLogin;
     TextView btnforgot,btnregister;
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String inputEmail;
     String inputPassword;
+    String status;
     ApiCall apiCall;
     Data data;
     String authToken;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.loginpage);
 
         btnforgot=findViewById((R.id.forgotpass));
         btnregister=findViewById((R.id.registernew));
@@ -109,34 +109,28 @@ public class MainActivity extends AppCompatActivity {
 
                 if (response.body() != null) {
                     data = response.body().getData();
-                    authToken=data.getUserToken();
-                    Toast.makeText(MainActivity.this, authToken, Toast.LENGTH_SHORT).show();
+                    authToken=data.getToken();
+                    status = data.getStatus();
+                    Toast.makeText(LoginPage.this, authToken, Toast.LENGTH_SHORT).show();
 
-                    Log.e("token", authToken);
+//                    Log.e("token", authToken);
                     SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
                     SharedPreferences.Editor editor = shared.edit();
                     editor.putString("token", authToken);
                     editor.commit();
 
-                    Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
-                        startActivity(newIntent);
+                    Intent newIntent;
+                    if(status.equals("filled")){
 
-//                    if(response.body().isRegistered()){
-//                        Intent newIntent = new Intent(getApplicationContext(), HomePage.class);
-//                        startActivity(newIntent);
-//                        finish();
-//                    }else {
-//                        Intent newIntent = new Intent(getApplicationContext(), PersonalDetails.class);
-//                        startActivity(newIntent);
-//                        finish();
-//                    }
-
-
-
+                        newIntent = new Intent(getApplicationContext(), HomePage.class);
+                    }else {
+                        newIntent = new Intent(getApplicationContext(), PersonalDetails.class);
+                    }
+                    startActivity(newIntent);
 
                 } else {
 
-                    Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginPage.this, "Login Failed.", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -145,28 +139,10 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<LoginResponse> call, Throwable t) {
 
                 pgBar.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginPage.this, "failed", Toast.LENGTH_SHORT).show();
             }
         });
 
-
-//    public Boolean ValidateInfo(String inputEmail, String inputPassword) {
-//        if (inputEmail.length() == 0) {
-//            txtEmail.requestFocus();
-//            txtEmail.setError("Field cannot be empty");
-//            return false;
-//        } else if (!inputEmail.matches(emailPattern)) {
-//            txtEmail.requestFocus();
-//            txtEmail.setError("Please enter a valid email address");
-//            return false;
-//        } else if (inputPassword.length() == 0) {
-//            txtPassword.requestFocus();
-//            txtPassword.setError("Field cannot be empty");
-//            return false;
-//        }
-//        else {
-//            return true;
-//        }
 
     }
 }

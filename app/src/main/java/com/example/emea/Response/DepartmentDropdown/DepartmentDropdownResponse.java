@@ -1,16 +1,17 @@
-package com.example.emea.Response.Login;
+package com.example.emea.Response.DepartmentDropdown;
 
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse{
+public class DepartmentDropdownResponse{
 
 	@SerializedName("data")
-	private Data data;
+	private List<DataItem> data;
 
 	@SerializedName("message")
 	private String message;
 
-	public Data getData(){
+	public List<DataItem> getData(){
 		return data;
 	}
 

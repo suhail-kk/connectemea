@@ -161,9 +161,11 @@
                 android:layout_alignStart="@+id/linearLayoutEducation"
                 android:layout_alignEnd="@+id/linearLayoutEducation"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutEducation"
-                tools:layout_editor_absoluteX="30dp">
+                app:layout_constraintBottom_toTopOf="@+id/linearLayoutextracirricular"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayoutextracirricular"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/linearLayoutextracirricular"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutEducation">
 
                 <ImageView
                     android:layout_width="0dp"
@@ -199,8 +201,10 @@
                 android:layout_alignEnd="@+id/linearLayoutEducation"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutFamily"
-                tools:layout_editor_absoluteX="30dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutFamily">
 
                 <ImageView
                     android:layout_width="0dp"
@@ -250,9 +254,10 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

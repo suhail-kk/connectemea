@@ -81,6 +81,7 @@
 
             <AutoCompleteTextView
                 android:id="@+id/department"
+                android:padding="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                  />
@@ -93,13 +94,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Admission Number"
+            android:hint="Email"
             app:layout_constraintEnd_toEndOf="@+id/Department"
             app:layout_constraintStart_toStartOf="@+id/Department"
             app:layout_constraintTop_toBottomOf="@+id/Department">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/admissionno"
+                android:id="@+id/user_email"
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -142,11 +143,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Roll No"
+                android:hint="Admission Number"
                 tools:ignore="DuplicateIds">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/rollnumber"
+                    android:id="@+id/admn_number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

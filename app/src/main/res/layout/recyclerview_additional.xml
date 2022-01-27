@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sino2"
+                style="@style/viewheading"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:text="1 ."
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView476"
+                style="@style/viewheading"
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"/>
+<!--                android:text="Additional Course" />-->
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout216"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line2"
+            android:layout_alignStart="@+id/line2"
+            android:layout_alignEnd="@+id/line2"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/course"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:text="Cousename" />
+
+            <TextView
+                android:id="@+id/Coursename"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:text="psychology" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout222"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout216"
+            android:layout_alignStart="@+id/linearLayout216"
+            android:layout_alignEnd="@+id/linearLayout216"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Institution"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Institution Name" />
+
+            <TextView
+                android:id="@+id/institutionName"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="EMEA"
+                android:maxLines="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout233"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout222"
+            android:layout_alignStart="@+id/linearLayout222"
+            android:layout_alignEnd="@+id/linearLayout222"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/universityname"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Univercity"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="132dp" />
+
+            <TextView
+                android:id="@+id/University"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="cu"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout262"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout233"
+            android:layout_alignStart="@+id/linearLayout233"
+            android:layout_alignEnd="@+id/linearLayout233"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/CGP"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CGP"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="132dp" />
+
+            <TextView
+                android:id="@+id/cgp"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="3"
+                android:maxLines="4"
+                android:layout_gravity="center"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

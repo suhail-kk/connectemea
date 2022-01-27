@@ -1,8 +1,8 @@
-package com.example.emea.Response.Adddetails;
+package com.example.emea.Response.getDetails;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Gardian{
+public class Guardian{
 
 	@SerializedName("occupation")
 	private String occupation;

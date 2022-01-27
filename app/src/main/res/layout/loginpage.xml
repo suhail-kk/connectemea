@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:padding="20dp"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.LoginPage">
 
     <TextView
         android:id="@+id/login"

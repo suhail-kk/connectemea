@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
 public class TwelthStd{
 
 	@SerializedName("subMark")
-	private List<Object> subMark;
+	private List<String> subMark;
 
 	@SerializedName("syllabus")
 	private String syllabus;
 
 	@SerializedName("sub")
-	private List<Object> sub;
+	private List<String> sub;
 
 	@SerializedName("course")
 	private String course;
@@ -20,7 +20,7 @@ public class TwelthStd{
 	@SerializedName("schoolName")
 	private String schoolName;
 
-	public List<Object> getSubMark(){
+	public List<String> getSubMark(){
 		return subMark;
 	}
 
@@ -28,7 +28,7 @@ public class TwelthStd{
 		return syllabus;
 	}
 
-	public List<Object> getSub(){
+	public List<String> getSub(){
 		return sub;
 	}
 

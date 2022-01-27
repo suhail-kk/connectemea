@@ -1,6 +1,7 @@
 package com.example.emea.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.emea.Network.ApiCall;
 import com.example.emea.R;
@@ -24,115 +26,61 @@ import java.util.zip.Inflater;
 
 public class EducationalDetails extends AppCompatActivity {
 
-    TextView sslc, medium, markssslc,
-            plustwo, marksplustwo, ugc, ugcmarks, anyotherqual, topNav, degreeCountView;
+    TextView sslc,  markssslc,
+            plustwo, marksplustwo,topNav;
     String textschool, textmedium, textenglishsslcbox,
             textmathssslcbox, textsciencesslcbox, textsocialsslcbox,
-            textschoolplustwo, textallsyllabus, textCousre, textsub1box, textsub2box,
-            textsub3box, textsub4box, textsub5box, textsub6box,
-            textcollegename, textuniversity, textugccourse, textugcmainbox, textcoresub, textugcenglishbox,
-            textugclangbox, textopencoursebox, textplustwoallsyllabus, textcoursename,
-            qualcrse, qualtype, qualinstitu, qualuniversity, textcollegecourse, textcoursetype, textsub1, textsub2, textsub3, textsub4, textsub5;
+            textschoolplustwo, textCousre, textsub1box, textsub2box,
+            textsub3box, textsub4box, textsub5box,
+           textplustwoallsyllabus, textsub1, textsub2, textsub3, textsub4, textsub5;
     TextInputEditText school, englishsslcbox, mathssslcbox, sciencesslcbox, socialsciencesslcbox,
-            schoolplustwo, sub1box, sub2box, sub3box, sub4box, sub5box, sub6box,
-            collegename, ugcmainbox, ugcsubbox, ugcenglishbox, ugclangbox, opencoursebox,
-            coursename, coursetype, institution, university2, Course;
-
-
-    AutoCompleteTextView plustwoallsyllabus, sub1, sub2, sub3, sub4, sub5, sub6, collegeuniversity, collegecourse;
-    Button adddegree, qualification, saveinfo, addqualification, deleteadddegree, degree;
-    RadioButton radioeng;
-    RadioButton radiomal;
-    ApiCall apiCall;
-    String apieducationlist;
-    String authentoken;
-    ImageView prevPage;
-    LinearLayout add;
-    int otherViewIdAboveV;
-    int status;
-    LinearLayout ll;
-    Inflater inflater;
-    Button addnewDegree, DeleteaddDegree, Remove;
-
-
-//    ArrayList<PlusTwoCoursesItem> plusTwoCoursesItems;
-//    ArrayList<String> plustwosyllabus;
-//    ArrayAdapter<String> plus2syllabus;
-//
-//    ArrayList<PlusTwoSubjectsItem> plusTwoSubjectsItems;
-//    //    ArrayList<String> plustwosubjects;
+            schoolplustwo, sub1box, sub2box, sub3box, sub4box, sub5box, sub6box;
+    AutoCompleteTextView plustwoallsyllabus, sub1, sub2, sub3, sub4, sub5, sub6,Course,medium;
+    Button  saveinfo;
     ArrayAdapter<String> plus2subjects;
     ArrayAdapter<String> english;
     ArrayAdapter<String> subject1;
     ArrayAdapter<String> subject2;
     ArrayAdapter<String> subject3;
     ArrayAdapter<String> subject4;
-//
-//    ArrayList<DegreeCoursesItem> degreeCoursesItems;
-//    ArrayList<String> degreecourses;
-//    ArrayAdapter<String> degreecourse;
-//
-//    ArrayList<UniversityItem> universityItems;
-//    ArrayList<String> universities;
-//    ArrayAdapter<String> university;
-//    HashMap<String, Object> familydetails;
-LinearLayout item;
+    ArrayAdapter<String> Medium;
+    ArrayAdapter<String> HSEcourse;
+
+    ImageView prevPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_educational_details);
-//        familydetails= (HashMap<String, Object>) getIntent().getSerializableExtra("MyClass");
 
-//        Toast.makeText(EducationalDetails.this,  getIntent().getSerializableExtra("personal").toString(),Toast.LENGTH_SHORT).show();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
+        getSupportActionBar();
+
+        prevPage = findViewById(R.id.backBtn);
+        prevPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(perIntent);
+            }
+        });
         Intent intent = getIntent();
         HashMap<String, Object> personalDetails = (HashMap<String, Object>) intent.getSerializableExtra("personalDetails");
-//        Toast.makeText(EducationalDetails.this,  getIntent().getSerializableExtra("personalDetails").toString(),Toast.LENGTH_SHORT).show();
-
-//        Personal personal= getIntent().getParcelableExtra("personal");
-//        Toast.makeText(this, (CharSequence) personal, Toast.LENGTH_SHORT).show();
-//        String name=personal.getName();
 
 
-//        Personal personal= getIntent().getParcelableExtra("personal");
+//buttons
+        saveinfo = findViewById(R.id.saveinfo);
 
-//       plustwosyllabus= new ArrayList<>();
-//        plustwosubjects= new ArrayList<>();
-        String plustwosyllabus[] = {"CBSE", "ICSE"};
-        String English[] = {"English"};
-        String hseSubject1[] = {"Biology", "Computer Science"};
-        String hseSubject2[] = {"physics", "accounting", "journalism"};
-        String hseSubject3[] = {"Chemistry", "Geology", "CA"};
-        String hseSubject4[] = {"Mathematics", "Politic", "sociology"};
-
-//        degreecourses= new ArrayList<>();
-//        universities= new ArrayList<>();
-//
-        item = findViewById(R.id.newDegreeLayout);
-// //buttons
-//        qualification = findViewById(R.id.addQualification);
-        add = findViewById(R.id.newDegreeLayout2);
-        saveinfo = findViewById(R.id.saveEduDetail);
-        radioeng = findViewById(R.id.radioeng);
-        radiomal = findViewById(R.id.radiomal);
-        adddegree = findViewById(R.id.addDegree);
-        addqualification = findViewById(R.id.addQualification);
-//        deleteadddegree=findViewById(R.id.deleteaddDegree);
-//        addnewDegree=findViewById(R.id.addNewDegree);
-//        DeleteaddDegree=findViewById(R.id.deleteaddDegree);
-//        Remove = findViewById(R.id.remove);
-        degree = findViewById(R.id.addbutton);
-//
-////sslc
+//sslc
         sslc = findViewById(R.id.sslc);
         school = findViewById(R.id.schoolname);
-        medium = findViewById(R.id.medium);
+        medium = findViewById(R.id.user_medium);
         markssslc = findViewById(R.id.marks);
         englishsslcbox = findViewById(R.id.englishsslc);
         mathssslcbox = findViewById(R.id.mathssslc);
         sciencesslcbox = findViewById(R.id.sciencesslc);
         socialsciencesslcbox = findViewById(R.id.socialsslc);
-//
+
 //plustwo
         plustwo = findViewById(R.id.hse);
         schoolplustwo = findViewById(R.id.hseschoolName);
@@ -151,230 +99,43 @@ LinearLayout item;
         sub5box = findViewById(R.id.hsesubMark5);
         sub6 = findViewById(R.id.hsesubName6);
         sub6box = findViewById(R.id.hsesubMark6);
-//
-////degree
-//        ugc=findViewById(R.id.degree);
-//        collegename = findViewById(R.id.ugcollegeName);
-//        collegeuniversity=findViewById(R.id.degreeuniversity);
-//        collegecourse=findViewById(R.id.degreecourse);
-//        ugcmainbox = findViewById(R.id.dgrsubCore);
-//        ugcsubbox = findViewById(R.id.dgrsubComp);
-//        ugcenglishbox = findViewById(R.id.dgrsubEng);
-//        ugclangbox = findViewById(R.id.dgrsubLang);
-//        opencoursebox = findViewById(R.id.dgrsubOpen);
-//
-////otherqualifications
-//        anyotherqual=findViewById(R.id.otherqual);
-//        coursename = findViewById(R.id.qualicrsName);
-//        coursetype = findViewById(R.id.qualicrstype);
-//        institution = findViewById(R.id.qualiIstnname);
-//        university2 = findViewById(R.id.qualiuniversity);
-//
-//        androidx.appcompat.widget.Toolbar myToolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(myToolbar);
-//
-//        plus2syllabus = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, plustwosyllabus);
-//        plustwoallsyllabus.setAdapter(plus2syllabus);
-//        plustwoallsyllabus.setThreshold(1);
-//
-//        plus2subjects = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, plustwosubjects);
-//        sub1.setAdapter(plus2subjects);
-//        sub1.setThreshold(1);
+        //dropdown
 
-        plus2subjects = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, plustwosyllabus);
+        String[] plustwosyllabus = {"CBSE", "ICSE"};
+        String[] English = {"English"};
+        String[] hseSubject1 = {"Biology", "Computer Science"};
+        String[] hseSubject2 = {"physics", "accounting", "journalism"};
+        String[] hseSubject3 = {"Chemistry", "Geology", "CA"};
+        String[] hseSubject4 = {"Mathematics", "Politic", "sociology"};
+        String[] sslcmedium ={"english","malayalam"};
+        String[] hsecourse ={"biology","commerce"};
+
+        HSEcourse=new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, hsecourse);
+        Course.setAdapter(HSEcourse);
+        Course.setThreshold(1);
+        Medium=new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, sslcmedium);
+        medium.setAdapter(Medium);
+        medium.setThreshold(1);
+        plus2subjects = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, plustwosyllabus);
         plustwoallsyllabus.setAdapter(plus2subjects);
         plustwoallsyllabus.setThreshold(1);
-        english = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, English);
+        english = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, English);
         sub1.setAdapter(english);
         sub1.setThreshold(1);
-        subject1 = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, hseSubject1);
+        subject1 = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, hseSubject1);
         sub2.setAdapter(subject1);
         sub2.setThreshold(1);
-        subject2 = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, hseSubject2);
+        subject2 = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, hseSubject2);
         sub3.setAdapter(subject2);
         sub3.setThreshold(1);
-        subject3 = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, hseSubject3);
+        subject3 = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, hseSubject3);
         sub4.setAdapter(subject3);
         sub4.setThreshold(1);
-        subject4 = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, hseSubject4);
+        subject4 = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, hseSubject4);
         sub5.setAdapter(subject4);
         sub5.setThreshold(1);
-//
-//        degreecourse = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, degreecourses);
-//        collegecourse.setAdapter(degreecourse);
-//        collegecourse.setThreshold(1);
-//
-//
-//        university = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, universities);
-//        collegeuniversity.setAdapter(university);
-//        collegeuniversity.setThreshold(1);
-//        apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-//        dropdowncall();
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_details);
-//        getSupportActionBar();
-//
-//
-////        topNav = findViewById(R.id.title_nav);
-////        String getText = topNav.getText().toString();
-////        topNav.setText("Educational Details");
-////        backbutton = findViewById(R.id.backBtn);
-////
-////        backbutton.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////
-////                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
-////                startActivity(perIntent);
-////
-////            }
-////        });
-//
-//
-//        prevPage = findViewById(R.id.backBtn);
-//        prevPage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent perIntent = new Intent(getApplicationContext(), HomePage.class);
-//                startActivity(perIntent);
-//            }
-//        });
-//
-//
 
 
-//    private void addView() {
-//        LinearLayout item = (LinearLayout) findViewById(R.id.Adddegree);
-//
-////                getLayoutInflater().inflate(R.layout.adddegree, item);
-//
-//
-//        View addedView = getLayoutInflater().inflate(R.layout.adddegree, null);
-//        item.addView(addedView);
-////                deleteadddegree.setVisibility(View.VISIBLE);
-//        deleteadddegree.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                removeView();
-//            }
-//
-//            private void removeView() {
-//
-//                item.removeView(addedView);
-//
-////                        LinearLayout.removeView((View) v.getParent());
-////                        findViewById(R.id.Adddegree).setVisibility(View.INVISIBLE);
-//            }
-//        });
-//    }
-//
-//
-//
-//
-//        deleteadddegree.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                removeView();
-//            }
-//            private void removeView(){
-//               item.removeView(addedView);
-//
-////                findViewById(R.id.Adddegree).setVisibility(View.INVISIBLE);
-//            }
-//        });
-//        adddegree.setOnClickListener(new View.OnClickListener() {
-//    @Override
-//    public void onClick(View v) {
-//        add.setVisibility(View.VISIBLE);
-//        Remove.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                add.setVisibility(View.GONE);
-//
-//            }
-//        });
-//    }
-//});
-
-//
-//
-
-        adddegree.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                addView();
-            }
-            private void addView() {
-//                add.setVisibility(View.VISIBLE);
-//                LinearLayout item = (LinearLayout)findViewById(R.id.Adddegree);
-//                getLayoutInflater().inflate(R.layout.adddegree, item);
-
-                View addedView = getLayoutInflater().inflate(R.layout.adddegree, null, false);
-
-            Button Remove=addedView.findViewById(R.id.remove);
-
-//                LayoutInflater layoutInflater =
-//                        (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//                final View addView = layoutInflater.inflate(R.layout.adddegree, null);
-//                AutoCompleteTextView textOut = (AutoCompleteTextView)addView.findViewById(R.id.textout);
-//                textOut.setAdapter(adapter);
-//                textOut.setText(textIn.getText().toString());
-//                Button buttonRemove = (Button)addView.findViewById(R.id.remove);
-//
-//                final View.OnClickListener thisListener = new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View v) {
-//                        info.append("thisListener called:\t" + this + "\n");
-//                        info.append("Remove addView: " + addView + "\n\n");
-//                        ((LinearLayout)addView.getParent()).removeView(addView);
-//
-//                        listAllAddView();
-//                    }
-//                };
-
-//                 Remove.setEnabled(true);
-                Remove.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        removeView(addedView);
-                    }
-
-                });
-
-                item.addView(addedView);
-            }
-                    private void removeView(View view){
-//                        LinearLayout item = (LinearLayout) findViewById(R.id.Adddegree);
-               item.removeView(view);
-
-//                        Remove.setEnabled(false);
-//                        Remove.setEnabled(false);
-//
-////                findViewById(R.id.Adddegree).setVisibility(View.INVISIBLE);
-            }
-
-                });
-
-
-
-
-
-
-//
-//        addqualification.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                addView();
-//            }
-//            private void addView() {
-//                LinearLayout item = (LinearLayout) findViewById(R.id.Adddqualification);
-//                getLayoutInflater().inflate(R.layout.addqualification, item);
-//            }
-//        });
-//
-//
         saveinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -383,11 +144,7 @@ LinearLayout item;
                 textmathssslcbox = mathssslcbox.getText().toString();
                 textsciencesslcbox = sciencesslcbox.getText().toString();
                 textsocialsslcbox = socialsciencesslcbox.getText().toString();
-                                if (radioeng.isChecked()) {
-                    textmedium = radioeng.getText().toString();
-                } else {
-                    textmedium = radiomal.getText().toString();
-                }
+                textmedium=medium.getText().toString();
                 textschoolplustwo = schoolplustwo.getText().toString();
                                 textCousre=Course.getText().toString();
                                 textsub1=sub1.getText().toString();
@@ -395,40 +152,14 @@ LinearLayout item;
                 textsub3=sub3.getText().toString();
                 textsub4=sub4.getText().toString();
                 textsub5=sub5.getText().toString();
-
-                String sub[] = {textsub1,textsub2,textsub3,textsub4,textsub5};
-
+                String[] sub = {textsub1,textsub2,textsub3,textsub4,textsub5};
                 textsub1box = sub1box.getText().toString();
                 textsub2box = sub2box.getText().toString();
                 textsub3box = sub3box.getText().toString();
                 textsub4box = sub4box.getText().toString();
                 textsub5box = sub5box.getText().toString();
-
-                String subMark[] = {textsub1box,textsub2box,textsub3box,textsub4box,textsub5box};
-//                textsub6box = sub6box.getText().toString();
-//                textcollegecourse=collegecourse.getText().toString();
+                String[] subMark = {textsub1box,textsub2box,textsub3box,textsub4box,textsub5box};
                 textplustwoallsyllabus=plustwoallsyllabus.getText().toString();
-//                textcollegename = collegename.getText().toString();
-//                textuniversity = collegeuniversity.getText().toString();
-//                textugcmainbox = ugcmainbox.getText().toString();
-//                textcoresub = ugcsubbox.getText().toString();
-//                textugcenglishbox = ugcenglishbox.getText().toString();
-//                textugclangbox = ugclangbox.getText().toString();
-//                textopencoursebox = opencoursebox.getText().toString();
-//                qualcrse = coursename.getText().toString();
-//                qualtype = coursetype.getText().toString();
-//               qualinstitu = institution.getText().toString();
-//               qualuniversity = university2.getText().toString();
-//                List<HashMap<String, String>> education = new ArrayList<HashMap<String, String>>();
-//
-//                HashMap<String, String> tenth = new HashMap<>();
-
-//                ArrayList<HashMap<String, String>> education = new ArrayList<HashMap<String, String>>();
-//                HashMap<String, String> tenthStd = new HashMap<String, String>();
-//                tenthStd.put("schoolName", textschool);
-//                tenthStd.put("science", textsciencesslcbox);
-//                tenthStd.put("socialScience", textsocialsslcbox);
-//                education.add(tenthStd);
 
                 HashMap<String, Object> educationDetails = new HashMap<>();
                 HashMap<String, Object> tenthStd = new HashMap<>();
@@ -438,8 +169,8 @@ LinearLayout item;
                 tenthStd.put("english", textenglishsslcbox);
                 tenthStd.put("maths", textmathssslcbox);
                 tenthStd.put("socialScience", textsocialsslcbox);
-
                 educationDetails.put("tenthStd",tenthStd);
+
                 HashMap<String, Object> twelthStd = new HashMap<>();
                 twelthStd.put("schoolName",textschoolplustwo);
                 twelthStd.put("syllabus",textplustwoallsyllabus);
@@ -448,202 +179,16 @@ LinearLayout item;
                 twelthStd.put("course",textCousre);
                 educationDetails.put("twelthStd",twelthStd);
 
-
-//                HashMap<String, String> twelthStd = new HashMap<String, String>();
-//                twelthStd.put("subMark", textsub1box);
-//                education.add(twelthStd);
-
-
-//            tenth.put("high_school_socialscience", textsocialsslcbox);
-//            tenth.put("higher_secondary_mark1", textsub1box);
-//        education.put("college_name", textcollegename);
-//            education.put("other_qualification_course_name", qualcrse);
-//
-//                if (radioeng.isChecked()) {
-//                    textmedium = radioeng.getText().toString();
-//                } else {
-//                    textmedium = radiomal.getText().toString();
-//                }
-//
-//                apiCall = ApiClient.getRetrofit().create(ApiCall.class);
-//
-//                getEducationList(textschool, textmedium, textenglishsslcbox, textmathssslcbox, textsciencesslcbox, textsocialsslcbox, textschoolplustwo, textallsyllabus,
-//                        textsub1box, textsub2box, textsub3box, textsub4box, textsub5box, textsub6box,
-//                        textallsyllabus, textcollegename, textuniversity, textugcmainbox, textcoresub, textugcenglishbox, textugclangbox, textopencoursebox,textcollegecourse,textplustwoallsyllabus,textcoursetype
-//                ,textcoursename,qualtype,qualcrse,qualinstitu, qualuniversity);
-//
-//
-//                Education education=new Education(textschool,textsciencesslcbox,textsocialsslcbox,textsub1box,textcollegename,qualcrse);
-
-
-
-
-                Intent newIntent = new Intent(EducationalDetails.this, ExtraCurricularActivity.class);
-//                newIntent.putExtra("personal",personal);
+                Intent newIntent = new Intent(EducationalDetails.this, EducationalDetails2.class);
                 newIntent.putExtra("personalDetails", personalDetails);
                 newIntent.putExtra("educationDetails", educationDetails);
                 startActivity(newIntent);
             }
         });
     }
-    public void onRadioButtonClicked(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-
-        switch (view.getId()) {
-            case R.id.radioeng:
-                if (checked)
-                    break;
-            case R.id.radiomal:
-                if (checked)
-                    break;
-        }
-    }
-
-//    private void dropdowncall() {
-//        Call<EducationDropdownResponse> dropdownResponseCall = apiCall.geteducationDropdown();
-//        dropdownResponseCall.enqueue(new Callback<EducationDropdownResponse>() {
-//            @Override
-//            public void onResponse(Call<EducationDropdownResponse> call, Response<EducationDropdownResponse> response) {
-//                plusTwoCoursesItems = response.body().getPlusTwoCourses();
-//                for (PlusTwoCoursesItem item : plusTwoCoursesItems) {
-//                    plustwosyllabus.add(item.getCourseName());
-//                }
-//
-//
-//                plusTwoSubjectsItems = response.body().getPlusTwoSubjects();
-//                for (PlusTwoSubjectsItem item1 : plusTwoSubjectsItems) {
-//                    plustwosubjects.add(item1.getSubject());
-//                }
-//
-//
-//                degreeCoursesItems = response.body().getDegreeCourses();
-//                for (DegreeCoursesItem item2 : degreeCoursesItems) {
-//                    degreecourses.add(item2.getCourse());
-//                }
-//
-//
-//                universityItems = response.body().getUniversity();
-//                for (UniversityItem item3 : universityItems) {
-//                    universities.add(item3.getUniversity());
-//                }
-//            }
-//
-//
-//            @Override
-//            public void onFailure(Call<EducationDropdownResponse> call, Throwable t) {
-//
-//            }
-//        });
-//    }
-//
-//
-//
-//    public void onRadioButtonClicked(View view) {
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        switch (view.getId()) {
-//            case R.id.radioeng:
-//                radiomal.setChecked(false);
-//
-//                break;
-//            case R.id.radiomal:
-//                radioeng.setChecked(false);
-//
-//                break;
-//        }
-//    }
-//
-//        public void getEducationList (String textschool, String textmedium, String
-//        textenglishsslcbox, String textmathssslcbox, String textsciencesslcbox, String
-//        textsocialsslcbox, String textschoolplustwo, String textallsyllabus,
-//                String textsub1box, String textsub2box, String textsub3box, String
-//        textsub4box, String textsub5box, String textsub6box,
-//                String textugccourse, String textcollegename, String textuniversity, String
-//        textugcmainbox, String textcoresub,
-//                String textugcenglishbox, String textugclangbox, String textopencoursebox ,String textcollegecourse,String textplustwoallsyllabus,
-//                                      String textcoursetype,String textcoursename,String qualtype,String qualcrse,
-//                                      String qualinstitu,String  qualuniversity){
-//
-//            SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//            authentoken = (shared.getString("token", ""));
-//            HashMap<String, String> params = new HashMap<>();
-//            params.put("high_school", textschool);
-//            params.put("high_school_medium", textmedium);
-//            params.put("high_school_english", textenglishsslcbox);
-//            params.put("high_school_maths", textmathssslcbox);
-//            params.put("high_school_science", textsciencesslcbox);
-//            params.put("high_school_socialscience", textsocialsslcbox);
-//            params.put("plus_two_syllabus", textplustwoallsyllabus);
-//            params.put("higher_secondary_school", textschoolplustwo);
-////        //  params.put("course_id", 1);
-////        params.put("higher_secondary_subject1",textsub1box );
-////        params.put("higher_secondary_subject2", textsub2box);
-////        params.put("higher_secondary_subject3", textsub3box);
-////        params.put("higher_secondary_subject4", textsub4box);
-////        params.put("higher_secondary_subject5", textsub5box);
-////            params.put("higher_secondary_subject6", textsub6box);
-////        params.put("higher_secondary_mark1", textsub1box);
-////            params.put("higher_secondary_mark2", textsub2box);
-////            params.put("higher_secondary_mark3", textsub3box);
-////            params.put("higher_secondary_mark4", textsub4box);
-////            params.put("higher_secondary_mark5", textsub5box);
-//            params.put("course_name", textcollegecourse);
-//            params.put("college_name", textcollegename);
-//            params.put("university", textuniversity);
-//            params.put("core_mark", textugcmainbox);
-//            params.put("complementary", textcoresub);
-//            params.put("common_english", textugcenglishbox);
-//            params.put("common_language", textugclangbox);
-//            params.put("open_mark", textopencoursebox);
-////        //params.put("additional_courses_grade", textcoursename);
-////        params.put("additional_courses_instiution", textinstitution);
-////        params.put("additional_courses_recongnisation", textuniversity2);
-////        params.put("additional_courses_course_type", qualtype);
-//        params.put("other_qualification_course_name", qualcrse);
-//        params.put("other_qualification_grade", qualtype);
-//        params.put("other_qualification_instiution", qualinstitu);
-//        params.put("other_qualification_recongnisation",  qualuniversity);
-//
-//
-//
-//
-//            Call<EducationResponse> educationCall = apiCall.getEducation(params, authentoken);
-//
-//            educationCall.enqueue(new Callback<EducationResponse>() {
-//                @Override
-//                public void onResponse(Call<EducationResponse> call, Response<EducationResponse> response) {
-//
-//                    status = response.code();
-//                    if (status != 400) {
-//                        apieducationlist = response.body().getStatus();
-//
-//                        Toast.makeText(EducationalDetails.this, "Added Successfully.", Toast.LENGTH_SHORT).show();
-//                        Intent newIntent = new Intent(getApplicationContext(), FamilyDetails.class);
-//                        startActivity(newIntent);
-//                        finish();
-//                    } else {
-//                        Toast.makeText(EducationalDetails.this, "Already registered.", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                }
-//
-//                @Override
-//                public void onFailure(Call<EducationResponse> call, Throwable t) {
-//                    Toast.makeText(EducationalDetails.this, "Failed", Toast.LENGTH_SHORT).show();
-//
-//                }
-//            });
-//
-//        }
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
-        startActivityForResult(myIntent, 0);
-        return true;
     }
 
 
-}
 
 
 

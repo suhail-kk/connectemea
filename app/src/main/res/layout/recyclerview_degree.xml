@@ -196,12 +196,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Common(English)"
+            android:text="Common one"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/ugcengdispaly"
+            android:id="@+id/ugccommondispaly"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -228,12 +228,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Common(Language)"
+            android:text="Common two"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="238dp" />
 
         <TextView
-            android:id="@+id/langdisplay"
+            android:id="@+id/commontwodisplay"
             style="@style/viewdetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -258,7 +258,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Open"
+            android:text="Open course"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="238dp" />
 

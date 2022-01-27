@@ -95,25 +95,54 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/FAnnualIncome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
+            android:id="@+id/line1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Annual Income"
-            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@+id/FOccupation"
             app:layout_constraintStart_toStartOf="@+id/FOccupation"
             app:layout_constraintTop_toBottomOf="@+id/FOccupation">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fincome"
-                android:inputType="number"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/FAnnualIncome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Annual Income"
+                android:layout_marginTop="8dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fincome"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/FPhoneNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fphone_number"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/FofficialAddress"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -121,9 +150,9 @@
             android:layout_height="wrap_content"
             android:hint="Official Address"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/FAnnualIncome"
-            app:layout_constraintStart_toStartOf="@+id/FAnnualIncome"
-            app:layout_constraintTop_toBottomOf="@+id/FAnnualIncome">
+            app:layout_constraintEnd_toEndOf="@+id/line1"
+            app:layout_constraintStart_toStartOf="@+id/line1"
+            app:layout_constraintTop_toBottomOf="@+id/line1">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fofficailaaddress"
@@ -202,42 +231,70 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/MAnnualIncome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Annual Income"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/MOccupation"
-            app:layout_constraintStart_toStartOf="@+id/MOccupation"
-            app:layout_constraintTop_toBottomOf="@+id/MOccupation">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/mincome"
-                android:inputType="number"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/MofficialAddress"
+            android:id="@+id/MOfficialAdress"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Official Address"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/MAnnualIncome"
-            app:layout_constraintStart_toStartOf="@+id/MAnnualIncome"
-            app:layout_constraintTop_toBottomOf="@+id/MAnnualIncome">
+            app:layout_constraintEnd_toEndOf="@+id/line"
+            app:layout_constraintStart_toStartOf="@+id/line"
+            app:layout_constraintTop_toBottomOf="@+id/line">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/mofficailaaddress"
+                android:id="@+id/mofficialAddress"
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/MOccupation"
+            app:layout_constraintStart_toStartOf="@+id/MOccupation"
+            app:layout_constraintTop_toBottomOf="@+id/MOccupation">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/MIncome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Annual Income"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/moincome"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/MPhoneNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mphone_number"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/guardian"
@@ -247,9 +304,9 @@
             android:layout_marginTop="40dp"
             android:text="Guardian"
             android:layout_marginStart="30dp"
-            app:layout_constraintEnd_toEndOf="@+id/MofficialAddress"
-            app:layout_constraintStart_toStartOf="@+id/MofficialAddress"
-            app:layout_constraintTop_toBottomOf="@+id/MofficialAddress" />
+            app:layout_constraintEnd_toEndOf="@+id/MOfficialAdress"
+            app:layout_constraintStart_toStartOf="@+id/MOfficialAdress"
+            app:layout_constraintTop_toBottomOf="@+id/MOfficialAdress" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/GuardName"
@@ -309,24 +366,54 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/GuardAnnInc"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
+            android:id="@+id/line5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Annual Income"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/GuardOccupation"
-            tools:layout_editor_absoluteX="40dp">
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/GuardOccupation"
+            app:layout_constraintStart_toStartOf="@+id/GuardOccupation"
+            app:layout_constraintTop_toBottomOf="@+id/GuardOccupation">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/gincome"
-                android:inputType="number"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/GIncome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Annual Income"
+                android:layout_marginTop="8dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gincome"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/GPhoneNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gphone_number"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/GfficialAddress"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -334,9 +421,9 @@
             android:layout_height="wrap_content"
             android:hint="Official Address"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/GuardAnnInc"
-            app:layout_constraintStart_toStartOf="@+id/GuardAnnInc"
-            app:layout_constraintTop_toBottomOf="@+id/GuardAnnInc">
+            app:layout_constraintEnd_toEndOf="@+id/line5"
+            app:layout_constraintStart_toStartOf="@+id/line5"
+            app:layout_constraintTop_toBottomOf="@+id/line5">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/gofficailaaddress"

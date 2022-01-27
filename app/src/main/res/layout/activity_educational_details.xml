@@ -4,15 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.EducationalDetails"
-        android:background="@color/background">
+        android:background="@color/background"
+        android:padding="10dp">
 
         <include
             android:id="@+id/toolbar_education"
@@ -74,29 +74,24 @@
             app:layout_constraintStart_toStartOf="@+id/medium"
             app:layout_constraintTop_toBottomOf="@+id/medium">
 
-            <RadioButton
-                android:id="@+id/radioeng"
-                style="@style/option"
-                android:layout_width="wrap_content"
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="English"
-                android:checked="false"
+                android:layout_marginTop="8dp"
+                android:hint="Medium">
 
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="190dp" />
+                <AutoCompleteTextView
+                    android:id="@+id/user_medium"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
 
-            <RadioButton
-                android:id="@+id/radiomal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="Malayalam"
-                android:checked="false"
+            </com.google.android.material.textfield.TextInputLayout>
 
-                style="@style/option"
-                tools:layout_editor_absoluteX="106dp"
-                tools:layout_editor_absoluteY="182dp" />
         </LinearLayout>
 
 
@@ -240,20 +235,22 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/hseCourse"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:hint="Course"
-            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@+id/hseSchoolName"
             app:layout_constraintStart_toStartOf="@+id/hseSchoolName"
             app:layout_constraintTop_toBottomOf="@+id/hseSchoolName">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/hsecourse"
-                android:maxLines="2"
+                android:padding="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -263,19 +260,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="Syllabus"
+
             app:layout_constraintEnd_toEndOf="@+id/hseCourse"
             app:layout_constraintStart_toStartOf="@+id/hseCourse"
             app:layout_constraintTop_toBottomOf="@+id/hseCourse">
 
-
-<!--            <AutoCompleteTextView-->
-<!--                android:id="@+id/hsesyllabus"-->
-
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:inputType="none" />-->
             <AutoCompleteTextView
                 android:id="@+id/hsesyllabus"
+                android:padding="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -332,6 +324,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark1"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -378,6 +371,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark2"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -425,6 +419,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark3"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -470,6 +465,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark4"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -514,6 +510,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark5"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -527,17 +524,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout44"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout44"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout44">
+            app:layout_constraintStart_toStartOf="@+id/linearLayout44"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout44">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/hseSubName6"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint=""
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:layout_weight="1"
+                android:hint="">
 
                 <AutoCompleteTextView
                     android:id="@+id/hsesubName6"
@@ -549,625 +546,22 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/hseSubMark6"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint=""
                 android:layout_marginStart="8dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:layout_weight="1"
+                android:hint="">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hsesubMark6"
-                    android:singleLine="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/newDegreeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout45"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout45"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout45"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/background">
-
-        <TextView
-            android:id="@+id/degree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. Degree"
-            style="@style/subheading"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout45"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout45"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout45" />
-
-            <TextView
-                android:id="@+id/degree1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1"
-                style="@style/subheading"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/degree"
-                app:layout_constraintStart_toStartOf="@+id/degree"
-                app:layout_constraintTop_toBottomOf="@+id/degree" />
-
-
-            <!--        <include-->
-<!--            android:id="@+id/Adddegree"-->
-<!--            layout="@layout/adddegree"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:visibility="gone"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.4"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/degree" />-->
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ugCollegeName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="College Name"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/degree"
-            app:layout_constraintEnd_toEndOf="@+id/degree"
-            app:layout_constraintStart_toStartOf="@+id/degree">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ugcollegeName"
-                android:maxLines="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <LinearLayout
-            android:id="@+id/linearLayout46"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/ugCollegeName"
-            app:layout_constraintEnd_toEndOf="@+id/ugCollegeName"
-            app:layout_constraintStart_toStartOf="@+id/ugCollegeName">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/degreeUniversity"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:hint="University"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                <AutoCompleteTextView
-                    android:id="@+id/degreeuniversity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/degreeCourse"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:hint="Course"
-                android:layout_marginStart="8dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                <AutoCompleteTextView
-                    android:id="@+id/degreecourse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView102"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Marks obtained(in %)"
-            style="@style/subheading2"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout46"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout46"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout46" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout47"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/textView102"
-            app:layout_constraintEnd_toEndOf="@+id/textView102"
-            app:layout_constraintStart_toStartOf="@+id/textView102">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/dgrSubCore"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:hint="Core(main)"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/dgrsubCore"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/dgrSubComp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:layout_height="wrap_content"
-                android:hint="Complementary(sub)"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/dgrsubComp"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout48"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout47"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout47"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout47">
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dgrSubEng"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:hint="Common(English)"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dgrsubEng"
-                android:inputType="number"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dgrSubLang"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:hint="Common(Language)"
-            android:layout_marginStart="8dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dgrsubLang"
-                android:inputType="number"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dgrSubOpen"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:hint="Open"
-            android:layout_marginStart="8dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dgrsubOpen"
-                android:inputType="number"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-        </LinearLayout>
-                <Button
-            android:id="@+id/addDegree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple"
-            android:text="Add another Degree"
-            android:textAllCaps="false"
-            android:layout_marginTop="25dp"
-            app:layout_constraintEnd_toEndOf="@+id/newDegreeLayout"
-            app:layout_constraintStart_toStartOf="@+id/newDegreeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/newDegreeLayout"/>
-
-        <LinearLayout
-            android:id="@+id/newDegreeLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/addDegree"
-            app:layout_constraintEnd_toEndOf="@+id/addDegree"
-            app:layout_constraintStart_toStartOf="@+id/addDegree"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:orientation="vertical"
-            android:background="@color/background">
-
-            <TextView
-                android:id="@+id/degree2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2"
-                style="@style/subheading"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/addDegree"
-                app:layout_constraintStart_toStartOf="@+id/addDegree"
-                app:layout_constraintTop_toBottomOf="@+id/addDegree" />
-
-<!--            <TextView-->
-<!--                android:id="@+id/degree2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="3. Degree"-->
-<!--                style="@style/subheading"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/linearLayout45"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/linearLayout45"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/linearLayout45" />-->
-
-            <!--        <include-->
-            <!--            android:id="@+id/Adddegree"-->
-            <!--            layout="@layout/adddegree"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:layout_marginTop="20dp"-->
-            <!--            android:visibility="gone"-->
-            <!--            app:layout_constraintEnd_toEndOf="parent"-->
-            <!--            app:layout_constraintHorizontal_bias="0.4"-->
-            <!--            app:layout_constraintStart_toStartOf="parent"-->
-            <!--            app:layout_constraintTop_toBottomOf="@+id/degree" />-->
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ugCollegeName2"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="College Name"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/degree"
-                app:layout_constraintEnd_toEndOf="@+id/degree"
-                app:layout_constraintStart_toStartOf="@+id/degree">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ugcollegeName2"
-                    android:maxLines="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <LinearLayout
-                android:id="@+id/linearLayout462"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/ugCollegeName"
-                app:layout_constraintEnd_toEndOf="@+id/ugCollegeName"
-                app:layout_constraintStart_toStartOf="@+id/ugCollegeName">
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/degreeUniversity2"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:hint="University"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/degreeuniversity2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/degreeCourse2"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:hint="Course"
-                    android:layout_marginStart="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/degreecourse2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView1022"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Marks obtained(in %)"
-                style="@style/subheading2"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/linearLayout46"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout46"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout46" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout472"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/textView102"
-                app:layout_constraintEnd_toEndOf="@+id/textView102"
-                app:layout_constraintStart_toStartOf="@+id/textView102">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dgrSubCore2"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:hint="Core(main)"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dgrsubCore2"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dgrSubComp2"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Complementary(sub)"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dgrsubComp2"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout482"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/linearLayout47"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout47"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout47">
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dgrSubEng2"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:hint="Common(English)"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dgrsubEng2"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dgrSubLang2"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:hint="Common(Language)"
-                    android:layout_marginStart="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dgrsubLang2"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dgrSubOpen2"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:hint="Open"
-                    android:layout_marginStart="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dgrsubOpen2"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-<!--                    <Button-->
-<!--                        android:id="@+id/remove"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="12dp"-->
-<!--                        android:background="@drawable/ripple"-->
-<!--                        android:text="remove"-->
-<!--                        android:textAllCaps="false"-->
-<!--                        app:layout_constraintEnd_toEndOf="@+id/linearLayout482"-->
-<!--                        app:layout_constraintHorizontal_bias="0.0"-->
-<!--                        app:layout_constraintStart_toStartOf="@+id/linearLayout482"-->
-<!--                        app:layout_constraintTop_toBottomOf="@+id/linearLayout482" />-->
-        </LinearLayout>
-
-        <!--        <Button-->
-<!--            android:id="@+id/remove"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="12dp"-->
-<!--            android:background="@drawable/ripple"-->
-<!--            android:text="remove"-->
-<!--            android:textAllCaps="false"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/Adddegree"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/Adddegree"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/Adddegree" />-->
-
-        <!--        <Button-->
-<!--            android:id="@+id/remove"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="55dp"-->
-<!--            android:layout_marginEnd="28dp"-->
-<!--            android:text="remove"-->
-<!--            android:enabled="false"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/otherqual"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/addDegree" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/addDegree"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/ripple"-->
-<!--            android:text="Add Degree"-->
-<!--            android:textAllCaps="false"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/Adddegree" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/remove"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/ripple"-->
-<!--            android:text="Add Degree"-->
-<!--            android:textAllCaps="false"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/Adddegree" />-->
-<!--      -->
-
-        <TextView
-            android:id="@+id/otherqual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4.Any Other Qualification"
-            style="@style/subheading"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/newDegreeLayout2"
-            app:layout_constraintEnd_toEndOf="@+id/newDegreeLayout2"
-            app:layout_constraintStart_toStartOf="@+id/newDegreeLayout2"/>
-
-        <include
-            android:id="@+id/Adddqualification"
-            layout="@layout/addqualification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/otherqual" />
-
-
-
-        <Button
-            android:id="@+id/addQualification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple"
-            android:text="Add another qualification"
-            android:layout_marginTop="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Adddqualification" />
-
-<!--        <Button-->
-<!--            android:id="@+id/addQualification"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/ripple"-->
-<!--            android:text="Add qualification"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/linearLayout45"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/linearLayout45"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/linearLayout45"/>-->
-
-
-        <Button
-            android:id="@+id/saveEduDetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple"
-            android:text="Save Info"
-            android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@id/addQualification"
-            app:layout_constraintEnd_toEndOf="@+id/addQualification"
-            app:layout_constraintStart_toStartOf="@+id/addQualification"/>
-
         <ProgressBar
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyle"
@@ -1180,16 +574,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <Button-->
-<!--            android:id="@+id/button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="55dp"-->
-<!--            android:layout_marginEnd="28dp"-->
-<!--            android:text="Button"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/addDegree"-->
-<!--            tools:layout_editor_absoluteY="1158dp" />-->
+        <Button
+            android:id="@+id/saveinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Save and Next"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout45" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

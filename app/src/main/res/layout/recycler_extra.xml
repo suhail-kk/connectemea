@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sino"
+                style="@style/viewheading"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:text="1 ."
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView47"
+                style="@style/viewheading"
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"/>
+<!--                android:text="Extra Curricular Activities" />-->
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line1"
+            android:layout_alignStart="@+id/line1"
+            android:layout_alignEnd="@+id/line1"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtActivity"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:text="Activities" />
+
+            <TextView
+                android:id="@+id/curricularActivityName"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:text="Ncc" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout21"
+            android:layout_alignStart="@+id/linearLayout21"
+            android:layout_alignEnd="@+id/linearLayout21"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPrice"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Price If Anyone" />
+
+            <TextView
+                android:id="@+id/priceOfActivity"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="10000"
+                android:maxLines="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout22"
+            android:layout_alignStart="@+id/linearLayout22"
+            android:layout_alignEnd="@+id/linearLayout22"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtYear"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Year Of Participation"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="132dp" />
+
+            <TextView
+                android:id="@+id/yearOfParticipation"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="2021"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout23"
+            android:layout_alignStart="@+id/linearLayout23"
+            android:layout_alignEnd="@+id/linearLayout23"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtDtls"
+                style="@style/subheading2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Details of excellence in Performance"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="132dp" />
+
+            <TextView
+                android:id="@+id/dtlsOfPariticipation"
+                style="@style/viewdetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="abc road"
+                android:maxLines="4"
+                android:layout_gravity="center"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

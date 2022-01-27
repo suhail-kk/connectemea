@@ -18,10 +18,11 @@ import com.example.emea.R;
 import com.example.emea.Response.getDetails.Data;
 import com.example.emea.Response.getDetails.FamilyDetails;
 import com.example.emea.Response.getDetails.Father;
-import com.example.emea.Response.getDetails.Gardian;
+//import com.example.emea.Response.getDetails.Gardian;
 import com.example.emea.Response.getDetails.GetResponse;
+import com.example.emea.Response.getDetails.Guardian;
 import com.example.emea.Response.getDetails.Mother;
-import com.example.emea.Response.getDetails.Student;
+//import com.example.emea.Response.getDetails.Student;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,29 +34,20 @@ public class FamilyDetailsView extends AppCompatActivity {
 
     ApiCall apiCall;
 
-    TextView fathername, fathereducation, fatheroccupation, fatherincome;
-    TextView mothername, mothereducation, motheroccupation, motherincome;
-    TextView guardianname, guardianeducation, guardianoccupation, guardianincome;
-
-    String textfathername;
-    String textfathereducation;
-    String textfatheroccupation;
-    int textfatherincome;
-    String textmothername;
-    String textmothereducation;
-    String textmotheroccupation;
-    int textmotherincome;
-    String textguardianname, textguardianeducation, textguardianoccupation, textguardianincome;
-    String authtoken;
+    TextView fathername, fathereducation, fatheroccupation, fatherincome
+    , mothername, mothereducation, motheroccupation, motherincome
+    , guardianname, guardianeducation, guardianoccupation, guardianincome;
+    String textfathername, textfathereducation, textfatheroccupation, textmothername, textmothereducation, textmotheroccupation, textguardianname, textguardianeducation, textguardianoccupation, textguardianincome
+    , authtoken;
+    int textfatherincome,textmotherincome;
 
     ImageView editfamily;
     ImageView backbutton;
     Data data;
-    Student student;
     FamilyDetails familyDetails;
     Father father;
     Mother mother;
-    Gardian gardian;
+    Guardian gardian;
 
 
     @Override
@@ -104,57 +96,58 @@ public class FamilyDetailsView extends AppCompatActivity {
             public void onResponse(Call<GetResponse> call, Response<GetResponse> response) {
 
                 data = response.body().getData();
-                student = data.getStudent();
-                familyDetails = student.getFamilyDetails();
+                familyDetails = data.getFamilyDetails();
                  father = familyDetails.getFather();
                 mother=familyDetails.getMother();
-                gardian=familyDetails.getGardian();
+                gardian=familyDetails.getGuardian();
                 textfathername = father.getName();
-                fathername = (TextView) findViewById(R.id.ftrname);
+                fathername =  findViewById(R.id.ftrname);
                 fathername.setText(textfathername);
 
                 textfathereducation = father.getEducationQualification();
-                fathereducation = (TextView) findViewById(R.id.ftredu);
+                fathereducation =  findViewById(R.id.ftredu);
                 fathereducation.setText(textfathereducation);
 
                 textfatheroccupation = father.getOccupation();
-                fatheroccupation = (TextView) findViewById(R.id.ftroccu);
+                fatheroccupation =  findViewById(R.id.ftroccu);
                 fatheroccupation.setText(textfatheroccupation);
 
                 textfatherincome = father.getAnnualIncome();
-                fatherincome = (TextView) findViewById(R.id.ftrinc);
+                fatherincome =  findViewById(R.id.ftrinc);
                 fatherincome.setText(String.valueOf(textfatherincome));
 
+
+
                 textmothername = mother.getName();
-                mothername = (TextView) findViewById(R.id.mtrname);
+                mothername =  findViewById(R.id.mtrname);
                 mothername.setText(textmothername);
 
                 textmothereducation = mother.getEducationQualification();
-                mothereducation = (TextView) findViewById(R.id.mtredu);
+                mothereducation =  findViewById(R.id.mtredu);
                 mothereducation.setText(textmothereducation);
 
                 textmotheroccupation = mother.getOccupation();
-                motheroccupation = (TextView) findViewById(R.id.mtroccu);
+                motheroccupation =  findViewById(R.id.mtroccu);
                 motheroccupation.setText(textmotheroccupation);
 
                 textmotherincome = mother.getAnnualIncome();
-                motherincome = (TextView) findViewById(R.id.mtrinc);
+                motherincome =  findViewById(R.id.mtrinc);
                 motherincome.setText(String.valueOf(textmotherincome));
 
                 textguardianname = gardian.getName();
-                guardianname = (TextView) findViewById(R.id.grdname);
+                guardianname =  findViewById(R.id.grdname);
                 guardianname.setText(textguardianname);
 
                 textguardianeducation = gardian.getEducationQualification();
-                guardianeducation = (TextView) findViewById(R.id.grdedu);
+                guardianeducation =  findViewById(R.id.grdedu);
                 guardianeducation.setText(textguardianeducation);
 
                 textguardianoccupation = gardian.getOccupation();
-                guardianoccupation = (TextView) findViewById(R.id.grdoccu);
+                guardianoccupation =  findViewById(R.id.grdoccu);
                 guardianoccupation.setText(textguardianoccupation);
 
                 textguardianincome = gardian.getAnnualIncome();
-                guardianincome = (TextView) findViewById(R.id.grdinc);
+                guardianincome =  findViewById(R.id.grdinc);
                 guardianincome.setText(textguardianincome);
 
             }

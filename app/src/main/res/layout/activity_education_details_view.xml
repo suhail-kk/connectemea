@@ -30,7 +30,6 @@
             style="@style/fam_Details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:background="@drawable/fam_dtls"
             app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +42,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="30dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/textView54"
@@ -311,7 +310,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="30dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/textView70"
@@ -387,15 +386,47 @@
                         tools:layout_editor_absoluteY="398dp" />
 
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayout21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout37"
+                    android:layout_alignStart="@+id/linearLayout37"
+                    android:layout_alignEnd="@+id/linearLayout37"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/subheading2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Course"
+                        tools:layout_editor_absoluteX="132dp"
+                        tools:layout_editor_absoluteY="443dp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        style="@style/viewdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        tools:layout_editor_absoluteX="293dp"
+                        tools:layout_editor_absoluteY="398dp" />
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView75"
                     style="@style/subheading2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearLayout37"
-                    android:layout_alignStart="@+id/linearLayout37"
-                    android:layout_alignEnd="@+id/linearLayout37"
+                    android:layout_below="@+id/linearLayout21"
+                    android:layout_alignStart="@+id/linearLayout21"
+                    android:layout_alignEnd="@+id/linearLayout21"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="0dp"
@@ -630,7 +661,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="30dp">
+                android:padding="10dp">
 
 
                 <TextView
@@ -679,7 +710,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="30dp">
+                android:padding="10dp">
 
 
                 <TextView

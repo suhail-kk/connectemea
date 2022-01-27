@@ -32,8 +32,6 @@ public class ForgotPassword extends AppCompatActivity {
     Button btnforgot;
     String inputEmail, inputfullname;
     ApiCall apiCall;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    String status;
     String authentoken;
     TextView txtForgot;
     Data data;
@@ -44,8 +42,6 @@ public class ForgotPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
-
-
         txtForgot = findViewById(R.id.forgot);
 
         Typeface typeface = ResourcesCompat.getFont(
@@ -69,19 +65,6 @@ public class ForgotPassword extends AppCompatActivity {
         });
     }
 
-//    private boolean ValidateInfo(String inputEmail) {
-//        if (inputEmail.length() == 0) {
-//            txtEmail.requestFocus();
-//            txtEmail.setError("Field cannot be empty");
-//            return false;
-//        } else if (!inputEmail.matches(emailPattern)) {
-//            txtEmail.requestFocus();
-//            txtEmail.setError("Please enter a valid email address");
-//            return false;
-//        } else {
-//            return true;
-//        }
-//    }
 
 
     public void getForgotList(String inputEmail, String inputfullname) {
@@ -98,34 +81,16 @@ public class ForgotPassword extends AppCompatActivity {
 
                 if (response.body() != null) {
 
-//                    authToken = response.headers().get("token");
                     data = response.body().getData();
                     authentoken=data.getUserToken();
                     Toast.makeText(ForgotPassword.this, authentoken, Toast.LENGTH_SHORT).show();
 
-
-
-
-
-
-
-
-
-//                    SharedPreferences shared = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = shared.edit();
-//                    editor.putString("token", authentoken);
-//                    editor.commit();
-//                    Log.e("tokenTAG", "Token : " + authentoken);
 
                     Toast.makeText(ForgotPassword.this, "Added ", Toast.LENGTH_SHORT).show();
 
                         Intent newIntent = new Intent(getApplicationContext(),RecoveryPassword.class);
                     newIntent.putExtra("token", authentoken);
                         startActivity(newIntent);
-
-
-
-
 
                 }
 
@@ -134,7 +99,6 @@ public class ForgotPassword extends AppCompatActivity {
                     }
 
             }
-
 
             @Override
             public void onFailure(Call<ForgotResponse> call, Throwable t) {

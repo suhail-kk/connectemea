@@ -4,10 +4,31 @@ import com.google.gson.annotations.SerializedName;
 
 public class Data{
 
-	@SerializedName("userToken")
-	private String userToken;
+	@SerializedName("type")
+	private String type;
 
-	public String getUserToken(){
-		return userToken;
+	@SerializedName("token")
+	private String token;
+
+	@SerializedName("username")
+	private String username;
+
+	@SerializedName("status")
+	private String status;
+
+	public String getType(){
+		return type;
+	}
+
+	public String getToken(){
+		return token;
+	}
+
+	public String getUsername(){
+		return username;
+	}
+
+	public String getStatus(){
+		return status;
 	}
 }
